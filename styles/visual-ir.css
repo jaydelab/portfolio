@@ -1,0 +1,272 @@
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+.visual-ir-page {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
+  padding: 0;
+  background: transparent;
+}
+
+.visual-ir-stage {
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: clip;
+  width: 1440px;
+  max-width: 100%;
+}
+
+.visual-ir-stage, .visual-ir-stage *, .visual-ir-stage *::before, .visual-ir-stage *::after {
+  box-sizing: border-box;
+}
+
+.visual-ir-stage > * {
+  isolation: isolate;
+  overflow: visible;
+}
+
+.visual-ir-stage img, .visual-ir-stage svg {
+  display: block;
+}
+
+[class~="content-stretch"] {
+  box-sizing: border-box;
+}
+
+[class~="mask-alpha"] {
+  mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+}
+
+[class~="mask-intersect"] {
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+[class~="mask-no-clip"] {
+  mask-clip: no-clip;
+}
+
+[class~="mask-no-repeat"] {
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+[class~="mix-blend-plus-lighter"] {
+  mix-blend-mode: plus-lighter;
+}
+
+.figma-font-510 {
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.figma-font-geist {
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.figma-font-geist-mono {
+  font-family: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.figma-font-georgia {
+  font-family: "Georgia", Georgia, "Times New Roman", serif;
+}
+
+.figma-font-halant-ptbr {
+  font-family: "Halant", Georgia, "Times New Roman", serif;
+}
+
+.figma-font-inter {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.figma-font-lucida-grande {
+  font-family: "Lucida Grande", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.figma-font-newsreader {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+[class~="mask-position-[-10px_-10px]"] {
+  mask-position: -10px -10px;
+  -webkit-mask-position: -10px -10px;
+}
+
+[class~="mask-position-[-10px_-21px]"] {
+  mask-position: -10px -21px;
+  -webkit-mask-position: -10px -21px;
+}
+
+[class~="mask-position-[-1113px_-46px]"] {
+  mask-position: -1113px -46px;
+  -webkit-mask-position: -1113px -46px;
+}
+
+[class~="mask-position-[-18px_26px]"] {
+  mask-position: -18px 26px;
+  -webkit-mask-position: -18px 26px;
+}
+
+[class~="mask-position-[-20px_-20px]"] {
+  mask-position: -20px -20px;
+  -webkit-mask-position: -20px -20px;
+}
+
+[class~="mask-position-[-20px_-2px]"] {
+  mask-position: -20px -2px;
+  -webkit-mask-position: -20px -2px;
+}
+
+[class~="mask-position-[-31.239px_-42.239px]"] {
+  mask-position: -31.239px -42.239px;
+  -webkit-mask-position: -31.239px -42.239px;
+}
+
+[class~="mask-position-[-588px_0px]"] {
+  mask-position: -588px 0px;
+  -webkit-mask-position: -588px 0px;
+}
+
+[class~="mask-position-[-5px_-17px]"] {
+  mask-position: -5px -17px;
+  -webkit-mask-position: -5px -17px;
+}
+
+[class~="mask-position-[0%_0%]"] {
+  mask-position: 0% 0%;
+  -webkit-mask-position: 0% 0%;
+}
+
+[class~="mask-position-[0px_0px,_0px_0px]"] {
+  mask-position: 0px 0px, 0px 0px;
+  -webkit-mask-position: 0px 0px, 0px 0px;
+}
+
+[class~="mask-position-[0px_0px]"] {
+  mask-position: 0px 0px;
+  -webkit-mask-position: 0px 0px;
+}
+
+[class~="mask-position-[10.75%_7.27%]"] {
+  mask-position: 10.75% 7.27%;
+  -webkit-mask-position: 10.75% 7.27%;
+}
+
+[class~="mask-position-[110.843px_0px]"] {
+  mask-position: 110.843px 0px;
+  -webkit-mask-position: 110.843px 0px;
+}
+
+[class~="mask-position-[119px_0px]"] {
+  mask-position: 119px 0px;
+  -webkit-mask-position: 119px 0px;
+}
+
+[class~="mask-position-[132.53px_0px]"] {
+  mask-position: 132.53px 0px;
+  -webkit-mask-position: 132.53px 0px;
+}
+
+[class~="mask-position-[224px_789.689px]"] {
+  mask-position: 224px 789.689px;
+  -webkit-mask-position: 224px 789.689px;
+}
+
+[class~="mask-position-[36px_40px]"] {
+  mask-position: 36px 40px;
+  -webkit-mask-position: 36px 40px;
+}
+
+[class~="mask-position-[46.537px_3.037px]"] {
+  mask-position: 46.537px 3.037px;
+  -webkit-mask-position: 46.537px 3.037px;
+}
+
+[class~="mask-position-[95px_68px]"] {
+  mask-position: 95px 68px;
+  -webkit-mask-position: 95px 68px;
+}
+
+[class~="mask-position-[9px_-225px]"] {
+  mask-position: 9px -225px;
+  -webkit-mask-position: 9px -225px;
+}
+
+[class~="mask-position-[9px_10px]"] {
+  mask-position: 9px 10px;
+  -webkit-mask-position: 9px 10px;
+}
+
+[class~="mask-size-[100%_100%]"] {
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+
+[class~="mask-size-[1120px_410px]"] {
+  mask-size: 1120px 410px;
+  -webkit-mask-size: 1120px 410px;
+}
+
+[class~="mask-size-[1200px_46px]"] {
+  mask-size: 1200px 46px;
+  -webkit-mask-size: 1200px 46px;
+}
+
+[class~="mask-size-[1200px_580px]"] {
+  mask-size: 1200px 580px;
+  -webkit-mask-size: 1200px 580px;
+}
+
+[class~="mask-size-[266px_334px]"] {
+  mask-size: 266px 334px;
+  -webkit-mask-size: 266px 334px;
+}
+
+[class~="mask-size-[296px_110px]"] {
+  mask-size: 296px 110px;
+  -webkit-mask-size: 296px 110px;
+}
+
+[class~="mask-size-[384px_162px]"] {
+  mask-size: 384px 162px;
+  -webkit-mask-size: 384px 162px;
+}
+
+[class~="mask-size-[438px_266px]"] {
+  mask-size: 438px 266px;
+  -webkit-mask-size: 438px 266px;
+}
+
+[class~="mask-size-[54px_24px]"] {
+  mask-size: 54px 24px;
+  -webkit-mask-size: 54px 24px;
+}
+
+[class~="mask-size-[572px_468px]"] {
+  mask-size: 572px 468px;
+  -webkit-mask-size: 572px 468px;
+}
+
+[class~="mask-size-[642px_266px]"] {
+  mask-size: 642px 266px;
+  -webkit-mask-size: 642px 266px;
+}
+
+[class~="mask-size-[642px_274px]"] {
+  mask-size: 642px 274px;
+  -webkit-mask-size: 642px 274px;
+}
+
+[class~="mask-size-[84.48%_87.47%]"] {
+  mask-size: 84.48% 87.47%;
+  -webkit-mask-size: 84.48% 87.47%;
+}
