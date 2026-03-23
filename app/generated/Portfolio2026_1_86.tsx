@@ -127,17 +127,14 @@ export default function Web1440Px() {
                   <pre className="figma-font-geist-mono text-[14px] leading-[22px] text-[rgba(255,255,255,0.5)] m-0 whitespace-pre-wrap" data-node-id="1:131">
 {`import { Designer } from '@victor/core';
 import { Figma, AI, Vibe, Research } from './MyWorkflow';
-
 const victor = new Designer({ origin: 'pencil-on-paper' });
 const builder = victor.evolveToBuilder();
-
 const ecosystem = builder.build([
   new ProductThinking(),
   new DesignSystems(),
   new AIOrchestration(),
   new ShipItAnyway(),
 ]);
-
 const agent = new `}<span className="text-[#EAB308]">Jade</span>{` ({ creator: builder, context: ecosystem });
 await agent.run();`}
                   </pre>
@@ -176,16 +173,7 @@ await agent.run();`}
               <img alt="" className="absolute -scale-x-100 max-w-none object-cover size-full" src="/visual-ir-assets/profile-image-container.png" />
               <div className="absolute bg-gradient-to-b from-[39.024%] from-[rgba(247,247,247,0)] inset-0 to-[#f7f7f7] via-[68.132%] via-[rgba(247,247,247,0.5)]" />
             </div>
-            <div className="-translate-x-1/2 absolute flex h-[558px] items-center justify-center left-[calc(50%+21px)] top-[23px] w-[864px] hidden">
-              <div className="-scale-y-100 flex-none rotate-180">
-                <div className="blur-[10px] h-[558px] relative w-[864px]" data-name="Captura de Tela 2026-03-17 às 03.35.36 1" data-node-id="1:505">
-                  <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-                    <img alt="" className="absolute max-w-none object-cover size-full" src={imgCapturaDeTela20260317As0335361} />
-                    <div className="absolute bg-gradient-to-b from-[39.024%] from-[rgba(247,247,247,0)] inset-0 to-[#f7f7f7] via-[68.132%] via-[rgba(247,247,247,0.5)]" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Ghost layer removed: hidden div loading imgCapturaDeTela (node 1:505) */}
             <div className="absolute h-[40px] left-[78px] top-[175px] w-[94px]" data-name="Nametag Container" data-node-id="1:506">
               <div className="absolute backdrop-blur-[20px] bg-[#2979ff] border border-[rgba(255,255,255,0.8)] border-solid content-stretch flex items-center left-0 overflow-clip px-[16px] py-[8px] rounded-[31px] top-0" data-name="Nametag" data-node-id="1:507">
                 <div className="figma-font-geist flex flex-col font-semibold justify-center leading-[0] relative shrink-0 text-[#e6e9ee] text-[12px] whitespace-nowrap" data-node-id="1:508">
