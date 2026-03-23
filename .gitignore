@@ -1,7 +1,19 @@
 node_modules/
 dist/
 .DS_Store
+*.log
+*.tsbuildinfo
+
+# Playwright
 .playwright-cli/
 .playwright-mcp/
-*.log
-.claude/settings.local.json
+tests/visual-baseline/screenshots/
+
+# AI tooling
+.claude/
+.agent/
+.gemini/
+
+# Project-specific
+figma-cli/
+RUNTIME_RULES.md
