@@ -20,7 +20,7 @@ O estado visual atual está correto e é a baseline viva.
 ## Runtime Canônico
 
 ```
-index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86.tsx
+index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86.tsx (Orquestrador) → app/components/sections/*.tsx
 ```
 
 | Arquivo | Função |
@@ -28,12 +28,13 @@ index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86
 | `index.html` | Shell HTML, `<div id="root">`, carrega `src/main.tsx` |
 | `src/main.tsx` | Entry point React. SEM StrictMode (intencional). |
 | `app/App.tsx` | Wrapper com `.visual-ir-page` + `.visual-ir-stage` (1440×12550). |
-| `app/generated/Portfolio2026_1_86.tsx` | Componente monolítico gerado (~1140 linhas). |
+| `app/generated/Portfolio2026_1_86.tsx` | Orquestrador principal. Contém as seções mas delega a UI. |
+| `app/components/sections/` | Componentes de seção modulares, contendo markup 1:1 do Figma. |
 | `styles/index.css` | Importa fonts.css, tailwind.css, theme.css |
 | `styles/visual-ir.css` | Reset, stage layout, font classes, mask utilities |
 | `styles/fonts.css` | Google Fonts (Geist, Geist Mono, Halant, Inter, Newsreader, Noto Sans) |
-| `styles/theme.css` | Variáveis globais (:root) |
-| `public/visual-ir-assets/` | 68 arquivos (35 PNG + 32 SVG + dock/ com 18 SVGs) |
+| `app/lib/tokens.ts` | Variáveis globais de Tema (cores, sombras, tipografia, bordas) |
+| `public/visual-ir-assets/` | Arquivos de imagem estáticos (WebP otimizado + SVGs vetoriais). |
 
 ---
 
@@ -81,23 +82,20 @@ node tests/visual-baseline/compare.mjs
 | Item | Regra |
 |------|-------|
 | Localização | `public/visual-ir-assets/` |
-| Nomes | Hash SHA do extrator ou nome semântico (ex: `avatar.png`, `erp.png`) |
-| Formatos atuais | PNG (35) + SVG (32) + dock/ (18 SVGs) |
-| WebP | Não implementado ainda. Quando for, manter fallback PNG/SVG. |
-| Imagens novas | Só com referência no Figma. Não invente assets. |
-| Remoção | Só após provar que não é referenciado pelo TSX. |
+| Nomes | Nomes estritamente semânticos em kebab-case (ex: `avatar.webp`, `hero-background.webp`) |
+| Formato Raster | Exclusivamente **WebP** (qualidade 90). Reduz First Contentful Paint. |
+| Formato Vetor | **SVG** puro para iconografia e ilustrações sem perda de qualidade. |
+| Imagens novas | Só adicione imagem se houver nova funcionalidade ou bloco do Figma. WebP obrigatório. |
+| Remoção | Só após provar que não é referenciado em toda a árvore do repositório. |
 
 ---
 
 ## Política de Componentização
 
-- O TSX monolítico (`Portfolio2026_1_86.tsx`) NÃO deve ser refatorado em massa.
-- Componentizar apenas quando:
-  - Há repetição clara (ex: list items com check icon)
-  - Uma seção precisa de estado ou interação
-  - O Figma valida que aquele bloco é um componente reutilizável
-- Cada extração precisa de baseline visual antes e depois.
-- Nunca componentize e mude layout no mesmo commit.
+- O projeto **já foi componentizado modularmente** por seções (`app/components/sections/`).
+- Abstrações granulares de UI ("utils" e blocos repetitivos mistos) são PROIBIDAS a menos que a extração preserve 100% o markup exato do Figma (ex: `CheckListItem` é aceito, enquanto o antigo `ProjectCard` diferia no DOM em cada variação).
+- **Regra de Ouro:** Não agrupe partes só porque "são parecidas". Se o Figma gerou estruturas DOM levemente diferentes em padding, width ou classes de layout, deixe o HTML bruto. Fidelidade supera o *Don't Repeat Yourself* cego.
+- Toda modificação estrutural na árvore de componentes TÊM que passar no Pixel Diff nativo do Playwright/Pixelview sem tolerância.
 
 ---
 

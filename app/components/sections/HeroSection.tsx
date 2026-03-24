@@ -62,23 +62,26 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
                   </div>
                   <div className="content-stretch flex flex-col items-start px-[20px] pb-[0px] relative shrink-0 w-full" data-name="Code Container" data-node-id="1:130">
                     <pre className="figma-font-geist-mono text-[14px] leading-[22px] text-[rgba(255,255,255,0.5)] m-0 whitespace-pre-wrap" data-node-id="1:131">
-  {`import { Designer } from '@victor/core';
-  import { Figma, AI, Vibe, Research } from './MyWorkflow';
-  const victor = new Designer({ origin: 'pencil-on-paper' });
-  const builder = victor.evolveToBuilder();
-  const ecosystem = builder.build([
-    new ProductThinking(),
-    new DesignSystems(),
-    new AIOrchestration(),
-    new ShipItAnyway(),
-  ]);
-  const agent = new `}<span className="text-[#EAB308]">Jade</span>{` ({ creator: builder, context: ecosystem });
-  await agent.run();`}
+{`import { Designer } from '@victor/core';
+import { Figma, AI, Vibe, Research } from './MyWorkflow';
+
+const victor = new Designer({ origin: 'pencil-on-paper' });
+const builder = victor.evolveToBuilder();
+
+const ecosystem = builder.build([
+  new ProductThinking(),
+  new DesignSystems(),
+  new AIOrchestration(),
+  new ShipItAnyway(),
+]);
+
+const agent = new `}<span className="text-[#EAB308]">Jade</span>{` ({ creator: builder, context: ecosystem });
+await agent.run();`}
                     </pre>
                   </div>
                 </div>
               </div>
-              <div className="col-1 h-[20px] ml-[746px] mt-[335px] relative row-1 w-[16px]" data-name="Vector Container" data-node-id="1:495">
+              <div className="col-1 h-[20px] ml-[753px] mt-[362px] relative row-1 w-[16px]" data-name="Vector Container" data-node-id="1:495">
                 <div className="absolute inset-[-15%_-21.48%_-25%_-25%]">
                   <img alt="" className="block max-w-none size-full" src={imgVectorContainer} />
                 </div>
