@@ -10,7 +10,7 @@ interface FooterSectionProps {
 export default function FooterSection({ id, className = "" }: FooterSectionProps = {}) {
   return (
     <div id={id || "contato"} className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-md:flex max-md:flex-col max-md:w-full ${className}`.trim()} data-name="Container" data-node-id="1:1095">
-            <div className="col-1 h-[774px] ml-0 mt-0 overflow-clip relative row-1 w-[1392px] max-md:w-full max-md:h-auto" data-name="Keyboard Section" data-node-id="1:1096">
+            <div className="col-1 h-[774px] ml-0 mt-0 overflow-clip relative row-1 w-[1392px] max-md:w-full max-md:h-auto max-md:aspect-[1392/774]" data-name="Keyboard Section" data-node-id="1:1096">
               <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src="/visual-ir-assets/keyboard-section.webp" />
             </div>
             <div className="figma-font-georgia col-1 flex flex-col justify-center ml-[300px] mt-[472px] not-italic relative row-1 text-[0px] text-center text-white w-[792px] max-md:ml-0 max-md:mt-[200px] max-md:w-full max-md:px-[16px]" data-node-id="1:1311">
@@ -20,7 +20,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
                 <span className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]">{` algo pensado pra seres humanos, vamos conversar.`}</span>
               </p>
             </div>
-            <div className="col-1 flex h-[32px] items-center justify-center ml-[48px] mt-[48px] relative row-1 w-[26px]">
+            <div className="col-1 flex h-[32px] items-center justify-center ml-[48px] mt-[48px] relative row-1 w-[26px] max-md:hidden">
               <div className="flex-none rotate-180">
                 <div className="h-[32px] relative w-[26px]" data-name="Vector" data-node-id="1:1312">
                   <div className="absolute inset-[-9.37%_-15.38%_-15.62%_-11.87%]">
