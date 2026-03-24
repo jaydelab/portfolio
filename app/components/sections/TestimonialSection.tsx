@@ -35,12 +35,17 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
               <div className="figma-font-geist flex flex-col font-normal h-[143px] justify-center leading-[0] relative shrink-0 text-[#393737] text-[18px] max-lg:text-[clamp(15px,2vw,18px)] w-full max-md:h-auto" data-node-id="1:736">
                 <p className="leading-[27px] max-lg:leading-[clamp(23px,2.8vw,27px)]">Victor tem demonstrado ser uma pessoa muito solícita, sempre aberto a ouvir e colaborar da melhor forma possível. Ele apresenta boa habilidade de comunicação e, além disso, mantém excelente coerência em seu raciocínio. É extremamente educado, preocupado e atencioso. Sem dúvidas, é alguém com quem eu gostaria de trabalhar por muito tempo.</p>
               </div>
-              <div className="content-stretch flex items-center justify-between leading-[0] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal max-md:flex-col max-md:items-start max-md:gap-[4px]" data-name="Reviewer Info Container" data-node-id="1:740">
-                <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[16px] text-black" data-node-id="1:741">
-                  <p className="leading-[normal]">Mayra Santos, Gerente de inovação e Desenvolvimento de Software</p>
+              <div className="content-stretch flex items-center justify-between leading-[0] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal max-md:justify-start max-md:gap-[12px]" data-name="Reviewer Info Container" data-node-id="1:740">
+                <div className="hidden max-md:flex h-[40px] overflow-hidden relative rounded-full shrink-0 w-[40px]" data-name="Avatar Mobile">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAvatar} />
                 </div>
-                <div className="figma-font-geist flex flex-col font-medium justify-center relative shrink-0 text-[#393737] text-[12px]" data-node-id="1:742">
-                  <p className="leading-[normal]">{`WAP & WAAW by Alok`}</p>
+                <div className="content-stretch flex items-center justify-between w-full max-md:flex-col max-md:items-start max-md:gap-[4px]">
+                  <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[16px] text-black" data-node-id="1:741">
+                    <p className="leading-[normal]">Mayra Santos, Gerente de inovação e Desenvolvimento de Software</p>
+                  </div>
+                  <div className="figma-font-geist flex flex-col font-medium justify-center relative shrink-0 text-[#393737] text-[12px]" data-node-id="1:742">
+                    <p className="leading-[normal]">{`WAP & WAAW by Alok`}</p>
+                  </div>
                 </div>
               </div>
             </div>

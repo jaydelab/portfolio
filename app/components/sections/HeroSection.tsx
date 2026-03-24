@@ -21,7 +21,7 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
                   </p>
                 </div>
                 <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid max-md:flex max-md:flex-col max-md:items-center max-md:w-full place-items-start relative shrink-0" data-name="Container" data-node-id="1:93">
-                  <div className="col-1 flex h-[111px] max-md:hidden items-center justify-center ml-[366.83px] max-md:ml-0 mt-0 relative row-1 w-[139.466px]" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "247" } as React.CSSProperties}>
+                  <div className="col-1 flex h-[111px] max-md:h-[78px] items-center justify-center ml-[366.83px] max-md:ml-0 mt-0 relative row-1 w-[139.466px] max-md:w-[98px] max-md:mb-[2px]" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "247" } as React.CSSProperties}>
                     <div className="flex-none h-full w-full">
                       <div className="h-full overflow-visible relative w-full" data-name="slideshow" data-node-id="1:94">
                         <img

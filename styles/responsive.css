@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Responsive overrides — only applies below 1280px.
-   Desktop (≥1280px) is NEVER affected by this file.
+   Responsive overrides — only applies below 1200px.
+   Desktop (≥1200px) is NEVER affected by this file.
    ========================================================================== */
 
 /* Stage wrapper: override inline styles on mobile */
-@media (width < 1280px) {
+@media (width < 1200px) {
   .visual-ir-stage {
     width: 100% !important;
     max-width: 1440px;

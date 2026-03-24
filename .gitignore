@@ -19,3 +19,4 @@ figma-cli/
 RUNTIME_RULES.md
 .superpowers/
 screenshots/
+output/playwright/

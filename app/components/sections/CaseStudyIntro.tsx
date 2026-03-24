@@ -9,17 +9,17 @@ interface CaseStudyIntroProps {
 
 export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroProps = {}) {
   return (
-    <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-md:gap-[24px] items-center justify-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Container" data-node-id="1:510">
+    <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Container" data-node-id="1:510">
             <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
               <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Um novo negócio, uma barreira e uma reunião</p>
             </div>
-            <div className="content-stretch flex max-md:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
-              <div className="h-[843px] max-md:h-[400px] relative shrink-0 w-[690px] max-md:w-full" data-name="003 1" data-node-id="1:513">
+            <div className="content-stretch flex max-lg:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
+              <div className="h-[843px] max-lg:h-[400px] relative shrink-0 w-[690px] max-lg:w-full" data-name="003 1" data-node-id="1:513">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                   <img alt="" className="absolute h-[120.78%] left-[-52.17%] max-w-none top-[-11.04%] w-[196.96%]" src={img0031} />
                 </div>
               </div>
-              <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-[486px] max-md:w-full" data-name="Container" data-node-id="1:514">
+              <div className="content-stretch flex flex-col gap-[40px] max-lg:gap-[24px] items-start relative shrink-0 w-[486px] max-lg:w-full" data-name="Container" data-node-id="1:514">
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:515">
                   <div className="content-stretch flex items-start relative shrink-0" data-name="Container" data-node-id="1:516">
                     <div className="figma-font-geist flex flex-col font-semibold justify-center leading-[0] relative shrink-0 text-[#393737] text-[18px] whitespace-nowrap" data-node-id="1:517">

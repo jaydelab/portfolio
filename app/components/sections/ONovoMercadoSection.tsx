@@ -18,7 +18,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                   <p className="leading-[normal]">O Novo Mercado</p>
                 </div>
               </div>
-              <div className="figma-font-halant-ptbr flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] whitespace-nowrap" data-node-id="1:949">
+            <div className="figma-font-halant-ptbr flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] whitespace-nowrap max-lg:whitespace-normal max-lg:text-center" data-node-id="1:949">
                 <p>
                   <span className="figma-font-newsreader font-normal leading-[68px]">283</span>
                   <span className="figma-font-georgia not-italic leading-[68px]">{` mil alunos e a `}</span>
@@ -27,7 +27,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                 </p>
               </div>
             </div>
-            <div className="content-stretch flex gap-[102px] max-md:gap-[32px] items-center relative shrink-0 w-full max-md:flex-col" data-name="Main Container" data-node-id="1:950">
+            <div className="content-stretch flex gap-[102px] max-lg:gap-[32px] items-center relative shrink-0 w-full max-lg:flex-col" data-name="Main Container" data-node-id="1:950">
               <div className="content-stretch flex flex-col gap-[37px] items-start leading-[0] relative shrink-0 w-[510px] max-md:w-full" data-name="Left Section" data-node-id="1:951">
                 <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-name="Text Container" data-node-id="1:952">
                   <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black w-full" data-node-id="1:953">
@@ -52,7 +52,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                   </div>
                 </div>
               </div>
-              <div className="content-stretch flex flex-col gap-[24px] h-[858px] items-start relative shrink-0 w-[588px] max-md:w-full" data-name="Right Section" data-node-id="1:974">
+              <div className="content-stretch flex flex-col gap-[24px] h-[858px] max-lg:h-auto items-start relative shrink-0 w-[588px] max-lg:w-full" data-name="Right Section" data-node-id="1:974">
                 <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-[1_0_0] flex-col items-center justify-end min-h-px min-w-px overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-full" data-name="Image Container" data-node-id="1:975">
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:976">
                     <div className="col-1 h-[468px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[572px_468px] overflow-clip ml-0 mt-0 opacity-95 relative row-1 w-[572px] max-md:w-full" data-name="Visão de cursos - 1440px 1" data-node-id="1:978" style={{ maskImage: `url('${imgVisaoDeCursos1440Px1}')` }}>

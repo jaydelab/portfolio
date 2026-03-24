@@ -9,8 +9,8 @@ interface AboutSectionProps {
 
 export default function AboutSection({ id, className = "" }: AboutSectionProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex gap-[24px] items-center justify-center relative shrink-0 max-md:flex-col-reverse max-md:gap-[16px] ${className}`.trim()} data-name="Sobre" data-node-id="1:497">
-            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[486px] max-md:w-full" data-name="Info Container" data-node-id="1:498">
+    <div id={id} className={`content-stretch flex gap-[24px] max-lg:gap-[16px] items-center justify-center relative shrink-0 max-lg:flex-col-reverse ${className}`.trim()} data-name="Sobre" data-node-id="1:497">
+            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[486px] max-lg:w-full" data-name="Info Container" data-node-id="1:498">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Label Container" data-node-id="1:499" style={{ backgroundImage: "linear-gradient(-13.6093deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                 <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:500">
                   <p className="leading-[normal]">Sobre mim</p>
@@ -29,13 +29,13 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
                 </div>
               </div>
             </div>
-            <div className="h-[604px] max-md:h-[350px] overflow-clip relative shrink-0 w-[690px] max-md:w-full" data-name="Profile Image Container" data-node-id="1:504">
+            <div className="h-[604px] max-lg:h-[350px] overflow-clip relative shrink-0 w-[690px] max-lg:w-full" data-name="Profile Image Container" data-node-id="1:504">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <img alt="" className="absolute -scale-x-100 max-w-none object-cover size-full" src="/visual-ir-assets/profile-image-container.webp" />
                 <div className="absolute bg-gradient-to-b from-[39.024%] from-[rgba(247,247,247,0)] inset-0 to-[#f7f7f7] via-[68.132%] via-[rgba(247,247,247,0.5)]" />
               </div>
               {/* Ghost layer removed: hidden div loading imgCapturaDeTela (node 1:505) */}
-              <div className="absolute h-[40px] left-[78px] max-md:left-[20px] top-[175px] max-md:top-[100px] w-[94px]" data-name="Nametag Container" data-node-id="1:506">
+              <div className="absolute h-[40px] left-[78px] max-lg:left-[20px] top-[175px] max-lg:top-[100px] w-[94px]" data-name="Nametag Container" data-node-id="1:506">
                 <div className="absolute backdrop-blur-[20px] bg-[#2979ff] border border-[rgba(255,255,255,0.8)] border-solid content-stretch flex items-center left-0 overflow-clip px-[16px] py-[8px] rounded-[31px] top-0" data-name="Nametag" data-node-id="1:507">
                   <div className="figma-font-geist flex flex-col font-semibold justify-center leading-[0] relative shrink-0 text-[#e6e9ee] text-[12px] whitespace-nowrap" data-node-id="1:508">
                     <p className="leading-[normal]">Victor</p>
