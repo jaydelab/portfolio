@@ -7,19 +7,19 @@ interface CaseStudyWAPProps {
 
 export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex items-start justify-center relative shrink-0 ${className}`.trim()} data-node-id="1:573">
-            <div className="content-stretch flex flex-col gap-[42px] items-start relative shrink-0 w-[588px]" data-node-id="1:574">
+    <div id={id} className={`content-stretch flex max-md:flex-col items-start justify-center relative shrink-0 ${className}`.trim()} data-node-id="1:573">
+            <div className="content-stretch flex flex-col gap-[42px] max-md:gap-[24px] items-start relative shrink-0 w-[588px] max-md:w-full" data-node-id="1:574">
               <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="1:575">
                 <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-node-id="1:576" style={{ backgroundImage: "linear-gradient(-8.23177deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                   <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:577">
                     <p className="leading-[normal]">WAP e WAAW by Alok</p>
                   </div>
                 </div>
-                <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] tracking-[-2.8px] w-[588px]" data-node-id="1:578">
+                <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] w-[588px]" data-node-id="1:578">
                   <p>
-                    <span className="leading-[68px]">{`O motor de `}</span>
-                    <span className="figma-font-newsreader font-normal leading-[68px]">2,5</span>
-                    <span className="leading-[68px]">{` bilhões que rodava em planilhas`}</span>
+                    <span className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">{`O motor de `}</span>
+                    <span className="figma-font-newsreader font-normal leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">2,5</span>
+                    <span className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">{` bilhões que rodava em planilhas`}</span>
                   </p>
                 </div>
               </div>
@@ -40,8 +40,8 @@ export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps =
                 </div>
               </div>
             </div>
-            <div className="h-[757px] relative shrink-0 w-[612px]" data-node-id="1:585">
-              <div className="absolute h-[757px] left-[-134px] top-0 w-[741px]" data-name="005 2" data-node-id="1:586">
+            <div className="h-[757px] max-md:h-[400px] relative shrink-0 w-[612px] max-md:w-full" data-node-id="1:585">
+              <div className="absolute h-[757px] left-[-134px] max-md:left-0 top-0 w-[741px] max-md:w-full" data-name="005 2" data-node-id="1:586">
                 <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img0052} />
               </div>
             </div>

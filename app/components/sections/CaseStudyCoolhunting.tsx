@@ -23,8 +23,8 @@ interface CaseStudyCoolhuntingProps {
 
 export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCoolhuntingProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
-            <div className="content-stretch flex flex-col gap-[10px] h-[580px] items-end overflow-clip pb-[55px] pt-[58px] px-[50px] relative shrink-0 w-full" data-name="Main Content" data-node-id="1:588">
+    <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
+            <div className="content-stretch flex flex-col gap-[10px] h-[580px] max-md:h-auto max-md:min-h-[300px] items-end overflow-clip pb-[55px] pt-[58px] px-[50px] relative shrink-0 w-full" data-name="Main Content" data-node-id="1:588">
               <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:589">
                 <div className="-translate-x-1/2 absolute bg-[#c3e1e5] h-[990.074px] left-[calc(50%+12.05px)] mask-alpha mask-intersect mask-no-repeat mask-position-[46.537px_3.037px] mask-size-[1200px_580px] overflow-clip rounded-[30px] top-[-3.04px] w-[1317.171px]" data-name="Back" data-node-id="1:591" style={{ maskImage: `url('${imgBack}')` }} />
                 <div className="absolute contents inset-[0_-134.94px_-322px_-132.53px]" data-name="Background Images" data-node-id="1:592">
@@ -46,9 +46,9 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                   <img alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
                 </div>
               </div>
-              <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] relative shrink-0 w-[460px]" data-name="Text Block" data-node-id="1:599">
+              <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] relative shrink-0 w-[460px] max-md:w-full" data-name="Text Block" data-node-id="1:599">
                 <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-[460px]" data-name="Description Block" data-node-id="1:600">
-                  <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[#393737] text-[32px] w-full" data-node-id="1:601">
+                  <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[#393737] text-[32px] max-lg:text-[clamp(22px,3.5vw,32px)] w-full" data-node-id="1:601">
                     <p className="leading-[normal]">Coolhunting 2.0</p>
                   </div>
                   <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black w-full" data-node-id="1:602">
@@ -60,8 +60,8 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                 </div>
               </div>
             </div>
-            <div className="content-stretch flex gap-[24px] items-end relative shrink-0 w-full" data-name="Additional Content" data-node-id="1:604">
-              <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-[348px] items-center overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px]" data-name="bento-1" data-node-id="1:605">
+            <div className="content-stretch flex max-md:flex-col gap-[24px] items-end relative shrink-0 w-full" data-name="Additional Content" data-node-id="1:604">
+              <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-[348px] max-md:h-auto items-center overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px] max-md:w-full" data-name="bento-1" data-node-id="1:605">
                 <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-name="Helper Container" data-node-id="1:606">
                   <div className="content-stretch flex items-start px-[16px] relative shrink-0 w-full" data-name="Indicator Container" data-node-id="1:607">
                     <div className="content-stretch flex gap-[5px] items-center opacity-60 relative shrink-0" data-name="Indicators" data-node-id="1:608">
@@ -119,9 +119,9 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                   </div>
                 </div>
               </div>
-              <div className="content-stretch flex flex-col gap-[23px] items-start leading-[0] relative shrink-0 w-[384px]" data-name="Thermometer Container" data-node-id="1:627">
+              <div className="content-stretch flex flex-col gap-[23px] items-start leading-[0] relative shrink-0 w-[384px] max-md:w-full" data-name="Thermometer Container" data-node-id="1:627">
                 <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="bento-2" data-node-id="1:628">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid col-1 content-stretch flex flex-col gap-[8px] h-[163px] items-center ml-0 mt-0 pb-px pt-[20px] px-[20px] relative rounded-[20px] row-1 shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-[384px]" data-name="Thermometer Block" data-node-id="1:629">
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid col-1 content-stretch flex flex-col gap-[8px] h-[163px] max-md:h-auto items-center ml-0 mt-0 pb-px pt-[20px] px-[20px] relative rounded-[20px] row-1 shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-[384px] max-md:w-full" data-name="Thermometer Block" data-node-id="1:629">
                     <div className="content-stretch flex items-start justify-between relative shrink-0 w-full" data-name="Thermometer Header" data-node-id="1:630">
                       <div className="content-stretch flex items-center relative shrink-0" data-name="Thermometer Title Container" data-node-id="1:631">
                         <div className="figma-font-geist flex flex-col font-semibold justify-center leading-[0] relative shrink-0 text-[#393737] text-[14px] whitespace-nowrap" data-node-id="1:638">
@@ -149,7 +149,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                   </div>
                 </div>
                 <div className="grid-cols-[max-content] grid-rows-[163px] inline-grid place-items-start relative shrink-0" data-name="bento-3" data-node-id="1:656">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid col-1 h-[163px] ml-0 mt-0 rounded-[20px] row-1 shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-[384px]" data-name="Rating Background" data-node-id="1:657" />
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid col-1 h-[163px] max-md:h-auto ml-0 mt-0 rounded-[20px] row-1 shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-[384px] max-md:w-full" data-name="Rating Background" data-node-id="1:657" />
                   <div className="col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-18px_26px] mask-size-[384px_162px] ml-[18px] mt-[-26px] relative row-1 size-[349px]" data-name="Product Image" data-node-id="1:659" style={{ maskImage: `url('${imgProductImage}')` }}>
                     <img alt="" className="absolute left-[-18px] max-w-none pointer-events-none top-[26px] w-[384px]" src={imgProductImage1} />
                   </div>
@@ -163,7 +163,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                   </div>
                 </div>
               </div>
-              <div className="h-[348px] overflow-clip relative shrink-0 w-[282px]" data-name="Graph Container" data-node-id="3:731">
+              <div className="h-[348px] max-md:h-[280px] overflow-clip relative shrink-0 w-[282px] max-md:w-full" data-name="Graph Container" data-node-id="3:731">
                 <div className="-translate-x-1/2 absolute bottom-[5.75%] left-[calc(50%+2px)] top-[30.46%] w-[222px]" data-name="Vector" data-node-id="1:666">
                   <div className="absolute inset-[-0.68%]">
                     <img alt="" className="block max-w-none size-full" src={imgVector2} />

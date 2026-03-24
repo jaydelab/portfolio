@@ -11,14 +11,14 @@ interface ONovoMercadoSectionProps {
 
 export default function ONovoMercadoSection({ id, className = "" }: ONovoMercadoSectionProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="O Novo Mercado" data-node-id="1:945">
+    <div id={id || "sobre"} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="O Novo Mercado" data-node-id="1:945">
             <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:946">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Upper Container" data-node-id="1:947" style={{ backgroundImage: "linear-gradient(-10.1145deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                 <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:948">
                   <p className="leading-[normal]">O Novo Mercado</p>
                 </div>
               </div>
-              <div className="figma-font-halant-ptbr flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] tracking-[-2.8px] whitespace-nowrap" data-node-id="1:949">
+              <div className="figma-font-halant-ptbr flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] whitespace-nowrap" data-node-id="1:949">
                 <p>
                   <span className="figma-font-newsreader font-normal leading-[68px]">283</span>
                   <span className="figma-font-georgia not-italic leading-[68px]">{` mil alunos e a `}</span>
@@ -27,8 +27,8 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                 </p>
               </div>
             </div>
-            <div className="content-stretch flex gap-[102px] items-center relative shrink-0 w-full" data-name="Main Container" data-node-id="1:950">
-              <div className="content-stretch flex flex-col gap-[37px] items-start leading-[0] relative shrink-0 w-[510px]" data-name="Left Section" data-node-id="1:951">
+            <div className="content-stretch flex gap-[102px] max-md:gap-[32px] items-center relative shrink-0 w-full max-md:flex-col" data-name="Main Container" data-node-id="1:950">
+              <div className="content-stretch flex flex-col gap-[37px] items-start leading-[0] relative shrink-0 w-[510px] max-md:w-full" data-name="Left Section" data-node-id="1:951">
                 <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-name="Text Container" data-node-id="1:952">
                   <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black w-full" data-node-id="1:953">
                     <p className="leading-[26px]">O Novo Mercado é a maior escola de marketing digital do Brasil, mais de 283 mil pessoas que um dia decidiram que iam parar de assistir a vida dos outros pelo celular e começar a construir a própria. São mais de 50 cursos, 200 horas de conteúdo, lives toda semana, uma comunidade onde as perguntas têm resposta de verdade, um mercado de trabalho com mais de 800 oportunidades por mês, e a Omnia, uma IA treinada pelos maiores do mercado digital com mais de 3 milhões de interações reais.</p>
@@ -52,10 +52,10 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                   </div>
                 </div>
               </div>
-              <div className="content-stretch flex flex-col gap-[24px] h-[858px] items-start relative shrink-0 w-[588px]" data-name="Right Section" data-node-id="1:974">
+              <div className="content-stretch flex flex-col gap-[24px] h-[858px] items-start relative shrink-0 w-[588px] max-md:w-full" data-name="Right Section" data-node-id="1:974">
                 <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-[1_0_0] flex-col items-center justify-end min-h-px min-w-px overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-full" data-name="Image Container" data-node-id="1:975">
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:976">
-                    <div className="col-1 h-[468px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[572px_468px] overflow-clip ml-0 mt-0 opacity-95 relative row-1 w-[572px]" data-name="Visão de cursos - 1440px 1" data-node-id="1:978" style={{ maskImage: `url('${imgVisaoDeCursos1440Px1}')` }}>
+                    <div className="col-1 h-[468px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[572px_468px] overflow-clip ml-0 mt-0 opacity-95 relative row-1 w-[572px] max-md:w-full" data-name="Visão de cursos - 1440px 1" data-node-id="1:978" style={{ maskImage: `url('${imgVisaoDeCursos1440Px1}')` }}>
                       <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <img alt="" className="absolute h-[107.52%] left-0 max-w-none top-[-0.04%] w-full" src={imgVisaoDeCursos1440Px2} />
                       </div>
@@ -64,7 +64,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                 </div>
                 <div className="content-stretch flex gap-[24px] h-[350px] items-center relative shrink-0 w-full" data-name="Images Section" data-node-id="1:979">
                   <div className="flex flex-row items-center self-stretch">
-                    <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col h-full items-center justify-end overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[282px]" data-name="Image Wrapper" data-node-id="1:980">
+                    <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col h-full items-center justify-end overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[282px] max-md:flex-1" data-name="Image Wrapper" data-node-id="1:980">
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:981">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 1" data-node-id="1:983" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -75,7 +75,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                     </div>
                   </div>
                   <div className="flex flex-row items-center self-stretch">
-                    <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col h-full items-center justify-end overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[282px]" data-name="Image Wrapper" data-node-id="1:984">
+                    <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col h-full items-center justify-end overflow-clip p-[8px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[282px] max-md:flex-1" data-name="Image Wrapper" data-node-id="1:984">
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:985">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 5" data-node-id="1:987" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">

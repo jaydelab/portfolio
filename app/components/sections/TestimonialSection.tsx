@@ -10,8 +10,8 @@ interface TestimonialSectionProps {
 
 export default function TestimonialSection({ id, className = "" }: TestimonialSectionProps = {}) {
   return (
-    <div id={id} className={`h-[455.5px] relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="3:733">
-            <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px]" data-name="Review Container" data-node-id="1:727">
+    <div id={id} className={`h-[455.5px] relative shrink-0 w-[1200px] max-lg:w-full max-md:h-auto ${className}`.trim()} data-name="Container" data-node-id="3:733">
+            <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px] max-md:relative max-md:w-full max-md:left-auto max-md:top-auto max-md:p-[24px]" data-name="Review Container" data-node-id="1:727">
               <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Header Section" data-node-id="1:728">
                 <div className="h-[26px] relative shrink-0 w-[33px]" data-name="“" data-node-id="1:729">
                   <img alt="" className="absolute block max-w-none size-full" src={img} />
@@ -32,8 +32,8 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
                   </div>
                 </div>
               </div>
-              <div className="figma-font-geist flex flex-col font-normal h-[143px] justify-center leading-[0] relative shrink-0 text-[#393737] text-[18px] w-full" data-node-id="1:736">
-                <p className="leading-[27px]">Victor tem demonstrado ser uma pessoa muito solícita, sempre aberto a ouvir e colaborar da melhor forma possível. Ele apresenta boa habilidade de comunicação e, além disso, mantém excelente coerência em seu raciocínio. É extremamente educado, preocupado e atencioso. Sem dúvidas, é alguém com quem eu gostaria de trabalhar por muito tempo.</p>
+              <div className="figma-font-geist flex flex-col font-normal h-[143px] justify-center leading-[0] relative shrink-0 text-[#393737] text-[18px] max-lg:text-[clamp(15px,2vw,18px)] w-full max-md:h-auto" data-node-id="1:736">
+                <p className="leading-[27px] max-lg:leading-[clamp(23px,2.8vw,27px)]">Victor tem demonstrado ser uma pessoa muito solícita, sempre aberto a ouvir e colaborar da melhor forma possível. Ele apresenta boa habilidade de comunicação e, além disso, mantém excelente coerência em seu raciocínio. É extremamente educado, preocupado e atencioso. Sem dúvidas, é alguém com quem eu gostaria de trabalhar por muito tempo.</p>
               </div>
               <div className="content-stretch flex items-center justify-between leading-[0] relative shrink-0 w-full whitespace-nowrap" data-name="Reviewer Info Container" data-node-id="1:740">
                 <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[16px] text-black" data-node-id="1:741">
@@ -44,14 +44,14 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
                 </div>
               </div>
             </div>
-            <div className="absolute h-[455.5px] left-0 top-0 w-[1200px]" data-name="Container" data-node-id="3:732">
+            <div className="absolute h-[455.5px] left-0 top-0 w-[1200px] max-md:hidden" data-name="Container" data-node-id="3:732">
               <div className="absolute contents left-0 top-0" data-name="Container" data-node-id="1:743">
                 <div className="absolute border border-[#e1e1e1] border-solid h-[454px] left-0 top-0 w-[1200px]" data-name="Container" data-node-id="1:744" />
                 <div className="absolute border border-[#e1e1e1] border-solid h-[46px] left-0 top-0 w-[1200px]" data-name="Line" data-node-id="1:745" />
                 <div className="absolute h-[46px] left-0 top-0 w-[1200px]" data-name="header-divisor" data-node-id="1:746">
                   <img alt="" className="absolute inset-0 block size-full" src="/visual-ir-assets/header-divisor.svg" />
                 </div>
-                <div className="absolute h-[406px] left-px top-[47px] w-[384px]" data-name="Avatar-background" data-node-id="1:925">
+                <div className="absolute h-[406px] left-px top-[47px] w-[384px] max-md:hidden" data-name="Avatar-background" data-node-id="1:925">
                   <div className="absolute contents left-0 top-0" data-name="Avatar-background" data-node-id="1:926">
                     <div className="absolute h-[405px] left-0 overflow-clip top-px w-[384px]" data-name="background-illustration" data-node-id="1:927">
                       <div className="absolute bg-[#f1f1f1] border border-[#e1e1e1] border-solid h-[139px] left-[-1px] rounded-br-[24px] top-[-3px] w-[94px]" data-name="Rounded Button" data-node-id="1:928" />

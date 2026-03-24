@@ -14,14 +14,14 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:1016">
-            <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
-              <p className="leading-[68px]">Outros projetos</p>
+    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Container" data-node-id="1:1016">
+            <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
+              <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Outros projetos</p>
             </div>
             <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:1018">
-              <div className="content-stretch flex gap-[24px] h-[399px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:1019">
+              <div className="content-stretch flex gap-[24px] h-[399px] max-md:h-auto items-center relative shrink-0 w-full max-md:flex-col" data-name="Container" data-node-id="1:1019">
                 <div className="flex flex-row items-center self-stretch">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[24px] h-full items-start leading-[0] overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[690px]" data-name="Container" data-node-id="1:1020">
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[24px] h-full items-start leading-[0] overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[690px] max-md:w-full" data-name="Container" data-node-id="1:1020">
                     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:1021">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#393737] w-full whitespace-nowrap" data-name="Container" data-node-id="1:1022">
                         <div className="figma-font-geist flex flex-col font-semibold justify-center relative shrink-0 text-[16px]" data-node-id="1:1023">
@@ -43,7 +43,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   </div>
                 </div>
                 <div className="flex flex-row items-center self-stretch">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px]" data-name="Container" data-node-id="1:1029">
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px] max-md:w-full" data-name="Container" data-node-id="1:1029">
                     <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] relative shrink-0 w-full" data-name="Container" data-node-id="1:1030">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#393737] w-full whitespace-nowrap" data-name="Container" data-node-id="1:1031">
                         <div className="figma-font-geist flex flex-col font-semibold justify-center relative shrink-0 text-[16px]" data-node-id="1:1032">
@@ -69,9 +69,9 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   </div>
                 </div>
               </div>
-              <div className="content-stretch flex gap-[24px] h-[399px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:1043">
+              <div className="content-stretch flex gap-[24px] h-[399px] max-md:h-auto items-center relative shrink-0 w-full max-md:flex-col" data-name="Container" data-node-id="1:1043">
                 <div className="flex flex-row items-center self-stretch">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start overflow-clip pt-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px]" data-name="Container" data-node-id="1:1044">
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start overflow-clip pt-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[486px] max-md:w-full" data-name="Container" data-node-id="1:1044">
                     <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] px-[24px] relative shrink-0 w-full" data-name="Container" data-node-id="1:1045">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#393737] w-full whitespace-nowrap" data-name="Container" data-node-id="1:1046">
                         <div className="figma-font-geist flex flex-col font-semibold justify-center relative shrink-0 text-[16px]" data-node-id="1:1047">
@@ -100,7 +100,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   </div>
                 </div>
                 <div className="flex flex-row items-center self-stretch">
-                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start leading-[0] overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[690px]" data-name="Container" data-node-id="1:1053">
+                  <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[32px] h-full items-start leading-[0] overflow-clip pt-[24px] px-[24px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-[690px] max-md:w-full" data-name="Container" data-node-id="1:1053">
                     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:1054">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 text-[#393737] w-full whitespace-nowrap" data-name="Container" data-node-id="1:1055">
                         <div className="figma-font-geist flex flex-col font-semibold justify-center relative shrink-0 text-[16px]" data-node-id="1:1056">
