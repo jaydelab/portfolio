@@ -17,9 +17,9 @@ const imgVector9 = "/visual-ir-assets/994144d485b287b95c9e3138c9d881eeb59bb13f.s
 
 export default function Web1440Px() {
   return (
-    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] items-center p-[24px] relative size-full" data-name="web-1440px" data-node-id="1:86">
+    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] max-lg:gap-[clamp(48px,12.5vw,150px)] items-center p-[24px] max-lg:p-[clamp(16px,2.5vw,24px)] relative size-full" data-name="web-1440px" data-node-id="1:86">
       <BadgeHeader />
-      <div className="content-stretch flex flex-col gap-[180px] items-center relative shrink-0 w-full" data-node-id="1:88">
+      <div className="content-stretch flex flex-col gap-[180px] max-lg:gap-[clamp(56px,15vw,180px)] items-center relative shrink-0 w-full" data-node-id="1:88">
         <HeroSection />
         <AboutSection />
         <CaseStudyIntro />
@@ -34,7 +34,7 @@ export default function Web1440Px() {
         <CTASection />
         <FooterSection />
       </div>
-      <div className="absolute inset-[36.2%_36.33%_62.5%_43.78%]" data-name="Vector" data-node-id="1:87">
+      <div className="absolute inset-[36.2%_36.33%_62.5%_43.78%] max-md:hidden" data-name="Vector" data-node-id="1:87">
         <img alt="" className="absolute block max-w-none size-full" src={imgVector9} />
       </div>
     </div>
