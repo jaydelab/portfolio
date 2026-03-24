@@ -16,4 +16,6 @@ tests/visual-baseline/screenshots/
 
 # Project-specific
 figma-cli/
-RUNTIME_RULES.md.superpowers/
+RUNTIME_RULES.md
+.superpowers/
+screenshots/

@@ -35,7 +35,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
               <div className="figma-font-geist flex flex-col font-normal h-[143px] justify-center leading-[0] relative shrink-0 text-[#393737] text-[18px] max-lg:text-[clamp(15px,2vw,18px)] w-full max-md:h-auto" data-node-id="1:736">
                 <p className="leading-[27px] max-lg:leading-[clamp(23px,2.8vw,27px)]">Victor tem demonstrado ser uma pessoa muito solícita, sempre aberto a ouvir e colaborar da melhor forma possível. Ele apresenta boa habilidade de comunicação e, além disso, mantém excelente coerência em seu raciocínio. É extremamente educado, preocupado e atencioso. Sem dúvidas, é alguém com quem eu gostaria de trabalhar por muito tempo.</p>
               </div>
-              <div className="content-stretch flex items-center justify-between leading-[0] relative shrink-0 w-full whitespace-nowrap" data-name="Reviewer Info Container" data-node-id="1:740">
+              <div className="content-stretch flex items-center justify-between leading-[0] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal max-md:flex-col max-md:items-start max-md:gap-[4px]" data-name="Reviewer Info Container" data-node-id="1:740">
                 <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[16px] text-black" data-node-id="1:741">
                   <p className="leading-[normal]">Mayra Santos, Gerente de inovação e Desenvolvimento de Software</p>
                 </div>
