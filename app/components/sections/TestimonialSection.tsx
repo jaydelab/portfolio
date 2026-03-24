@@ -1,11 +1,16 @@
-const imgAvatar = "/visual-ir-assets/avatar.png";
-const img = "/visual-ir-assets/3ec587c79d428df415d60cc7313d9e213a1bfb5a.svg";
-const imgFrame1410137285 = "/visual-ir-assets/a135b85ddecc4d8309de6eb457c0ab6179e31710.svg";
-const imgNextIndicatorContainer = "/visual-ir-assets/1f68901e6a5138cd5ffe137cf1e616f7cba346e3.svg";
+const imgAvatar = "/visual-ir-assets/avatar.webp";
+const img = "/visual-ir-assets/asset.svg";
+const imgFrame1410137285 = "/visual-ir-assets/frame-1410137285.svg";
+const imgNextIndicatorContainer = "/visual-ir-assets/next-indicator-container.svg";
 
-export default function TestimonialSection() {
+interface TestimonialSectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function TestimonialSection({ id, className = "" }: TestimonialSectionProps = {}) {
   return (
-          <div className="h-[455.5px] relative shrink-0 w-[1200px]" data-name="Container" data-node-id="3:733">
+    <div id={id} className={`h-[455.5px] relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="3:733">
             <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px]" data-name="Review Container" data-node-id="1:727">
               <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Header Section" data-node-id="1:728">
                 <div className="h-[26px] relative shrink-0 w-[33px]" data-name="“" data-node-id="1:729">

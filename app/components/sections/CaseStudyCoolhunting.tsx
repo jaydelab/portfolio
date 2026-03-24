@@ -1,24 +1,29 @@
-const imgPaperTexture = "/visual-ir-assets/b252142990b06034447bfe4d848aab2a4878e622.png";
-const imgImage1 = "/visual-ir-assets/883fc7f1bf633c2c5de077b419fb876e12eef734.png";
-const img0166 = "/visual-ir-assets/43957e781b16495f931ce2da2a4212a01e2bd17f.png";
-const imgFigureIntegrationsOrbit1 = "/visual-ir-assets/integration-image-container.png";
-const imgProductImage1 = "/visual-ir-assets/song.png";
-const imgBack = "/visual-ir-assets/04f2f1ad8904d079beeb6b57d45d408639f8ee97.svg";
-const imgLogoWap = "/visual-ir-assets/9535049b72a0736eaaca605cd888ec1f5484ba1f.svg";
-const imgBack1 = "/visual-ir-assets/304a7710b96c8860f737289b98724738de7a9362.svg";
-const imgGroup = "/visual-ir-assets/302ad77ac996425a7178bc3a17b8546622442597.svg";
-const imgGroup2 = "/visual-ir-assets/b44335d69ed7d0f89c990d672790584b16301b40.svg";
-const imgGroup3 = "/visual-ir-assets/0260560aacbe9695cd596ba3e5bb999c498236ee.svg";
-const imgProductImage = "/visual-ir-assets/b04f83c31b3d190d12481b1ed5d84ef9dd238a78.svg";
-const imgStar = "/visual-ir-assets/5ec56a6e906d3e6265a5c88cdd862c8e1d2f5f70.svg";
-const imgVector2 = "/visual-ir-assets/816f4e066991bcd653167fd3c2b02ebec832e4fa.svg";
-const imgVector3 = "/visual-ir-assets/72f22c769d486acf2cc812f0398b4cc1d96b9c59.svg";
-const imgGraphVectorBackground = "/visual-ir-assets/03b8bb64837c1535b3d6f7f00eaaa19d2b55b410.svg";
-const imgGraphVectors = "/visual-ir-assets/1808f2858cbeec2ba022f3c6e9179af46b7404c3.svg";
+const imgPaperTexture = "/visual-ir-assets/paper-texture.webp";
+const imgImage1 = "/visual-ir-assets/image-1.webp";
+const img0166 = "/visual-ir-assets/0166.webp";
+const imgFigureIntegrationsOrbit1 = "/visual-ir-assets/integration-image-container.webp";
+const imgProductImage1 = "/visual-ir-assets/song.webp";
+const imgBack = "/visual-ir-assets/back.svg";
+const imgLogoWap = "/visual-ir-assets/logo-wap.svg";
+const imgBack1 = "/visual-ir-assets/back-1.svg";
+const imgGroup = "/visual-ir-assets/group.svg";
+const imgGroup2 = "/visual-ir-assets/group-2.svg";
+const imgGroup3 = "/visual-ir-assets/group-3.svg";
+const imgProductImage = "/visual-ir-assets/product-image.svg";
+const imgStar = "/visual-ir-assets/star.svg";
+const imgVector2 = "/visual-ir-assets/vector-2.svg";
+const imgVector3 = "/visual-ir-assets/vector-3.svg";
+const imgGraphVectorBackground = "/visual-ir-assets/graph-vector-background.svg";
+const imgGraphVectors = "/visual-ir-assets/graph-vectors.svg";
 
-export default function CaseStudyCoolhunting() {
+interface CaseStudyCoolhuntingProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCoolhuntingProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[1200px]" data-name="Cover Container" data-node-id="1:587">
+    <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
             <div className="content-stretch flex flex-col gap-[10px] h-[580px] items-end overflow-clip pb-[55px] pt-[58px] px-[50px] relative shrink-0 w-full" data-name="Main Content" data-node-id="1:588">
               <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:589">
                 <div className="-translate-x-1/2 absolute bg-[#c3e1e5] h-[990.074px] left-[calc(50%+12.05px)] mask-alpha mask-intersect mask-no-repeat mask-position-[46.537px_3.037px] mask-size-[1200px_580px] overflow-clip rounded-[30px] top-[-3.04px] w-[1317.171px]" data-name="Back" data-node-id="1:591" style={{ maskImage: `url('${imgBack}')` }} />

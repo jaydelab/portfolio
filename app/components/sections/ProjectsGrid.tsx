@@ -1,15 +1,20 @@
-const img22 = "/visual-ir-assets/a0a0dae7a4c3227bbe542193bcc7c240e1023af3.png";
-const imgImage3 = "/visual-ir-assets/container-services.png";
-const imgFrame62751 = "/visual-ir-assets/93465b64efe138afff66d322f871e868c28c9f03.png";
-const imgFrame62752 = "/visual-ir-assets/74771470fc692218f382557f211e50634578f700.png";
-const imgAgenda3 = "/visual-ir-assets/erp.png";
-const img0021 = "/visual-ir-assets/773da98d8d485ebeb30b50b949d7fddaa3ee7a0f.svg";
-const imgImage2 = "/visual-ir-assets/5ffb33ccfd0be89ddfcbd697ed302acc7e1902c3.svg";
-const imgAgenda2 = "/visual-ir-assets/fa5fcbb76599cac6964844bf3ee44a99474a2bd0.svg";
+const img22 = "/visual-ir-assets/22.webp";
+const imgImage3 = "/visual-ir-assets/container-services.webp";
+const imgFrame62751 = "/visual-ir-assets/frame-62751.webp";
+const imgFrame62752 = "/visual-ir-assets/frame-62752.webp";
+const imgAgenda3 = "/visual-ir-assets/erp.webp";
+const img0021 = "/visual-ir-assets/0021.svg";
+const imgImage2 = "/visual-ir-assets/image-2.svg";
+const imgAgenda2 = "/visual-ir-assets/agenda-2.svg";
 
-export default function ProjectsGrid() {
+interface ProjectsGridProps {
+  id?: string;
+  className?: string;
+}
+
+export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px]" data-name="Container" data-node-id="1:1016">
+    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:1016">
             <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
               <p className="leading-[68px]">Outros projetos</p>
             </div>

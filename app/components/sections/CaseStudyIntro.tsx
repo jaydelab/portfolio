@@ -1,10 +1,15 @@
-const img0031 = "/visual-ir-assets/5012e29c07704e3893db0aefc21dae0caded9d23.png";
-const imgVector = "/visual-ir-assets/55acb3183cd22b31c9137f14c70345cd93d954b2.svg";
-const imgVector1 = "/visual-ir-assets/cc9d740951873be82de0b7875e4fde0dfcc91680.svg";
+import CheckListItem from "../ui/CheckListItem";
 
-export default function CaseStudyIntro() {
+const img0031 = "/visual-ir-assets/0031.webp";
+
+interface CaseStudyIntroProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[52px] items-center justify-center relative shrink-0 w-[1200px]" data-name="Container" data-node-id="1:510">
+    <div id={id} className={`content-stretch flex flex-col gap-[52px] items-center justify-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:510">
             <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
               <p className="leading-[68px]">Um novo negócio, uma barreira e uma reunião</p>
             </div>
@@ -45,141 +50,15 @@ export default function CaseStudyIntro() {
                     </div>
                   </div>
                   <div className="content-stretch flex flex-col gap-[11.5px] items-start leading-[0] px-[4px] relative shrink-0 w-full" data-name="Container" data-node-id="1:527">
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:528">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:529">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:530" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:531">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:531;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:532">
-                        <p className="leading-[normal]">Problema e briefing</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:533">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:534">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:535" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:536">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:536;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:537">
-                        <p className="leading-[normal]">Pesquisas e copywright</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:538">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:539">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[15px]" data-name="List item icon background" data-node-id="1:540" />
-                        <div className="col-1 ml-[2.81px] mt-[2.81px] overflow-clip relative row-1 size-[9.375px]" data-name="check" data-node-id="1:541">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:541;13:359">
-                            <div className="absolute inset-[-16%_-12%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector1} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:542">
-                        <p className="leading-[normal]">Arquitetura e fluxos</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:543">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:544">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:545" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:546">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:546;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:547">
-                        <p className="leading-[normal]">Wireframes mobile first</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:548">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:549">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:550" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:551">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:551;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:552">
-                        <p className="leading-[normal]">Viabilidade técnica</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:553">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:554">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:555" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:556">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:556;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:557">
-                        <p className="leading-[normal]">Performance e acessibilidade</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:558">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:559">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:560" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:561">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:561;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:562">
-                        <p className="leading-[normal]">UI com componentes, tokens e variáveis</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:563">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:564">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:565" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:566">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:566;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:567">
-                        <p className="leading-[normal]">Protótipo navegável</p>
-                      </div>
-                    </div>
-                    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:568">
-                      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="List item icon with bullet point" data-node-id="1:569">
-                        <div className="bg-[rgba(57,55,55,0.7)] col-1 ml-0 mt-0 rounded-[5px] row-1 size-[16px]" data-name="List item icon background" data-node-id="1:570" />
-                        <div className="col-1 ml-[3px] mt-[3px] overflow-clip relative row-1 size-[10px]" data-name="check" data-node-id="1:571">
-                          <div className="absolute bottom-1/4 left-[16.67%] right-[16.67%] top-1/4" data-name="Vector" data-node-id="I1:571;13:359">
-                            <div className="absolute inset-[-15%_-11.25%]">
-                              <img alt="" className="block max-w-none size-full" src={imgVector} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[16px] text-black whitespace-nowrap" data-node-id="1:572">
-                        <p className="leading-[normal]">Testes e análise pós-lançamento</p>
-                      </div>
-                    </div>
+                    <CheckListItem label="Problema e briefing" />
+                    <CheckListItem label="Pesquisas e copywright" />
+                    <CheckListItem label="Arquitetura e fluxos" small />
+                    <CheckListItem label="Wireframes mobile first" />
+                    <CheckListItem label="Viabilidade técnica" />
+                    <CheckListItem label="Performance e acessibilidade" />
+                    <CheckListItem label="UI com componentes, tokens e variáveis" />
+                    <CheckListItem label="Protótipo navegável" />
+                    <CheckListItem label="Testes e análise pós-lançamento" />
                   </div>
                 </div>
               </div>

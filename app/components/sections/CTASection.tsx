@@ -1,19 +1,24 @@
-const imgPreview12 = "/visual-ir-assets/cta-preview-left.png";
-const imgIcon54 = "/visual-ir-assets/icon-5-4.png";
-const imgIcon53 = "/visual-ir-assets/icon-5-3.png";
-const imgIcon55 = "/visual-ir-assets/icon-5-5.png";
-const imgIcon51 = "/visual-ir-assets/icon-5-1.png";
-const imgPreview14 = "/visual-ir-assets/cta-preview-center.png";
-const imgLargeImageContainer = "/visual-ir-assets/large-image-container.png";
-const imgIcon56 = "/visual-ir-assets/icon-5-4s.png";
-const imgIcon57 = "/visual-ir-assets/icon-5-3s.png";
-const imgIcon58 = "/visual-ir-assets/icon-5-5s.png";
-const imgIcon52 = "/visual-ir-assets/icon-5-1s.png";
-const imgIconSvg = "/visual-ir-assets/ed8ee30839c254e6170420bda44cae5ff47f610e.svg";
+const imgPreview12 = "/visual-ir-assets/cta-preview-left.webp";
+const imgIcon54 = "/visual-ir-assets/icon-5-4.webp";
+const imgIcon53 = "/visual-ir-assets/icon-5-3.webp";
+const imgIcon55 = "/visual-ir-assets/icon-5-5.webp";
+const imgIcon51 = "/visual-ir-assets/icon-5-1.webp";
+const imgPreview14 = "/visual-ir-assets/cta-preview-center.webp";
+const imgLargeImageContainer = "/visual-ir-assets/large-image-container.webp";
+const imgIcon56 = "/visual-ir-assets/icon-5-4s.webp";
+const imgIcon57 = "/visual-ir-assets/icon-5-3s.webp";
+const imgIcon58 = "/visual-ir-assets/icon-5-5s.webp";
+const imgIcon52 = "/visual-ir-assets/icon-5-1s.webp";
+const imgIconSvg = "/visual-ir-assets/icon-svg.svg";
 
-export default function CTASection() {
+interface CTASectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CTASection({ id, className = "" }: CTASectionProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px]" data-name="Container" data-node-id="1:1062">
+    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:1062">
             <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[997px]" data-name="Header" data-node-id="1:1063">
               <div className="figma-font-georgia flex flex-col justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#393737] text-[56px] text-center tracking-[-1.68px] w-[min-content]" data-node-id="1:1064">
                 <p className="leading-[68px]">Seu projeto é exigente ou pontual?</p>

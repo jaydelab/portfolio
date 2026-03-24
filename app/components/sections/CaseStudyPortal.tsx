@@ -1,8 +1,13 @@
-const img00321 = "/visual-ir-assets/598122a3e81b881a708ac2c62f8c4f5eb23ce8d8.png";
+const img00321 = "/visual-ir-assets/00321.webp";
 
-export default function CaseStudyPortal() {
+interface CaseStudyPortalProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CaseStudyPortal({ id, className = "" }: CaseStudyPortalProps = {}) {
   return (
-          <div className="content-stretch flex gap-[24px] items-start justify-center relative shrink-0" data-name="Image" data-node-id="1:719">
+    <div id={id} className={`content-stretch flex gap-[24px] items-start justify-center relative shrink-0 ${className}`.trim()} data-name="Image" data-node-id="1:719">
             <div className="h-[477.018px] relative shrink-0 w-[792px]" data-name="003 2 1" data-node-id="1:720">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img00321} />
             </div>

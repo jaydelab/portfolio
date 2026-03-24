@@ -1,12 +1,17 @@
-const imgVector8 = "/visual-ir-assets/d07ceebcebfaf3563b7ea669edfc5d966fbe9853.svg";
-const imgSocialButton = "/visual-ir-assets/1091449117890b8fc4996b52ce79035d096c6676.svg";
-const imgSocialButtonIcon = "/visual-ir-assets/9ae4a7d326c1bb9e46de386fbe90fa8267e8976f.svg";
+const imgVector8 = "/visual-ir-assets/vector-8.svg";
+const imgSocialButton = "/visual-ir-assets/social-button.svg";
+const imgSocialButtonIcon = "/visual-ir-assets/social-button-icon.svg";
 
-export default function FooterSection() {
+interface FooterSectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function FooterSection({ id, className = "" }: FooterSectionProps = {}) {
   return (
-          <div className="mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Container" data-node-id="1:1095">
+    <div id={id} className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 ${className}`.trim()} data-name="Container" data-node-id="1:1095">
             <div className="col-1 h-[774px] ml-0 mt-0 overflow-clip relative row-1 w-[1392px]" data-name="Keyboard Section" data-node-id="1:1096">
-              <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src="/visual-ir-assets/keyboard-section.png" />
+              <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src="/visual-ir-assets/keyboard-section.webp" />
             </div>
             <div className="figma-font-georgia col-1 flex flex-col justify-center ml-[300px] mt-[472px] not-italic relative row-1 text-[0px] text-center text-white w-[792px]" data-node-id="1:1311">
               <p className="text-[40px]">

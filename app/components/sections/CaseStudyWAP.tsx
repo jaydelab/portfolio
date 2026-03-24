@@ -1,8 +1,13 @@
-const img0052 = "/visual-ir-assets/86cb02970057dfd8bdc133e437cf07e7e5a9acc2.png";
+const img0052 = "/visual-ir-assets/0052.webp";
 
-export default function CaseStudyWAP() {
+interface CaseStudyWAPProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps = {}) {
   return (
-          <div className="content-stretch flex items-start justify-center relative shrink-0" data-node-id="1:573">
+    <div id={id} className={`content-stretch flex items-start justify-center relative shrink-0 ${className}`.trim()} data-node-id="1:573">
             <div className="content-stretch flex flex-col gap-[42px] items-start relative shrink-0 w-[588px]" data-node-id="1:574">
               <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="1:575">
                 <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-node-id="1:576" style={{ backgroundImage: "linear-gradient(-8.23177deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>

@@ -1,12 +1,17 @@
-const imgVisaoDeCursos1440Px2 = "/visual-ir-assets/522268feeb8421d73bbc8008e05f6f7a7e5a68a7.png";
-const imgHomeMobile390Px12 = "/visual-ir-assets/af340f40328f1e31f78e5a0083214ce846dcfdaf.png";
-const imgButtonContainer = "/visual-ir-assets/17ef278a13ab5374545fd6763919e4e5048ada2d.svg";
-const imgVisaoDeCursos1440Px1 = "/visual-ir-assets/59b83be3b98c9f5e7a24cbdbe0ebc156610da361.svg";
-const imgHomeMobile390Px11 = "/visual-ir-assets/a84f3bb1b8a9b59c8f3f04673199c151e6ca1ea7.svg";
+const imgVisaoDeCursos1440Px2 = "/visual-ir-assets/visao-de-cursos-1440px-2.webp";
+const imgHomeMobile390Px12 = "/visual-ir-assets/home-mobile-390px-12.webp";
+const imgButtonContainer = "/visual-ir-assets/button-container.svg";
+const imgVisaoDeCursos1440Px1 = "/visual-ir-assets/visao-de-cursos-1440px-1.svg";
+const imgHomeMobile390Px11 = "/visual-ir-assets/home-mobile-390px-11.svg";
 
-export default function ONovoMercadoSection() {
+interface ONovoMercadoSectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function ONovoMercadoSection({ id, className = "" }: ONovoMercadoSectionProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px]" data-name="O Novo Mercado" data-node-id="1:945">
+    <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] ${className}`.trim()} data-name="O Novo Mercado" data-node-id="1:945">
             <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:946">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Upper Container" data-node-id="1:947" style={{ backgroundImage: "linear-gradient(-10.1145deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                 <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:948">
@@ -74,7 +79,7 @@ export default function ONovoMercadoSection() {
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:985">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 5" data-node-id="1:987" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src="/visual-ir-assets/mask-group-novo-mercado.png" />
+                            <img alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src="/visual-ir-assets/mask-group-novo-mercado.webp" />
                           </div>
                         </div>
                       </div>

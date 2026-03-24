@@ -1,14 +1,19 @@
 import React from "react";
 
-const imgPaperTexture = "/visual-ir-assets/b252142990b06034447bfe4d848aab2a4878e622.png";
-const imgImage1 = "/visual-ir-assets/883fc7f1bf633c2c5de077b419fb876e12eef734.png";
-const img167 = "/visual-ir-assets/d22051513d4af5bfe833e97e2ebfc895ca0c1c89.png";
-const imgBack = "/visual-ir-assets/04f2f1ad8904d079beeb6b57d45d408639f8ee97.svg";
-const imgLogoWap = "/visual-ir-assets/9535049b72a0736eaaca605cd888ec1f5484ba1f.svg";
+const imgPaperTexture = "/visual-ir-assets/paper-texture.webp";
+const imgImage1 = "/visual-ir-assets/image-1.webp";
+const img167 = "/visual-ir-assets/167.webp";
+const imgBack = "/visual-ir-assets/back.svg";
+const imgLogoWap = "/visual-ir-assets/logo-wap.svg";
 
-export default function CaseStudyConnectHunt() {
+interface CaseStudyConnectHuntProps {
+  id?: string;
+  className?: string;
+}
+
+export default function CaseStudyConnectHunt({ id, className = "" }: CaseStudyConnectHuntProps = {}) {
   return (
-          <div className="h-[580px] overflow-clip relative rounded-[30px] shrink-0 w-[1200px]" data-name="Logo" data-node-id="1:703">
+    <div id={id} className={`h-[580px] overflow-clip relative rounded-[30px] shrink-0 w-[1200px] ${className}`.trim()} data-name="Logo" data-node-id="1:703">
             <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:704">
               <div className="-translate-x-1/2 absolute bg-[#ffd4ef] h-[990.074px] left-[calc(50%+12.05px)] mask-alpha mask-intersect mask-no-repeat mask-position-[46.537px_3.037px] mask-size-[1200px_580px] overflow-clip rounded-[30px] top-[-3.04px] w-[1317.171px]" data-name="Back" data-node-id="1:706" style={{ maskImage: `url('${imgBack}')` }} />
               <div className="absolute contents inset-[0_-134.94px_-322px_-132.53px]" data-name="Background Container" data-node-id="1:707">

@@ -1,11 +1,16 @@
 import React from "react";
 
-const imgSlideshowImage = "/visual-ir-assets/fig.png";
-const imgVectorContainer = "/visual-ir-assets/144ad37c447cbb71f4e482707fa6e16a1e4f1587.svg";
+const imgSlideshowImage = "/visual-ir-assets/fig.webp";
+const imgVectorContainer = "/visual-ir-assets/vector-container.svg";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  id?: string;
+  className?: string;
+}
+
+export default function HeroSection({ id, className = "" }: HeroSectionProps = {}) {
   return (
-          <div className="content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-[996px]" data-name="Container" data-node-id="1:89">
+    <div id={id} className={`content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-[996px] ${className}`.trim()} data-name="Container" data-node-id="1:89">
             <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:90">
               <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:91">
                 <div className="figma-font-halant-ptbr flex flex-col justify-center min-w-full not-italic relative shrink-0 text-[#393737] text-[0px] text-center tracking-[-3.5px] w-[min-content]" data-node-id="1:92">
