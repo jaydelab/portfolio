@@ -97,8 +97,9 @@ index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86
 O projeto usa **design adaptativo** — mesmos componentes, comportamentos visuais diferentes por breakpoint.
 Cada seção contém dois blocos: o desktop original (intocável) e um mobile variant dedicado.
 
-- **Desktop** (`max-md:hidden`): Bloco original do Figma, preservado pixel-perfect. **NUNCA modificar.**
-- **Mobile** (`hidden max-md:flex`): Bloco novo construído a partir do Figma mobile (320px).
+- **Desktop** (`max-md:hidden`): Bloco original do Figma, preservado pixel-perfect. **NUNCA modificar.** Fica fixo com 1440px de largura interna.
+- **Scaling Dinâmico (1024px a 1440px):** O orquestrador `App.tsx` aplica `transform: scale()` para o bloco desktop em viewports menores que 1440px. As margens laterais interpolam de 120px a ~32px, garantindo legibilidade sem quebrar o layout.
+- **Mobile** (`hidden max-md:flex`): Bloco novo construído a partir do Figma mobile (320px). Ocorre a transição em `max-md` (768px).
 
 ### Breakpoints (Tailwind v4)
 
