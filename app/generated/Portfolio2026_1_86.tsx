@@ -17,18 +17,18 @@ const imgVector9 = "/visual-ir-assets/994144d485b287b95c9e3138c9d881eeb59bb13f.s
 
 export default function Web1440Px() {
   return (
-    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] max-lg:gap-[clamp(48px,12.5vw,150px)] items-center p-[24px] max-lg:p-[clamp(16px,2.5vw,24px)] relative size-full" data-name="web-1440px" data-node-id="1:86">
-      <BadgeHeader />
-      <div className="content-stretch flex flex-col gap-[180px] max-lg:gap-[clamp(56px,15vw,180px)] items-center relative shrink-0 w-full" data-node-id="1:88">
+    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] max-lg:gap-[clamp(48px,12.5vw,150px)] max-md:gap-0 items-center p-[24px] max-lg:p-[clamp(16px,2.5vw,24px)] max-md:px-[24px] max-md:pt-[24px] max-md:pb-[24px] relative size-full" data-name="web-1440px" data-node-id="1:86">
+      <BadgeHeader className="max-[768.99px]:hidden" />
+      <div className="content-stretch flex flex-col gap-[180px] min-[768px]:gap-[82px] min-[769px]:max-lg:gap-[clamp(56px,15vw,180px)] max-md:gap-0 items-center relative shrink-0 w-full" data-node-id="1:88">
         <HeroSection />
         <AboutSection />
         <CaseStudyIntro />
-        <CaseStudyWAP />
-        <CaseStudyCoolhunting />
-        <CaseStudyConnectHunt />
-        <CaseStudyPortal />
+        <CaseStudyWAP className="max-[768.99px]:hidden" />
+        <CaseStudyCoolhunting className="max-[768.99px]:hidden" />
+        <CaseStudyConnectHunt className="max-[768.99px]:hidden" />
+        <CaseStudyPortal className="max-[768.99px]:hidden" />
         <TestimonialSection />
-        <ONovoMercadoSection />
+        <ONovoMercadoSection className="max-[768.99px]:hidden" />
         <HighlightsSection />
         <ProjectsGrid />
         <CTASection />

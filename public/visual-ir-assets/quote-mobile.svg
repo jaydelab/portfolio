@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#226;&#128;&#156;" filter="url(#filter0_i_0_11)">
+<path d="M12.0085 3.96766C12.8541 2.5876 13.8689 1.55256 15.0529 0.862534C15.9549 0.287511 16.9556 0 18.055 0C18.7879 0 19.1543 0.201258 19.1543 0.603774C19.1543 0.77628 18.9993 0.920036 18.6892 1.03504C17.4489 1.52381 16.4623 2.41509 15.7294 3.7089C15.1374 4.74394 14.7992 5.77898 14.7146 6.81402C14.8837 6.78527 15.1374 6.77089 15.4757 6.77089C18.4919 6.77089 20 8.30908 20 11.3854C20 14.4618 18.4919 16 15.4757 16C13.9535 16 12.7273 15.4825 11.797 14.4474C10.7541 13.3549 10.2326 11.8886 10.2326 10.0485C10.2326 7.83468 10.8245 5.80773 12.0085 3.96766ZM1.7759 3.96766C2.62156 2.5876 3.63636 1.55256 4.8203 0.862534C5.72234 0.287511 6.72304 0 7.82241 0C8.55532 0 8.92178 0.201258 8.92178 0.603774C8.92178 0.77628 8.76674 0.920036 8.45666 1.03504C7.21635 1.52381 6.22974 2.41509 5.49683 3.7089C4.90486 4.74394 4.5666 5.77898 4.48203 6.81402C4.65116 6.78527 4.90486 6.77089 5.24313 6.77089C8.25934 6.77089 9.76744 8.30908 9.76744 11.3854C9.76744 14.4618 8.25934 16 5.24313 16C3.72093 16 2.49471 15.4825 1.56448 14.4474C0.521494 13.3549 0 11.8886 0 10.0485C0 7.83468 0.591966 5.80773 1.7759 3.96766Z" fill="var(--fill-0, #E2E2E2)"/>
+</g>
+<defs>
+<filter id="filter0_i_0_11" x="0" y="0" width="20" height="18" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_11"/>
+</filter>
+</defs>
+</svg>
