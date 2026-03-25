@@ -20,6 +20,10 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-[768.99px]:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1095"
+        style={{
+          transform: "scale(var(--footer-scale, 1))",
+          transformOrigin: "center center",
+        }}
       >
         <div className="col-1 h-[774px] ml-0 mt-0 overflow-clip relative row-1 w-[1392px]" data-name="Keyboard Section" data-node-id="1:1096">
           <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src="/visual-ir-assets/keyboard-section.webp" />

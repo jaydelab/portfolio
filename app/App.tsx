@@ -50,6 +50,11 @@ export default function App() {
   const scaledWidth = DESIGN_WIDTH * scale;
   const offsetX = isScaling ? (window.innerWidth - scaledWidth) / 2 : 0;
 
+  // Calcula a escala adicional necessária apénas para o footer (que é 1392px de largura e pode vazar)
+  const unscaledVw = isScaling ? window.innerWidth / scale : window.innerWidth;
+  const maxFooterWidth = unscaledVw - 48; // 48px = 24px padding de cada lado no root container
+  const footerScale = isScaling && maxFooterWidth < 1392 ? maxFooterWidth / 1392 : 1;
+
   return (
     <div className="visual-ir-page">
       <div
@@ -67,14 +72,15 @@ export default function App() {
           ref={stageRef}
           className="visual-ir-stage"
           style={
-            isScaling
+            (isScaling
               ? {
                   width: `${DESIGN_WIDTH}px`,
                   maxWidth: "none",
                   transform: `translateX(${offsetX}px) scale(${scale})`,
                   transformOrigin: "top left",
+                  "--footer-scale": footerScale,
                 }
-              : undefined
+              : {}) as React.CSSProperties
           }
         >
           <Portfolio2026_1_86 />
