@@ -163,7 +163,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
       </div>
 
       {/* ====== Mobile ====== */}
-      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full mt-[62px]" data-name="CaseStudies-mobile">
+      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-name="CaseStudies-mobile">
         <div className="figma-font-georgia not-italic text-[24px] text-[#393737] tracking-[-0.48px] w-full">
           <p className="leading-[34px]">Últimos trabalhos</p>
         </div>
@@ -186,8 +186,8 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
               </div>
             </div>
           </div>
-          <div className="h-[214px] overflow-clip relative rounded-[12px] shrink-0 w-[248px]">
-            <div className="absolute h-[239px] left-[-4px] top-0 w-[256px]">
+          <div className="aspect-[248/214] overflow-clip relative rounded-[12px] shrink-0 w-[91%]">
+            <div className="absolute inset-0">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntro} />
             </div>
           </div>

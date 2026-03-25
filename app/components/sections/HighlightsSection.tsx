@@ -145,7 +145,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
         </div>
       </div>
 
-      <div className="hidden max-md:flex flex-col w-full mt-[62px]" data-name="HowIBuildWitfhAI-mobile">
+      <div className="hidden max-md:flex flex-col w-full max-w-[480px] mx-auto mt-[62px]" data-name="HowIBuildWitfhAI-mobile">
         <div className="h-[915px] overflow-clip relative rounded-[14px] w-full" data-name="HowIBuildWitfhAI" data-node-id="67:2437">
           <div className="absolute inset-0 bg-[#1a1a1a]" data-name="background-color" data-node-id="67:2439" />
           <div className="-translate-x-1/2 absolute flex h-[411px] items-center justify-center left-[calc(50%+120px)] mix-blend-plus-lighter top-[-7px] w-[746px]" data-name="blur-effect" data-node-id="67:2440">

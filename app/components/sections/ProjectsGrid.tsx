@@ -247,7 +247,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
         </div>
       </div>
 
-      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full mt-[62px]" data-node-id="67:2507" data-name="ProjectsGrid-mobile">
+      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-node-id="67:2507" data-name="ProjectsGrid-mobile">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[24px] tracking-[-0.48px] w-full" data-node-id="67:2508">
           <p className="leading-[34px]">Outros projetos</p>
         </div>
@@ -269,7 +269,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
           </div>
           <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2517">
-            <div className="-translate-x-1/2 absolute h-[205px] left-[calc(50%-4px)] top-0 w-[348px]" data-name="002 1" data-node-id="67:2518">
+            <div className="-translate-x-1/2 absolute h-[75%] left-[calc(50%-4px)] top-0 w-[128%]" data-name="002 1" data-node-id="67:2518">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
           </div>
           <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2527">
-            <div className="-translate-x-1/2 absolute h-[201px] left-[calc(50%+1px)] top-0 w-[262px]" data-name="Image" data-node-id="67:2528">
+            <div className="-translate-x-1/2 absolute h-[74%] left-[calc(50%+1px)] top-0 w-[96%]" data-name="Image" data-node-id="67:2528">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <img alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
               </div>
@@ -348,7 +348,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
           </div>
           <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2548">
-            <div className="-translate-x-1/2 absolute h-[148px] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[246px]" data-name="Agenda 2" data-node-id="67:2549">
+            <div className="-translate-x-1/2 absolute h-[80%] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[90%]" data-name="Agenda 2" data-node-id="67:2549">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[163.41%]" src={imgOtherProjectsSankhya} />
               </div>

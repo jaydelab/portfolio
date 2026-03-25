@@ -193,9 +193,9 @@ await agent.run();`}
           <div className="flex flex-col gap-[12px] items-center w-full" data-node-id="13:7062">
             <div className="flex flex-col items-center w-full" data-node-id="13:7063">
               {/* "Claude e Codex / são funcionários," */}
-              <div className="figma-font-georgia not-italic text-[30px] text-[#393737] text-center tracking-[-0.6px] w-full" data-node-id="13:7064">
-                <p className="leading-[38px]">{`Claude e Codex `}</p>
-                <p className="leading-[38px]">
+              <div className="figma-font-georgia not-italic text-[clamp(30px,7.5vw,40px)] text-[#393737] text-center tracking-[-0.6px] w-full" data-node-id="13:7064">
+                <p className="leading-[clamp(38px,9.5vw,50px)]">{`Claude e Codex `}</p>
+                <p className="leading-[clamp(38px,9.5vw,50px)]">
                   <span>{`são `}</span>
                   <span className="text-[#888787]">funcionários,</span>
                 </p>
@@ -203,8 +203,8 @@ await agent.run();`}
 
               {/* "mas [image] produto" */}
               <div className="flex gap-[8px] items-center justify-center w-full" data-node-id="13:7065">
-                <span className="figma-font-georgia not-italic text-[30px] text-[#888787] tracking-[-0.6px] leading-[38px]">{`mas `}</span>
-                <div className="h-[46px] relative shrink-0 w-[58px]" data-node-id="13:7067">
+                <span className="figma-font-georgia not-italic text-[clamp(30px,7.5vw,40px)] text-[#888787] tracking-[-0.6px] leading-[clamp(38px,9.5vw,50px)]">{`mas `}</span>
+                <div className="h-[clamp(46px,11.5vw,62px)] relative shrink-0 w-[clamp(58px,14.5vw,78px)]" data-node-id="13:7067">
                   <img
                     alt=""
                     className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
@@ -215,12 +215,12 @@ await agent.run();`}
                     }}
                   />
                 </div>
-                <span className="figma-font-georgia not-italic text-[30px] text-[#393737] tracking-[-0.6px] leading-[38px]">produto</span>
+                <span className="figma-font-georgia not-italic text-[clamp(30px,7.5vw,40px)] text-[#393737] tracking-[-0.6px] leading-[clamp(38px,9.5vw,50px)]">produto</span>
               </div>
 
               {/* "nasce no Figma" */}
-              <div className="figma-font-georgia not-italic text-[30px] text-[#393737] tracking-[-0.6px] text-center" data-node-id="13:7069">
-                <p className="leading-[38px]">nasce no Figma</p>
+              <div className="figma-font-georgia not-italic text-[clamp(30px,7.5vw,40px)] text-[#393737] tracking-[-0.6px] text-center" data-node-id="13:7069">
+                <p className="leading-[clamp(38px,9.5vw,50px)]">nasce no Figma</p>
               </div>
             </div>
           </div>

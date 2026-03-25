@@ -197,7 +197,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
           </div>
         </div>
 
-        <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="67:2559">
+        <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full max-w-[480px] mx-auto" data-node-id="67:2559">
           <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="Icons Row" data-node-id="67:2560">
             <div className="aspect-[62/62] flex-[1_0_0] min-h-px min-w-px relative" data-name="icon-5 4" data-node-id="67:2561">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCtaMobileIconTop1} />

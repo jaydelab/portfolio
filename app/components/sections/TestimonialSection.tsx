@@ -161,15 +161,15 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
       </div>
 
       {/* ====== Mobile ====== */}
-      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full mt-[62px]" data-name="Testimonial-mobile" data-node-id="67:2213">
+      <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-name="Testimonial-mobile" data-node-id="67:2213">
         <div className="figma-font-georgia not-italic text-[24px] text-[#393737] tracking-[-0.48px] w-full" data-node-id="67:2214">
           <p className="leading-[34px]">Sucesso não é só produto, também é sobre gente</p>
         </div>
-        <div className="flex gap-[10px] h-[609px] items-end px-[16px] py-[22px] relative shrink-0 w-full" data-node-id="67:2215">
+        <div className="flex gap-[10px] h-auto min-h-[500px] items-end px-[16px] py-[22px] relative shrink-0 w-full" data-node-id="67:2215">
           {/* Decorative card background */}
-          <div className="absolute h-[609px] inset-x-0 top-0" data-name="Container" data-node-id="67:2216">
+          <div className="absolute inset-0" data-name="Container" data-node-id="67:2216">
             <div className="absolute bg-white bottom-[0.5px] h-[1.5px] inset-x-0" data-node-id="67:2217" />
-            <div className="absolute border border-[#e1e1e1] border-solid h-[607px] inset-x-0 top-0" data-node-id="67:2218" />
+            <div className="absolute border border-[#e1e1e1] border-solid inset-x-0 top-0 bottom-0" data-node-id="67:2218" />
             <div className="absolute border border-[#e1e1e1] border-solid h-[46px] inset-x-0 top-0" data-node-id="67:2219" />
             <div className="absolute h-[48px] inset-x-0 -top-px overflow-clip" data-name="header-divisor" data-node-id="67:2220">
               <img alt="" className="absolute left-1/2 -translate-x-1/2 top-px h-[46px] w-[1200px] max-w-none" src="/visual-ir-assets/header-divisor.svg" />
@@ -192,7 +192,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
               </div>
               <div className="absolute h-[200px] left-px top-px right-px" data-name="white-fade" data-node-id="67:2410" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 270 200\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(8.2664e-16 10 -14.342 2.9516e-14 135 100)\\'><stop stop-color=\\'rgba(247,247,247,0)\\' offset=\\'0.71154\\'/><stop stop-color=\\'rgba(247,247,247,1)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }} />
               {/* Photo + blur ellipses */}
-              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[123px] left-1/2 top-[calc(50%+0.5px)] w-[124px]" data-name="photo+blur" data-node-id="67:2411">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[clamp(123px,32vw,160px)] left-1/2 top-[calc(50%+0.5px)] w-[clamp(124px,32vw,160px)]" data-name="photo+blur" data-node-id="67:2411">
                 <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%+0.5px)] size-[173px] top-[calc(50%+10px)]" data-node-id="67:2412">
                   {/* Blur ellipses */}
                   <div className="absolute flex items-center justify-center left-[13.89px] size-[138.875px] top-[23.13px]">
