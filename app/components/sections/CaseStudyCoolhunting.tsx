@@ -23,7 +23,7 @@ interface CaseStudyCoolhuntingProps {
 
 export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCoolhuntingProps = {}) {
   return (
-    <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
+    <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
             <div className="content-stretch flex flex-col gap-[10px] h-[580px] max-md:h-auto max-md:min-h-[300px] items-end overflow-clip pb-[55px] pt-[58px] px-[50px] relative shrink-0 w-full" data-name="Main Content" data-node-id="1:588">
               <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:589">
                 <div className="-translate-x-1/2 absolute bg-[#c3e1e5] h-[990.074px] left-[calc(50%+12.05px)] mask-alpha mask-intersect mask-no-repeat mask-position-[46.537px_3.037px] mask-size-[1200px_580px] overflow-clip rounded-[30px] top-[-3.04px] w-[1317.171px]" data-name="Back" data-node-id="1:591" style={{ maskImage: `url('${imgBack}')` }} />

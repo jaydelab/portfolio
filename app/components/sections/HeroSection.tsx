@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ id, className = "" }: HeroSectionProps = {}) {
   return (
-    <div id={id} className={`w-[996px] max-lg:w-full ${className}`.trim()}>
+    <div id={id} className={`w-full max-w-[996px] ${className}`.trim()}>
       {/* ====== Desktop ====== */}
       <div className="max-[768.99px]:hidden content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-full" data-name="Container" data-node-id="1:89">
             <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:90">

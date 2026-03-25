@@ -35,7 +35,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
     <>
       <div
         id={id}
-        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[1200px] max-lg:w-full max-[768.99px]:hidden ${className}`.trim()}
+        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[768.99px]:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1062"
       >

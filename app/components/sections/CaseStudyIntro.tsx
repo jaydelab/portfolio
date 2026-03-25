@@ -17,7 +17,7 @@ interface CaseStudyIntroProps {
 
 export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroProps = {}) {
   return (
-    <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-[1200px] max-lg:w-full ${className}`.trim()} data-name="Container" data-node-id="1:510">
+    <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:510">
             <div className="max-[768.99px]:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
               <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Um novo negócio, uma barreira e uma reunião</p>
             </div>
