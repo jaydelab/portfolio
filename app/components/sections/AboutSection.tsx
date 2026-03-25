@@ -13,7 +13,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
   return (
     <div id={id} className={`w-full ${className}`.trim()}>
       {/* ====== Desktop ====== */}
-      <div className="max-[768.99px]:hidden content-stretch flex gap-[24px] max-lg:gap-[16px] items-center justify-center relative shrink-0 max-lg:flex-col-reverse" data-name="Sobre" data-node-id="1:497">
+      <div className="max-[1023px]:hidden content-stretch flex gap-[24px] max-lg:gap-[16px] items-center justify-center relative shrink-0 max-lg:flex-col-reverse" data-name="Sobre" data-node-id="1:497">
             <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[486px] max-lg:w-full" data-name="Info Container" data-node-id="1:498">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Label Container" data-node-id="1:499" style={{ backgroundImage: "linear-gradient(-13.6093deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                 <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:500">
@@ -58,7 +58,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
       </div>
 
       {/* ====== Tablet ====== */}
-      <div className="hidden min-[768px]:flex min-[769px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="AboutSection-tablet" data-node-id="68:82">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="AboutSection-tablet" data-node-id="68:82">
         <div className="relative h-[530px] w-[768px]" data-node-id="68:83">
           <div className="absolute h-[530px] left-[289px] overflow-clip top-0 w-[479px]" data-node-id="68:83">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none">

@@ -17,7 +17,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
     <>
       <div
         id={id || "contato"}
-        className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-[768.99px]:hidden ${className}`.trim()}
+        className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-[1023px]:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1095"
         style={{
@@ -86,7 +86,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         </div>
       </div>
 
-      <div className="hidden min-[768px]:flex min-[769px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="FooterSection-tablet" data-node-id="68:512">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="FooterSection-tablet" data-node-id="68:512">
         <div className="relative h-[534px] overflow-hidden rounded-[16px] w-[736px]" data-node-id="68:513">
           <div className="absolute inset-0 overflow-hidden rounded-[16px]">
             <div className="-translate-x-1/2 absolute h-[534px] left-1/2 top-0 w-[754px]" data-node-id="68:514">

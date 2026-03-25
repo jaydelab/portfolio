@@ -35,7 +35,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
     <>
       <div
         id={id}
-        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[768.99px]:hidden ${className}`.trim()}
+        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[1023px]:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1062"
       >
@@ -108,7 +108,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
         </div>
       </div>
 
-      <div className="hidden min-[768px]:flex min-[769px]:hidden flex-col gap-[42px] items-center mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="CTASection-tablet" data-node-id="69:924">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[42px] items-center mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="CTASection-tablet" data-node-id="69:924">
         <div className="content-stretch flex flex-col gap-[20px] items-center relative shrink-0 w-[508px]" data-node-id="69:941">
           <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] relative shrink-0 text-center w-full" data-node-id="69:942">
             <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="69:943">

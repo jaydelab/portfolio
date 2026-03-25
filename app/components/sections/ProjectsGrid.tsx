@@ -20,7 +20,7 @@ interface ProjectsGridProps {
 export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps = {}) {
   return (
     <>
-      <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[768.99px]:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
+      <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[1023px]:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
           <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Outros projetos</p>
         </div>
@@ -131,7 +131,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
         </div>
       </div>
 
-      <div className="hidden min-[768px]:flex min-[769px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="ProjectsGrid-tablet" data-node-id="68:443">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="ProjectsGrid-tablet" data-node-id="68:443">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="68:444">
           <p className="leading-[44px]">Outros projetos</p>
         </div>

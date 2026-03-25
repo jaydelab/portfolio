@@ -18,7 +18,7 @@ interface TestimonialSectionProps {
 export default function TestimonialSection({ id, className = "" }: TestimonialSectionProps = {}) {
   return (
     <div id={id} className={`h-[455.5px] min-[768px]:h-auto min-[769px]:h-[455.5px] relative shrink-0 w-full max-w-[1200px] max-md:h-auto ${className}`.trim()} data-name="Container" data-node-id="3:733">
-            <div className="max-[768.99px]:hidden absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px]" data-name="Review Container" data-node-id="1:727">
+            <div className="max-[1023px]:hidden absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px]" data-name="Review Container" data-node-id="1:727">
               <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Header Section" data-node-id="1:728">
                 <div className="h-[26px] relative shrink-0 w-[33px]" data-name="“" data-node-id="1:729">
                   <img alt="" className="absolute block max-w-none size-full" src={img} />
@@ -53,14 +53,14 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
                 </div>
               </div>
             </div>
-            <div className="absolute h-[455.5px] left-0 top-0 w-[1200px] max-[768.99px]:hidden" data-name="Container" data-node-id="3:732">
+            <div className="absolute h-[455.5px] left-0 top-0 w-[1200px] max-[1023px]:hidden" data-name="Container" data-node-id="3:732">
               <div className="absolute contents left-0 top-0" data-name="Container" data-node-id="1:743">
                 <div className="absolute border border-[#e1e1e1] border-solid h-[454px] left-0 top-0 w-[1200px]" data-name="Container" data-node-id="1:744" />
                 <div className="absolute border border-[#e1e1e1] border-solid h-[46px] left-0 top-0 w-[1200px]" data-name="Line" data-node-id="1:745" />
                 <div className="absolute h-[46px] left-0 top-0 w-[1200px]" data-name="header-divisor" data-node-id="1:746">
                   <img alt="" className="absolute inset-0 block size-full" src="/visual-ir-assets/header-divisor.svg" />
                 </div>
-                <div className="absolute h-[406px] left-px top-[47px] w-[384px] max-md:hidden" data-name="Avatar-background" data-node-id="1:925">
+                <div className="absolute h-[406px] left-px top-[47px] w-[384px] max-[1023px]:hidden" data-name="Avatar-background" data-node-id="1:925">
                   <div className="absolute contents left-0 top-0" data-name="Avatar-background" data-node-id="1:926">
                     <div className="absolute h-[405px] left-0 overflow-clip top-px w-[384px]" data-name="background-illustration" data-node-id="1:927">
                       <div className="absolute bg-[#f1f1f1] border border-[#e1e1e1] border-solid h-[139px] left-[-1px] rounded-br-[24px] top-[-3px] w-[94px]" data-name="Rounded Button" data-node-id="1:928" />
@@ -89,7 +89,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
             </div>
 
       {/* ====== Tablet ====== */}
-      <div className="hidden min-[768px]:flex min-[769px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="Testimonial-tablet" data-node-id="69:925">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="Testimonial-tablet" data-node-id="69:925">
         <div className="figma-font-georgia not-italic text-[32px] text-[#393737] tracking-[-0.64px] w-full" data-node-id="68:150">
           <p className="leading-[44px]">Sucesso não é só produto, também é sobre gente</p>
         </div>
