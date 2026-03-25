@@ -18,10 +18,10 @@ interface CaseStudyIntroProps {
 export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroProps = {}) {
   return (
     <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:510">
-            <div className="max-[1023px]:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
+            <div className="max-lg:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
               <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Um novo negócio, uma barreira e uma reunião</p>
             </div>
-            <div className="max-[1023px]:hidden content-stretch flex max-lg:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
+            <div className="max-lg:hidden content-stretch flex max-lg:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
               <div className="h-[843px] max-lg:h-[400px] relative shrink-0 w-[690px] max-lg:w-full" data-name="003 1" data-node-id="1:513">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                   <img alt="" className="absolute h-[120.78%] left-[-52.17%] max-w-none top-[-11.04%] w-[196.96%]" src={img0031} />
@@ -73,7 +73,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
             </div>
 
       {/* ====== Tablet ====== */}
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="CaseStudies-tablet" data-node-id="68:97">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="CaseStudies-tablet" data-node-id="68:97">
         <div className="figma-font-georgia not-italic text-[32px] text-[#393737] tracking-[-0.64px] w-[272px]" data-node-id="68:98">
           <p className="leading-[44px]">Últimos trabalhos</p>
         </div>
@@ -243,7 +243,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
             </div>
           </div>
           <div className="h-[226px] overflow-clip relative shrink-0 w-full">
-            <div className="absolute h-[226px] left-0 overflow-clip top-0 w-[272px]">
+            <div className="absolute h-[226px] left-0 overflow-clip top-0 w-full">
               <div className="absolute bottom-[-57px] h-[365px] left-[-116px] w-[461px]">
                 <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseNovoMercado} />
               </div>

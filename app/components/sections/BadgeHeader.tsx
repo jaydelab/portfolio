@@ -41,7 +41,7 @@ export default function BadgeHeader({ id, className = "" }: BadgeHeaderProps = {
       data-name="Badge"
       data-node-id="1:1338"
     >
-      <div className="content-stretch flex gap-[7px] items-center relative shrink-0 max-[1023px]:hidden" data-name="Content" data-node-id="1:1339">
+      <div className="content-stretch flex gap-[7px] items-center relative shrink-0 max-lg:hidden" data-name="Content" data-node-id="1:1339">
         <div className="bg-[#80f571] rounded-[50px] shrink-0 size-[8px]" data-name="Dot" data-node-id="1:1340" />
         <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[13px] text-white whitespace-nowrap" data-node-id="1:1341">
           <p className="leading-[normal]">Disponível para projetos</p>

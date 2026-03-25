@@ -17,7 +17,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
     <>
       <div
         id={id || "contato"}
-        className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-[1023px]:hidden ${className}`.trim()}
+        className={`mb-[24px] grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-lg:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1095"
         style={{

@@ -20,7 +20,7 @@ interface ProjectsGridProps {
 export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps = {}) {
   return (
     <>
-      <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[1023px]:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
+      <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
           <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Outros projetos</p>
         </div>
@@ -131,7 +131,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
         </div>
       </div>
 
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="ProjectsGrid-tablet" data-node-id="68:443">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="ProjectsGrid-tablet" data-node-id="68:443">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="68:444">
           <p className="leading-[44px]">Outros projetos</p>
         </div>
@@ -317,12 +317,12 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
           </div>
           <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2537">
-            <div className="absolute h-[526px] left-[10px] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[123px]" data-name="Frame 6275 1" data-node-id="67:2538">
+            <div className="absolute h-[526px] left-[3.7%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[45.2%]" data-name="Frame 6275 1" data-node-id="67:2538">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
               </div>
             </div>
-            <div className="absolute h-[257px] left-[139px] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[123px]" data-name="Frame 6275 2" data-node-id="67:2539">
+            <div className="absolute h-[257px] left-[51.1%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[45.2%]" data-name="Frame 6275 2" data-node-id="67:2539">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
               </div>

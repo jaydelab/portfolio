@@ -35,7 +35,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
     <>
       <div
         id={id}
-        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-[1023px]:hidden ${className}`.trim()}
+        className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()}
         data-name="Container"
         data-node-id="1:1062"
       >
@@ -108,7 +108,7 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
         </div>
       </div>
 
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[42px] items-center mx-[-24px] px-[42px] w-[calc(100%+48px)]" data-name="CTASection-tablet" data-node-id="69:924">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[42px] items-center w-full max-w-[684px] mx-auto" data-name="CTASection-tablet" data-node-id="69:924">
         <div className="content-stretch flex flex-col gap-[20px] items-center relative shrink-0 w-[508px]" data-node-id="69:941">
           <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] relative shrink-0 text-center w-full" data-node-id="69:942">
             <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="69:943">
@@ -213,20 +213,20 @@ export default function CTASection({ id, className = "" }: CTASectionProps = {})
             </div>
           </div>
 
-          <div className="h-[198px] relative shrink-0 w-full" data-node-id="67:2565">
+          <div className="aspect-[272/198] relative shrink-0 w-full" data-node-id="67:2565">
             <div className="absolute inset-0 rounded-[14px]" data-name="Preview-1 4" data-node-id="67:2566">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[14px] size-full" src={imgCtaMobileCenter} />
             </div>
-            <div className="absolute h-[46.785px] left-[58.7px] top-[78px] w-[213.121px]" data-name="Union" data-node-id="67:2567">
+            <div className="absolute h-[23.6%] left-[21.6%] top-[39.4%] w-[78.4%]" data-name="Union" data-node-id="67:2567">
               <img alt="" className="absolute inset-0 max-w-none size-full" src={imgCtaMobileUnion} />
             </div>
           </div>
 
           <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-node-id="67:2568">
-            <div className="h-[96px] relative rounded-[14px] shrink-0 w-[calc(50%-4px)]" data-name="Preview-1 2" data-node-id="67:2569">
+            <div className="aspect-[11/8] relative rounded-[14px] shrink-0 w-[calc(50%-4px)]" data-name="Preview-1 2" data-node-id="67:2569">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[14px] size-full" src={imgCtaMobileLeft} />
             </div>
-            <div className="h-[96px] relative rounded-[14px] shrink-0 w-[calc(50%-4px)]" data-name="Preview-1 3" data-node-id="67:2570">
+            <div className="aspect-[11/8] relative rounded-[14px] shrink-0 w-[calc(50%-4px)]" data-name="Preview-1 3" data-node-id="67:2570">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[14px] size-full" src={imgCtaMobileRight} />
             </div>
           </div>

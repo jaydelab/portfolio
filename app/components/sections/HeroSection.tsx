@@ -12,7 +12,7 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
   return (
     <div id={id} className={`w-full max-w-[996px] ${className}`.trim()}>
       {/* ====== Desktop ====== */}
-      <div className="max-[1023px]:hidden content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-full" data-name="Container" data-node-id="1:89">
+      <div className="max-lg:hidden content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-full" data-name="Container" data-node-id="1:89">
             <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:90">
               <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:91">
                 <div className="figma-font-halant-ptbr flex flex-col justify-center min-w-full not-italic relative shrink-0 text-[#393737] text-[0px] text-center tracking-[-3.5px] w-[min-content]" data-node-id="1:92">

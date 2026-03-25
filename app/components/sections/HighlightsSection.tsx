@@ -14,7 +14,7 @@ interface HighlightsSectionProps {
 export default function HighlightsSection({ id, className = "" }: HighlightsSectionProps = {}) {
   return (
     <>
-      <div id={id} className={`content-stretch flex flex-col gap-[843px] max-md:gap-[96px] max-sm:gap-[72px] h-[1274px] items-center max-md:items-start pb-[35px] max-md:pb-[24px] pt-[82px] max-md:pt-[48px] px-[36px] max-md:px-[20px] max-sm:px-[16px] relative shrink-0 w-full max-w-[1200px] max-md:h-auto max-[1023px]:hidden ${className}`.trim()} data-name="Background" data-node-id="1:988">
+      <div id={id} className={`content-stretch flex flex-col gap-[843px] max-md:gap-[96px] max-sm:gap-[72px] h-[1274px] items-center max-md:items-start pb-[35px] max-md:pb-[24px] pt-[82px] max-md:pt-[48px] px-[36px] max-md:px-[20px] max-sm:px-[16px] relative shrink-0 w-full max-w-[1200px] max-md:h-auto max-lg:hidden ${className}`.trim()} data-name="Background" data-node-id="1:988">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgBackground} />
         <div className="content-stretch flex flex-col gap-[12px] max-md:gap-[10px] items-center max-md:items-start leading-[0] relative shrink-0 text-center max-md:text-left w-[792px] max-md:w-full" data-name="Container" data-node-id="1:989">
           <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[48px] max-lg:text-[clamp(28px,4.8vw,48px)] text-white tracking-[-0.96px] whitespace-nowrap max-md:whitespace-normal" data-node-id="1:990">
