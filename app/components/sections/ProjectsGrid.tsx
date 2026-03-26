@@ -1,16 +1,19 @@
-const img22 = "/visual-ir-assets/22.webp";
-const imgImage3 = "/visual-ir-assets/container-services.webp";
-const imgFrame62751 = "/visual-ir-assets/frame-62751.webp";
-const imgFrame62752 = "/visual-ir-assets/frame-62752.webp";
-const imgAgenda3 = "/visual-ir-assets/erp.webp";
-const img0021 = "/visual-ir-assets/0021.svg";
-const imgImage2 = "/visual-ir-assets/image-2.svg";
-const imgAgenda2 = "/visual-ir-assets/agenda-2.svg";
-const imgOtherProjectsIgreen = "/visual-ir-assets/other-projects-igreen.webp";
-const imgOtherProjectsAlgar = "/visual-ir-assets/other-projects-algar.webp";
-const imgOtherProjectsMaceioLeft = "/visual-ir-assets/other-projects-maceio-left.webp";
-const imgOtherProjectsMaceioRight = "/visual-ir-assets/other-projects-maceio-right.webp";
-const imgOtherProjectsSankhya = "/visual-ir-assets/other-projects-sankhya.webp";
+import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
+
+const img22 = assetUrl("/visual-ir-assets/22.webp");
+const imgImage3 = assetUrl("/visual-ir-assets/container-services.webp");
+const imgFrame62751 = assetUrl("/visual-ir-assets/frame-62751.webp");
+const imgFrame62752 = assetUrl("/visual-ir-assets/frame-62752.webp");
+const imgAgenda3 = assetUrl("/visual-ir-assets/erp.webp");
+const img0021 = assetUrl("/visual-ir-assets/0021.svg");
+const imgImage2 = assetUrl("/visual-ir-assets/image-2.svg");
+const imgAgenda2 = assetUrl("/visual-ir-assets/agenda-2.svg");
+const imgOtherProjectsIgreen = assetUrl("/visual-ir-assets/other-projects-igreen.webp");
+const imgOtherProjectsAlgar = assetUrl("/visual-ir-assets/other-projects-algar.webp");
+const imgOtherProjectsMaceioLeft = assetUrl("/visual-ir-assets/other-projects-maceio-left.webp");
+const imgOtherProjectsMaceioRight = assetUrl("/visual-ir-assets/other-projects-maceio-right.webp");
+const imgOtherProjectsSankhya = assetUrl("/visual-ir-assets/other-projects-sankhya.webp");
 
 interface ProjectsGridProps {
   id?: string;
@@ -22,7 +25,9 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
     <>
       <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
-          <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">Outros projetos</p>
+          <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">
+            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+          </p>
         </div>
         <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:1018">
           <div className="content-stretch flex gap-[24px] h-[399px] max-lg:h-auto items-center relative shrink-0 w-full max-lg:flex-col" data-name="Container" data-node-id="1:1019">
@@ -133,7 +138,9 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
 
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="ProjectsGrid-tablet" data-node-id="68:443">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="68:444">
-          <p className="leading-[44px]">Outros projetos</p>
+          <p className="leading-[44px]">
+            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+          </p>
         </div>
 
         <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="69:842">
@@ -249,10 +256,12 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
 
       <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-node-id="67:2507" data-name="ProjectsGrid-mobile">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[24px] tracking-[-0.48px] w-full" data-node-id="67:2508">
-          <p className="leading-[34px]">Outros projetos</p>
+          <p className="leading-[34px]">
+            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+          </p>
         </div>
 
-        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] h-[390px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2509">
+        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2509">
           <div className="content-stretch flex flex-col items-start px-[20px] relative shrink-0 w-full" data-name="Area" data-node-id="67:2510">
             <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] relative shrink-0 w-full" data-node-id="67:2511">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="67:2512">
@@ -268,14 +277,14 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2517">
-            <div className="-translate-x-1/2 absolute h-[75%] left-[calc(50%-4px)] top-0 w-[128%]" data-name="002 1" data-node-id="67:2518">
+          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2517">
+            <div className="-translate-x-1/2 absolute h-[75%] left-[calc(50%-1.5%)] top-0 w-[128%]" data-name="002 1" data-node-id="67:2518">
               <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
             </div>
           </div>
         </div>
 
-        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] h-[390px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2519">
+        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2519">
           <div className="content-stretch flex flex-col items-start px-[20px] relative shrink-0 w-full" data-name="Area" data-node-id="67:2520">
             <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] relative shrink-0 w-full" data-node-id="67:2521">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="67:2522">
@@ -291,8 +300,8 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2527">
-            <div className="-translate-x-1/2 absolute h-[74%] left-[calc(50%+1px)] top-0 w-[96%]" data-name="Image" data-node-id="67:2528">
+          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2527">
+            <div className="-translate-x-1/2 absolute h-[74%] left-[calc(50%+0.4%)] top-0 w-[96%]" data-name="Image" data-node-id="67:2528">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <img alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
               </div>
@@ -300,7 +309,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           </div>
         </div>
 
-        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] h-[390px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2529">
+        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2529">
           <div className="content-stretch flex flex-col items-start px-[20px] relative shrink-0 w-full" data-name="Area" data-node-id="67:2530">
             <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] relative shrink-0 w-full" data-node-id="67:2531">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="67:2532">
@@ -316,13 +325,13 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2537">
-            <div className="absolute h-[526px] left-[3.7%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[45.2%]" data-name="Frame 6275 1" data-node-id="67:2538">
+          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2537">
+            <div className="absolute aspect-[123/526] left-[3.7%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 1" data-node-id="67:2538">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
               </div>
             </div>
-            <div className="absolute h-[257px] left-[51.1%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[4px] w-[45.2%]" data-name="Frame 6275 2" data-node-id="67:2539">
+            <div className="absolute aspect-[123/257] left-[51.1%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 2" data-node-id="67:2539">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
               </div>
@@ -330,7 +339,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           </div>
         </div>
 
-        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] h-[390px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2540">
+        <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid content-stretch flex flex-col gap-[20px] items-start overflow-clip pt-[16px] relative rounded-[20px] shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] shrink-0 w-full" data-name="case01" data-node-id="67:2540">
           <div className="content-stretch flex flex-col items-start px-[20px] relative shrink-0 w-full" data-name="Area" data-node-id="67:2541">
             <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] relative shrink-0 w-full" data-node-id="67:2542">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="67:2543">
@@ -347,8 +356,8 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="67:2548">
-            <div className="-translate-x-1/2 absolute h-[80%] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[90%]" data-name="Agenda 2" data-node-id="67:2549">
+          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2548">
+            <div className="-translate-x-1/2 absolute h-[80%] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[0.7%] w-[90%]" data-name="Agenda 2" data-node-id="67:2549">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[163.41%]" src={imgOtherProjectsSankhya} />
               </div>

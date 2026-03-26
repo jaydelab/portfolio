@@ -1,8 +1,9 @@
 import CTAIconMorph from "../effects/cta-icon-morph";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
 
-const DESKTOP_ARROW = "/visual-ir-assets/icon-svg.svg";
-const MOBILE_ARROW = "/visual-ir-assets/cta-mobile-arrow.svg";
+const DESKTOP_ARROW = assetUrl("/visual-ir-assets/icon-svg.svg");
+const MOBILE_ARROW = assetUrl("/visual-ir-assets/cta-mobile-arrow.svg");
 const CTA_COPY =
   "O que você precisa? Resolver um problema complexo? Prazer. Tem uma idéia que não sai do papel no tempo que precisa? Me chama. Do simples ao único eu resolvo.";
 const TABLET_CTA_ICONS = [
@@ -20,7 +21,7 @@ const TABLET_CTA_ICONS = [
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-framer-liquid-glass.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-adobe-photoshop.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-sketch-liquid-glass.webp",
-] as const;
+].map(assetUrl);
 const MOBILE_CTA_ICONS = [
   "/visual-ir-assets/dock/Icon-1.svg",
   "/visual-ir-assets/dock/Icon-2.svg",
@@ -33,7 +34,7 @@ const MOBILE_CTA_ICONS = [
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-figma.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-framer-liquid-glass.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-adobe-photoshop.webp",
-] as const;
+].map(assetUrl);
 
 interface CTASectionProps {
   id?: string;

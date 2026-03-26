@@ -1,8 +1,11 @@
-const imgVisaoDeCursos1440Px2 = "/visual-ir-assets/visao-de-cursos-1440px-2.webp";
-const imgHomeMobile390Px12 = "/visual-ir-assets/home-mobile-390px-12.webp";
-const imgButtonContainer = "/visual-ir-assets/button-container.svg";
-const imgVisaoDeCursos1440Px1 = "/visual-ir-assets/visao-de-cursos-1440px-1.svg";
-const imgHomeMobile390Px11 = "/visual-ir-assets/home-mobile-390px-11.svg";
+import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
+
+const imgVisaoDeCursos1440Px2 = assetUrl("/visual-ir-assets/visao-de-cursos-1440px-2.webp");
+const imgHomeMobile390Px12 = assetUrl("/visual-ir-assets/home-mobile-390px-12.webp");
+const imgButtonContainer = assetUrl("/visual-ir-assets/button-container.svg");
+const imgVisaoDeCursos1440Px1 = assetUrl("/visual-ir-assets/visao-de-cursos-1440px-1.svg");
+const imgHomeMobile390Px11 = assetUrl("/visual-ir-assets/home-mobile-390px-11.svg");
 
 interface ONovoMercadoSectionProps {
   id?: string;
@@ -20,10 +23,32 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
               </div>
             <div className="figma-font-halant-ptbr flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] whitespace-nowrap max-lg:whitespace-normal max-lg:text-center" data-node-id="1:949">
                 <p>
-                  <span className="figma-font-newsreader font-normal leading-[68px]">283</span>
-                  <span className="figma-font-georgia not-italic leading-[68px]">{` mil alunos e a `}</span>
-                  <span className="figma-font-georgia not-italic tracking-[-0.8px] leading-[68px]">necessidade</span>
-                  <span className="figma-font-georgia not-italic leading-[68px]">{` de UX`}</span>
+                  <HeroTitleTextReveal
+                    text="283"
+                    delay={0}
+                    className="figma-font-newsreader font-normal leading-[68px]"
+                  />
+                  {" "}
+                  <HeroTitleTextReveal
+                    text="mil alunos e a"
+                    delay={0.18}
+                    className="figma-font-georgia not-italic leading-[68px]"
+                    noWrap={false}
+                  />
+                  {" "}
+                  <HeroTitleTextReveal
+                    text="necessidade"
+                    delay={0.42}
+                    className="figma-font-georgia not-italic tracking-[-0.8px] leading-[68px]"
+                    noWrap={false}
+                  />
+                  {" "}
+                  <HeroTitleTextReveal
+                    text="de UX"
+                    delay={0.62}
+                    className="figma-font-georgia not-italic leading-[68px]"
+                    noWrap={false}
+                  />
                 </p>
               </div>
             </div>
@@ -79,7 +104,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:985">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 5" data-node-id="1:987" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src="/visual-ir-assets/mask-group-novo-mercado.webp" />
+                            <img alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src={assetUrl("/visual-ir-assets/mask-group-novo-mercado.webp")} />
                           </div>
                         </div>
                       </div>

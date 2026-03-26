@@ -1,4 +1,7 @@
-const img0052 = "/visual-ir-assets/0052.webp";
+import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
+
+const img0052 = assetUrl("/visual-ir-assets/0052.webp");
 
 interface CaseStudyWAPProps {
   id?: string;
@@ -17,9 +20,25 @@ export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps =
                 </div>
                 <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] tracking-[-2.8px] w-[588px] max-lg:w-full" data-node-id="1:578">
                   <p>
-                    <span className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">{`O motor de `}</span>
-                    <span className="figma-font-newsreader font-normal leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">2,5</span>
-                    <span className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">{` bilhões que rodava em planilhas`}</span>
+                    <HeroTitleTextReveal
+                      text="O motor de"
+                      delay={0}
+                      className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]"
+                      noWrap={false}
+                    />
+                    {" "}
+                    <HeroTitleTextReveal
+                      text="2,5"
+                      delay={0.3}
+                      className="figma-font-newsreader font-normal leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]"
+                    />
+                    {" "}
+                    <HeroTitleTextReveal
+                      text="bilhões que rodava em planilhas"
+                      delay={0.42}
+                      className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]"
+                      noWrap={false}
+                    />
                   </p>
                 </div>
               </div>

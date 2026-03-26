@@ -1,11 +1,14 @@
-const imgVector8 = "/visual-ir-assets/vector-8.svg";
-const imgSocialButton = "/visual-ir-assets/social-button.svg";
-const imgSocialButtonIcon = "/visual-ir-assets/social-button-icon.svg";
+import { HeroTitleHighlightReveal, HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
 
-const imgFooterMobileKeyboard = "/visual-ir-assets/footer-mobile-keyboard.webp";
-const imgFooterMobileCheck = "/visual-ir-assets/footer-mobile-check.svg";
-const imgFooterMobileLinkedin = "/visual-ir-assets/footer-mobile-linkedin.svg";
-const imgFooterMobileWhatsapp = "/visual-ir-assets/footer-mobile-whatsapp.svg";
+const imgVector8 = assetUrl("/visual-ir-assets/vector-8.svg");
+const imgSocialButton = assetUrl("/visual-ir-assets/social-button.svg");
+const imgSocialButtonIcon = assetUrl("/visual-ir-assets/social-button-icon.svg");
+
+const imgFooterMobileKeyboard = assetUrl("/visual-ir-assets/footer-mobile-keyboard.webp");
+const imgFooterMobileCheck = assetUrl("/visual-ir-assets/footer-mobile-check.svg");
+const imgFooterMobileLinkedin = assetUrl("/visual-ir-assets/footer-mobile-linkedin.svg");
+const imgFooterMobileWhatsapp = assetUrl("/visual-ir-assets/footer-mobile-whatsapp.svg");
 
 interface FooterSectionProps {
   id?: string;
@@ -26,13 +29,29 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         }}
       >
         <div className="col-1 h-[774px] ml-0 mt-0 overflow-clip relative row-1 w-[1392px]" data-name="Keyboard Section" data-node-id="1:1096">
-          <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src="/visual-ir-assets/keyboard-section.webp" />
+          <img alt="" className="absolute inset-0 max-w-none object-cover size-full rounded-[30px]" src={assetUrl("/visual-ir-assets/keyboard-section.webp")} />
         </div>
         <div className="figma-font-georgia col-1 flex flex-col justify-center ml-[300px] mt-[472px] not-italic relative row-1 text-[0px] text-center text-white w-[792px]" data-node-id="1:1311">
           <p className="text-[40px] max-lg:text-[clamp(24px,4.5vw,40px)]">
-            <span className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]">{`Se você precisa `}</span>
-            <span className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[39.423%] italic text-[transparent] to-[#cbe3ff] to-[60.096%] leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]">construir</span>
-            <span className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]">{` algo pensado pra seres humanos, vamos conversar.`}</span>
+            <HeroTitleTextReveal
+              text="Se você precisa"
+              delay={0}
+              className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
+              noWrap={false}
+            />
+            {" "}
+            <HeroTitleHighlightReveal
+              text="construir"
+              delay={0.28}
+              className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[39.423%] italic text-[transparent] to-[#cbe3ff] to-[60.096%] leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
+            />
+            {" "}
+            <HeroTitleTextReveal
+              text="algo pensado pra seres humanos, vamos conversar."
+              delay={0.46}
+              className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
+              noWrap={false}
+            />
           </p>
         </div>
         <div className="col-1 flex h-[32px] items-center justify-center ml-[48px] mt-[48px] relative row-1 w-[26px]">
@@ -97,9 +116,20 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
           <div className="absolute bottom-[32px] left-[32px] right-[32px] flex flex-col gap-[42px] items-center" data-node-id="68:515">
             <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-center text-white tracking-[-0.96px] w-[508px]" data-node-id="68:516">
               <p className="text-[32px]">
-                <span className="leading-[42px]">{`Se você precisa `}</span>
-                <span className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[42px] text-[transparent] to-[#cbe3ff] to-[77.885%]">construir</span>
-                <span className="leading-[42px]">{` algo pensado pra seres humanos, vamos conversar.`}</span>
+                <HeroTitleTextReveal text="Se você precisa" delay={0} className="leading-[42px]" noWrap={false} />
+                {" "}
+                <HeroTitleHighlightReveal
+                  text="construir"
+                  delay={0.24}
+                  className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[42px] text-[transparent] to-[#cbe3ff] to-[77.885%]"
+                />
+                {" "}
+                <HeroTitleTextReveal
+                  text="algo pensado pra seres humanos, vamos conversar."
+                  delay={0.42}
+                  className="leading-[42px]"
+                  noWrap={false}
+                />
               </p>
             </div>
 
@@ -148,9 +178,20 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         <div className="content-stretch flex flex-col gap-[36px] items-center justify-end p-[32px] relative shrink-0 w-full h-full" data-node-id="67:2579">
           <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-center text-white tracking-[-0.6px] w-full" data-node-id="67:2580">
             <p className="text-[20px]">
-              <span className="leading-[26px]">{`Se você precisa `}</span>
-              <span className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[26px] text-[transparent] to-[#cbe3ff] to-[77.885%]">construir</span>
-              <span className="leading-[26px]">{` algo pensado pra seres humanos, vamos conversar.`}</span>
+              <HeroTitleTextReveal text="Se você precisa" delay={0} className="leading-[26px]" noWrap={false} />
+              {" "}
+              <HeroTitleHighlightReveal
+                text="construir"
+                delay={0.22}
+                className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[26px] text-[transparent] to-[#cbe3ff] to-[77.885%]"
+              />
+              {" "}
+              <HeroTitleTextReveal
+                text="algo pensado pra seres humanos, vamos conversar."
+                delay={0.38}
+                className="leading-[26px]"
+                noWrap={false}
+              />
             </p>
           </div>
 

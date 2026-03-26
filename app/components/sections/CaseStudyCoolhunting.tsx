@@ -1,20 +1,22 @@
-const imgPaperTexture = "/visual-ir-assets/paper-texture.webp";
-const imgImage1 = "/visual-ir-assets/image-1.webp";
-const img0166 = "/visual-ir-assets/0166.webp";
-const imgFigureIntegrationsOrbit1 = "/visual-ir-assets/integration-image-container.webp";
-const imgProductImage1 = "/visual-ir-assets/song.webp";
-const imgBack = "/visual-ir-assets/back.svg";
-const imgLogoWap = "/visual-ir-assets/logo-wap.svg";
-const imgBack1 = "/visual-ir-assets/back-1.svg";
-const imgGroup = "/visual-ir-assets/group.svg";
-const imgGroup2 = "/visual-ir-assets/group-2.svg";
-const imgGroup3 = "/visual-ir-assets/group-3.svg";
-const imgProductImage = "/visual-ir-assets/product-image.svg";
-const imgStar = "/visual-ir-assets/star.svg";
-const imgVector2 = "/visual-ir-assets/vector-2.svg";
-const imgVector3 = "/visual-ir-assets/vector-3.svg";
-const imgGraphVectorBackground = "/visual-ir-assets/graph-vector-background.svg";
-const imgGraphVectors = "/visual-ir-assets/graph-vectors.svg";
+import { assetUrl } from "../../lib/asset-url";
+
+const imgPaperTexture = assetUrl("/visual-ir-assets/paper-texture.webp");
+const imgImage1 = assetUrl("/visual-ir-assets/image-1.webp");
+const img0166 = assetUrl("/visual-ir-assets/0166.webp");
+const imgFigureIntegrationsOrbit1 = assetUrl("/visual-ir-assets/integration-image-container.webp");
+const imgProductImage1 = assetUrl("/visual-ir-assets/song.webp");
+const imgBack = assetUrl("/visual-ir-assets/back.svg");
+const imgLogoWap = assetUrl("/visual-ir-assets/logo-wap.svg");
+const imgBack1 = assetUrl("/visual-ir-assets/back-1.svg");
+const imgGroup = assetUrl("/visual-ir-assets/group.svg");
+const imgGroup2 = assetUrl("/visual-ir-assets/group-2.svg");
+const imgGroup3 = assetUrl("/visual-ir-assets/group-3.svg");
+const imgProductImage = assetUrl("/visual-ir-assets/product-image.svg");
+const imgStar = assetUrl("/visual-ir-assets/star.svg");
+const imgVector2 = assetUrl("/visual-ir-assets/vector-2.svg");
+const imgVector3 = assetUrl("/visual-ir-assets/vector-3.svg");
+const imgGraphVectorBackground = assetUrl("/visual-ir-assets/graph-vector-background.svg");
+const imgGraphVectors = assetUrl("/visual-ir-assets/graph-vectors.svg");
 
 interface CaseStudyCoolhuntingProps {
   id?: string;
@@ -144,7 +146,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                       </div>
                     </div>
                     <div className="relative shrink-0 w-[296px] h-[110px]" data-name="Mask group" data-node-id="1:651">
-                      <img alt="" className="block size-full" src="/visual-ir-assets/mask-group-thermometer.svg" />
+                      <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/mask-group-thermometer.svg")} />
                     </div>
                   </div>
                 </div>

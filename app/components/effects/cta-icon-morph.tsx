@@ -18,6 +18,7 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
+import { assetUrl } from "../../lib/asset-url";
 
 type AnimationPhase = "scatter" | "line" | "orbit";
 
@@ -120,7 +121,7 @@ const ICON_SOURCES = [
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-adobe-photoshop.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-sketch-liquid-glass.webp",
   "/visual-ir-assets/cta-orbit/cta-orbit-extra-custom-liquid-glass.webp",
-] as const;
+].map(assetUrl);
 
 const CARD_SPRING = { damping: 16, stiffness: 44 };
 const MOUSE_SPRING = { damping: 22, stiffness: 36 };

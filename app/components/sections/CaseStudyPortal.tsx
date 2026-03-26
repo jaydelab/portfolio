@@ -1,4 +1,6 @@
-const img00321 = "/visual-ir-assets/00321.webp";
+import { assetUrl } from "../../lib/asset-url";
+
+const img00321 = assetUrl("/visual-ir-assets/00321.webp");
 
 interface CaseStudyPortalProps {
   id?: string;

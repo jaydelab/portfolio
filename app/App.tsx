@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Portfolio2026_1_86 from "./generated/Portfolio2026_1_86";
+import { SplashIntro } from "./components/effects/splash-intro";
+import SmoothScroll from "./components/effects/smooth-scroll";
 import "../styles/visual-ir.css";
 
 const DESIGN_WIDTH = 1440;
@@ -56,6 +58,8 @@ export default function App() {
   const footerScale = isScaling && maxFooterWidth < 1392 ? maxFooterWidth / 1392 : 1;
 
   return (
+    <SmoothScroll>
+    <SplashIntro>
     <div className="visual-ir-page">
       <div
         style={
@@ -63,7 +67,7 @@ export default function App() {
             ? {
                 width: "100%",
                 height: stageHeight ? stageHeight * scale : undefined,
-                overflow: "hidden",
+                overflow: "clip",
               }
             : undefined
         }
@@ -87,6 +91,8 @@ export default function App() {
         </div>
       </div>
     </div>
+    </SplashIntro>
+    </SmoothScroll>
   );
 }
 

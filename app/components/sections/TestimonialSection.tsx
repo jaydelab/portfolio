@@ -1,14 +1,17 @@
-const imgAvatar = "/visual-ir-assets/avatar.webp";
-const img = "/visual-ir-assets/asset.svg";
-const imgFrame1410137285 = "/visual-ir-assets/frame-1410137285.svg";
-const imgNextIndicatorContainer = "/visual-ir-assets/next-indicator-container.svg";
-const imgQuoteMobile = "/visual-ir-assets/quote-mobile.svg";
-const imgEllipse54 = "/visual-ir-assets/ellipse54.png";
-const imgEllipse55 = "/visual-ir-assets/ellipse55.png";
-const imgEllipse56 = "/visual-ir-assets/ellipse56.png";
-const imgIconGroupMask = "/visual-ir-assets/icon-group-mask.svg";
-const imgIconGroup = "/visual-ir-assets/icon-group.svg";
-const imgBadgeWap = "/visual-ir-assets/badge-wap.svg";
+import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { assetUrl } from "../../lib/asset-url";
+
+const imgAvatar = assetUrl("/visual-ir-assets/avatar.webp");
+const img = assetUrl("/visual-ir-assets/asset.svg");
+const imgFrame1410137285 = assetUrl("/visual-ir-assets/frame-1410137285.svg");
+const imgNextIndicatorContainer = assetUrl("/visual-ir-assets/next-indicator-container.svg");
+const imgQuoteMobile = assetUrl("/visual-ir-assets/quote-mobile.svg");
+const imgEllipse54 = assetUrl("/visual-ir-assets/ellipse54.png");
+const imgEllipse55 = assetUrl("/visual-ir-assets/ellipse55.png");
+const imgEllipse56 = assetUrl("/visual-ir-assets/ellipse56.png");
+const imgIconGroupMask = assetUrl("/visual-ir-assets/icon-group-mask.svg");
+const imgIconGroup = assetUrl("/visual-ir-assets/icon-group.svg");
+const imgBadgeWap = assetUrl("/visual-ir-assets/badge-wap.svg");
 
 interface TestimonialSectionProps {
   id?: string;
@@ -58,7 +61,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
                 <div className="absolute border border-[#e1e1e1] border-solid h-[454px] left-0 top-0 w-[1200px]" data-name="Container" data-node-id="1:744" />
                 <div className="absolute border border-[#e1e1e1] border-solid h-[46px] left-0 top-0 w-[1200px]" data-name="Line" data-node-id="1:745" />
                 <div className="absolute h-[46px] left-0 top-0 w-[1200px]" data-name="header-divisor" data-node-id="1:746">
-                  <img alt="" className="absolute inset-0 block size-full" src="/visual-ir-assets/header-divisor.svg" />
+                  <img alt="" className="absolute inset-0 block size-full" src={assetUrl("/visual-ir-assets/header-divisor.svg")} />
                 </div>
                 <div className="absolute h-[406px] left-px top-[47px] w-[384px] max-lg:hidden" data-name="Avatar-background" data-node-id="1:925">
                   <div className="absolute contents left-0 top-0" data-name="Avatar-background" data-node-id="1:926">
@@ -91,7 +94,9 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
       {/* ====== Tablet ====== */}
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="Testimonial-tablet" data-node-id="69:925">
         <div className="figma-font-georgia not-italic text-[32px] text-[#393737] tracking-[-0.64px] w-full" data-node-id="68:150">
-          <p className="leading-[44px]">Sucesso não é só produto, também é sobre gente</p>
+          <p className="leading-[44px]">
+            <HeroTitleTextReveal text="Sucesso não é só produto, também é sobre gente" delay={0} noWrap={false} />
+          </p>
         </div>
 
         <div className="content-stretch flex flex-col gap-[10px] h-[326px] items-end justify-end px-[24px] py-[24px] relative shrink-0 w-full" data-node-id="69:651">
@@ -100,7 +105,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
             <div className="absolute border border-[#e1e1e1] border-solid h-[324px] left-0 top-0 w-[684px]" data-node-id="68:154" />
             <div className="absolute border border-[#e1e1e1] border-solid h-[46px] left-0 top-0 w-[684px]" data-node-id="68:155" />
             <div className="absolute h-[46px] left-0 overflow-clip top-0 w-[684px]" data-node-id="68:156">
-              <img alt="" className="absolute left-1/2 -translate-x-1/2 top-0 h-[46px] w-[1200px] max-w-none" src="/visual-ir-assets/header-divisor.svg" />
+              <img alt="" className="absolute left-1/2 -translate-x-1/2 top-0 h-[46px] w-[1200px] max-w-none" src={assetUrl("/visual-ir-assets/header-divisor.svg")} />
             </div>
 
             <div className="absolute h-[277px] left-px overflow-hidden top-[47px] w-[247px]" data-node-id="68:335">
@@ -163,19 +168,21 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
       {/* ====== Mobile ====== */}
       <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-name="Testimonial-mobile" data-node-id="67:2213">
         <div className="figma-font-georgia not-italic text-[24px] text-[#393737] tracking-[-0.48px] w-full" data-node-id="67:2214">
-          <p className="leading-[34px]">Sucesso não é só produto, também é sobre gente</p>
+          <p className="leading-[34px]">
+            <HeroTitleTextReveal text="Sucesso não é só produto, também é sobre gente" delay={0} noWrap={false} />
+          </p>
         </div>
-        <div className="flex gap-[10px] h-auto min-h-[500px] items-end px-[16px] py-[22px] relative shrink-0 w-full" data-node-id="67:2215">
+        <div className="flex gap-[10px] h-auto min-h-[440px] items-end px-[16px] pt-[14px] pb-[20px] relative shrink-0 w-full" data-node-id="67:2215">
           {/* Decorative card background */}
           <div className="absolute inset-0" data-name="Container" data-node-id="67:2216">
             <div className="absolute bg-white bottom-[0.5px] h-[1.5px] inset-x-0" data-node-id="67:2217" />
             <div className="absolute border border-[#e1e1e1] border-solid inset-x-0 top-0 bottom-0" data-node-id="67:2218" />
             <div className="absolute border border-[#e1e1e1] border-solid h-[46px] inset-x-0 top-0" data-node-id="67:2219" />
             <div className="absolute h-[48px] inset-x-0 -top-px overflow-clip" data-name="header-divisor" data-node-id="67:2220">
-              <img alt="" className="absolute left-1/2 -translate-x-1/2 top-px h-[46px] w-[1200px] max-w-none" src="/visual-ir-assets/header-divisor.svg" />
+              <img alt="" className="absolute left-1/2 -translate-x-1/2 top-px h-[46px] w-[1200px] max-w-none" src={assetUrl("/visual-ir-assets/header-divisor.svg")} />
             </div>
             {/* Avatar background area */}
-            <div className="absolute h-[200px] inset-x-0 top-[47px]" data-name="Avatar-background" data-node-id="67:2399">
+            <div className="absolute h-[clamp(200px,56vw,260px)] inset-x-0 top-[47px]" data-name="Avatar-background" data-node-id="67:2399">
               <div className="absolute h-[200px] left-px overflow-clip top-px right-px" data-name="background-illustration" data-node-id="67:2400">
                 <div className="absolute bg-[#f1f1f1] border border-[#e1e1e1] border-solid h-[98px] left-[-1px] rounded-br-[14px] top-[-48px] w-[66px]" data-node-id="67:2402" />
                 <div className="absolute bg-[#f1f1f1] border border-[#e1e1e1] border-solid h-[123px] left-[-1px] rounded-br-[14px] rounded-tr-[14px] top-[59px] w-[66px]" data-node-id="67:2403" />
@@ -192,7 +199,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
               </div>
               <div className="absolute h-[200px] left-px top-px right-px" data-name="white-fade" data-node-id="67:2410" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 270 200\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(8.2664e-16 10 -14.342 2.9516e-14 135 100)\\'><stop stop-color=\\'rgba(247,247,247,0)\\' offset=\\'0.71154\\'/><stop stop-color=\\'rgba(247,247,247,1)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }} />
               {/* Photo + blur ellipses */}
-              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[clamp(123px,32vw,160px)] left-1/2 top-[calc(50%+0.5px)] w-[clamp(124px,32vw,160px)]" data-name="photo+blur" data-node-id="67:2411">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[clamp(140px,40vw,200px)] left-1/2 top-[calc(50%+0.5px)] w-[clamp(140px,40vw,200px)]" data-name="photo+blur" data-node-id="67:2411">
                 <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%+0.5px)] size-[173px] top-[calc(50%+10px)]" data-node-id="67:2412">
                   {/* Blur ellipses */}
                   <div className="absolute flex items-center justify-center left-[13.89px] size-[138.875px] top-[23.13px]">
@@ -236,7 +243,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
             <div className="absolute bg-white h-[1.5px] inset-x-0 top-[46px]" data-node-id="67:2420" />
           </div>
           {/* Review content */}
-          <div className="flex flex-col gap-[30px] items-start relative shrink-0 w-full" data-name="Review Container" data-node-id="67:2421">
+          <div className="flex flex-col gap-[20px] items-start relative shrink-0 w-full" data-name="Review Container" data-node-id="67:2421">
             <div className="flex flex-col gap-[12px] items-start w-full" data-node-id="67:2422">
               <div className="h-[16px] relative shrink-0 w-[20px]" data-node-id="67:2423">
                 <img alt="" className="absolute block max-w-none size-full" src={imgQuoteMobile} />

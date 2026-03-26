@@ -1,10 +1,11 @@
 import React from "react";
+import { assetUrl } from "../../lib/asset-url";
 
-const imgPaperTexture = "/visual-ir-assets/paper-texture.webp";
-const imgImage1 = "/visual-ir-assets/image-1.webp";
-const img167 = "/visual-ir-assets/167.webp";
-const imgBack = "/visual-ir-assets/back.svg";
-const imgLogoWap = "/visual-ir-assets/logo-wap.svg";
+const imgPaperTexture = assetUrl("/visual-ir-assets/paper-texture.webp");
+const imgImage1 = assetUrl("/visual-ir-assets/image-1.webp");
+const img167 = assetUrl("/visual-ir-assets/167.webp");
+const imgBack = assetUrl("/visual-ir-assets/back.svg");
+const imgLogoWap = assetUrl("/visual-ir-assets/logo-wap.svg");
 
 interface CaseStudyConnectHuntProps {
   id?: string;

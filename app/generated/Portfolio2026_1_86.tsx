@@ -12,8 +12,9 @@ import HighlightsSection from "../components/sections/HighlightsSection";
 import ProjectsGrid from "../components/sections/ProjectsGrid";
 import CTASection from "../components/sections/CTASection";
 import FooterSection from "../components/sections/FooterSection";
+import { assetUrl } from "../lib/asset-url";
 
-const imgVector9 = "/visual-ir-assets/994144d485b287b95c9e3138c9d881eeb59bb13f.svg";
+const imgVector9 = assetUrl("/visual-ir-assets/994144d485b287b95c9e3138c9d881eeb59bb13f.svg");
 
 export default function Web1440Px() {
   return (

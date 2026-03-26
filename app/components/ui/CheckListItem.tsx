@@ -1,5 +1,7 @@
-const imgCheckmark = "/visual-ir-assets/checkmark.svg";
-const imgCheckmarkSmall = "/visual-ir-assets/checkmark-small.svg";
+import { assetUrl } from "../../lib/asset-url";
+
+const imgCheckmark = assetUrl("/visual-ir-assets/checkmark.svg");
+const imgCheckmarkSmall = assetUrl("/visual-ir-assets/checkmark-small.svg");
 
 interface CheckListItemProps {
   label: string;

@@ -51,6 +51,7 @@ index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86
 ## Validação Visual
 
 - Validação principal é via **Playwright CLI** (ver seção Responsividade acima).
+- **Playwright MCP é proibido neste repositório.** Use apenas **Playwright CLI** local para qualquer captura, inspeção ou validação visual.
 - Viewports obrigatórios: **320px**, **390px**, **1440px**.
 - Diferença perceptível no desktop: REGRESSÃO → reverta imediatamente.
 - Nunca confie apenas no browser DevTools — sempre capturar screenshot real via Playwright.
@@ -157,7 +158,7 @@ export default function SomeSection({ className = "" }) {
 | ONovoMercadoSection | ⏳ | Pendente |
 | HighlightsSection | ⏳ | Pendente |
 | ProjectsGrid | ⏳ | Pendente |
-| CTASection | ⏳ | Pendente |
+| CTASection | ✅ | CTA morph section reconstruída com scroll proprietário e validação via Playwright CLI |
 | FooterSection | ⏳ | Pendente |
 
 ### Validação com Playwright CLI
