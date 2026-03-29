@@ -26,8 +26,15 @@ const imgEllipse56 = assetUrl("/visual-ir-assets/ellipse56.png");
 const TESTIMONIAL_EASE: [number, number, number, number] = [0.44, 0, 0.56, 1];
 const MOBILE_TESTIMONIAL_CONTENT_TOP = 220;
 const MOBILE_TESTIMONIAL_FALLBACK_MIN_HEIGHT = 548;
+const TABLET_TESTIMONIAL_CONTENT_TOP = 70;
+const TABLET_REVIEW_COLUMN_WIDTH = 353;
+const TABLET_TESTIMONIAL_BOTTOM_OFFSET = 24;
+const TABLET_TESTIMONIAL_FALLBACK_MIN_HEIGHT = 232;
 const TABLET_SWIPE_THRESHOLD = 56;
-const TABLET_DRAG_PREVIEW_LIMIT = 72;
+const TABLET_DRAG_PREVIEW_LIMIT = TABLET_REVIEW_COLUMN_WIDTH;
+const TABLET_DRAG_RESPONSE = 1;
+const TABLET_SWIPE_EXIT_OFFSET = Math.round(TABLET_REVIEW_COLUMN_WIDTH * 1.12);
+const TABLET_SWIPE_ENTER_OFFSET = 48;
 const EMBLA_OPTIONS = {
   align: "start" as const,
   containScroll: "trimSnaps" as const,
@@ -51,11 +58,11 @@ const TABLET_TESTIMONIAL_VARIANTS = {
   center: { opacity: 1, x: 0 },
   enter: (nextDirection: -1 | 1) => ({
     opacity: 0.001,
-    x: nextDirection > 0 ? 48 : -48,
+    x: nextDirection > 0 ? TABLET_SWIPE_ENTER_OFFSET : -TABLET_SWIPE_ENTER_OFFSET,
   }),
   exit: (nextDirection: -1 | 1) => ({
     opacity: 0.001,
-    x: nextDirection > 0 ? -48 : 48,
+    x: nextDirection > 0 ? -TABLET_SWIPE_EXIT_OFFSET : TABLET_SWIPE_EXIT_OFFSET,
   }),
 } satisfies Variants;
 
@@ -228,32 +235,27 @@ function TabletTestimonialSwap({
   }
 
   return (
-    <motion.div
-      animate={{ x: dragOffset }}
-      className="relative h-full"
-      style={{ willChange: "transform" }}
-      transition={
-        dragOffset === 0
-          ? { duration: 0.18, ease: TESTIMONIAL_EASE }
-          : { duration: 0 }
-      }
-    >
+    <div className="relative h-full overflow-hidden">
       <AnimatePresence custom={direction} initial={false} mode="wait">
         <motion.div
           key={activeIndex}
-          animate="center"
-          className="absolute inset-x-0 bottom-0"
+          animate={dragOffset === 0 ? "center" : { opacity: 1, x: dragOffset }}
+          className="absolute inset-x-0 top-0"
           custom={direction}
           exit="exit"
           initial="enter"
           style={{ willChange: "transform, opacity" }}
-          transition={{ duration: 0.28, ease: TESTIMONIAL_EASE }}
+          transition={
+            dragOffset === 0
+              ? { duration: 0.22, ease: TESTIMONIAL_EASE }
+              : { duration: 0 }
+          }
           variants={TABLET_TESTIMONIAL_VARIANTS}
         >
           {children}
         </motion.div>
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
 
@@ -299,7 +301,9 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
   const [hasUserTakenControl, setHasUserTakenControl] = useState(false);
   const [tabletDirection, setTabletDirection] = useState<1 | -1>(1);
   const [tabletDragOffset, setTabletDragOffset] = useState(0);
+  const [tabletMeasuredContentHeight, setTabletMeasuredContentHeight] = useState(0);
   const [mobileMeasuredContentHeight, setMobileMeasuredContentHeight] = useState(0);
+  const tabletMeasurementRefs = useRef<Array<HTMLDivElement | null>>([]);
   const mobileMeasurementRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [mobileEmblaRef, mobileEmblaApi] = useEmblaCarousel(EMBLA_OPTIONS);
   const tabletSwipeStateRef = useRef({
@@ -326,16 +330,26 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
   }, [hasUserTakenControl]);
 
   useLayoutEffect(() => {
-    const measure = () => {
-      const nextHeight = mobileMeasurementRefs.current.reduce((maxHeight, node) => {
+    const measureMaxHeight = (nodes: Array<HTMLDivElement | null>) => {
+      return nodes.reduce((maxHeight, node) => {
         if (!node) {
           return maxHeight;
         }
 
         return Math.max(maxHeight, Math.ceil(node.getBoundingClientRect().height));
       }, 0);
+    };
 
-      setMobileMeasuredContentHeight((current) => (current === nextHeight ? current : nextHeight));
+    const measure = () => {
+      const nextMobileHeight = measureMaxHeight(mobileMeasurementRefs.current);
+      const nextTabletHeight = measureMaxHeight(tabletMeasurementRefs.current);
+
+      setMobileMeasuredContentHeight((current) =>
+        current === nextMobileHeight ? current : nextMobileHeight,
+      );
+      setTabletMeasuredContentHeight((current) =>
+        current === nextTabletHeight ? current : nextTabletHeight,
+      );
     };
 
     measure();
@@ -346,7 +360,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
 
     const observer = new ResizeObserver(measure);
 
-    mobileMeasurementRefs.current.forEach((node) => {
+    [...mobileMeasurementRefs.current, ...tabletMeasurementRefs.current].forEach((node) => {
       if (node) {
         observer.observe(node);
       }
@@ -362,6 +376,14 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
     MOBILE_TESTIMONIAL_FALLBACK_MIN_HEIGHT,
     MOBILE_TESTIMONIAL_CONTENT_TOP + mobileMeasuredContentHeight,
   );
+  const tabletContentMinHeight = Math.max(
+    TABLET_TESTIMONIAL_FALLBACK_MIN_HEIGHT,
+    tabletMeasuredContentHeight,
+  );
+  const tabletCardHeight =
+    TABLET_TESTIMONIAL_CONTENT_TOP +
+    tabletContentMinHeight +
+    TABLET_TESTIMONIAL_BOTTOM_OFFSET;
 
   useEffect(() => {
     if (!mobileEmblaApi) {
@@ -430,8 +452,12 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
     }
 
     event.preventDefault();
+    const previewOffset = deltaX * TABLET_DRAG_RESPONSE;
     setTabletDragOffset(
-      Math.max(-TABLET_DRAG_PREVIEW_LIMIT, Math.min(TABLET_DRAG_PREVIEW_LIMIT, deltaX)),
+      Math.max(
+        -TABLET_DRAG_PREVIEW_LIMIT,
+        Math.min(TABLET_DRAG_PREVIEW_LIMIT, previewOffset),
+      ),
     );
   };
 
@@ -451,6 +477,10 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
 
     if (!swipeState.isActive || swipeState.pointerId !== event.pointerId) {
       return;
+    }
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
     const deltaX = event.clientX - swipeState.startX;
@@ -545,17 +575,26 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
         </div>
 
         <div
-          className="content-stretch flex flex-col gap-[10px] h-[326px] items-end justify-end px-[24px] py-[24px] relative shrink-0 w-full touch-pan-y"
+          className="content-stretch flex flex-col gap-[10px] items-end justify-end px-[24px] py-[24px] relative shrink-0 w-full touch-pan-y"
           data-node-id="69:651"
           onPointerCancel={handleTabletPointerEnd}
           onPointerDown={handleTabletPointerDown}
           onPointerMove={handleTabletPointerMove}
           onPointerUp={handleTabletPointerEnd}
           onTouchStart={handleTestimonialInteractionStart}
+          style={{ height: `${tabletCardHeight}px` }}
         >
-          <div className="absolute h-[326px] left-0 top-0 w-[684px]" data-node-id="68:152">
+          <div
+            className="absolute left-0 top-0 w-[684px]"
+            data-node-id="68:152"
+            style={{ height: `${tabletCardHeight}px` }}
+          >
             <div className="absolute bg-white bottom-0 h-[2px] left-0 w-[684px]" data-node-id="68:153" />
-            <div className="absolute border border-[#e1e1e1] border-solid h-[324px] left-0 top-0 w-[684px]" data-node-id="68:154" />
+            <div
+              className="absolute border border-[#e1e1e1] border-solid left-0 top-0 w-[684px]"
+              data-node-id="68:154"
+              style={{ height: `${tabletCardHeight - 2}px` }}
+            />
             <div className="absolute border border-[#e1e1e1] border-solid h-[46px] left-0 top-0 w-[684px]" data-node-id="68:155" />
             <div className="absolute h-[46px] left-0 overflow-clip top-0 w-[684px]" data-node-id="68:156">
               <img decoding="async" loading="lazy" alt="" className="absolute left-1/2 -translate-x-1/2 top-0 h-[46px] w-[1200px] max-w-none" src={assetUrl("/visual-ir-assets/header-divisor.svg")} />
@@ -565,7 +604,27 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
             <div className="absolute bg-white h-[1.5px] left-px top-[46px] w-[682px]" data-node-id="68:356" />
           </div>
 
-          <div className="absolute bottom-[24px] right-[24px] top-[24px] w-[353px] overflow-hidden z-0">
+          <div
+            aria-hidden="true"
+            className="absolute right-[24px] top-[70px] invisible pointer-events-none z-0 w-[353px]"
+          >
+            {TESTIMONIALS.map((testimonial, index) => (
+              <div
+                key={`testimonial-tablet-measure-${index}`}
+                ref={(node) => {
+                  tabletMeasurementRefs.current[index] = node;
+                }}
+                className="w-full"
+              >
+                <TabletTestimonialContent testimonial={testimonial} />
+              </div>
+            ))}
+          </div>
+
+          <div
+            className="absolute right-[24px] top-[70px] w-[353px] overflow-hidden z-0"
+            style={{ height: `${tabletContentMinHeight}px` }}
+          >
             <TabletTestimonialSwap
               activeIndex={activeTestimonialIndex}
               direction={tabletDirection}

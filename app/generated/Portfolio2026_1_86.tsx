@@ -22,7 +22,7 @@ type Web1440PxProps = {
 
 export default function Web1440Px({ heroEffectReady = true }: Web1440PxProps) {
   return (
-    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] max-lg:gap-[32px] max-md:gap-[24px] items-center px-0 pt-[24px] pb-[24px] max-lg:px-0 max-lg:pt-[24px] max-lg:pb-[clamp(16px,2.5vw,24px)] max-md:px-0 max-md:pt-[24px] max-md:pb-[24px] relative size-full" data-name="web-1440px" data-node-id="1:86">
+    <div className="bg-[#f7f7f7] content-stretch flex flex-col gap-[150px] max-lg:gap-[32px] max-md:gap-[24px] items-center px-0 pt-[24px] pb-[24px] max-[1023px]:px-[24px] max-lg:pt-[24px] max-lg:pb-[clamp(16px,2.5vw,24px)] max-md:pt-[24px] max-md:pb-[24px] relative size-full" data-name="web-1440px" data-node-id="1:86">
       <BadgeHeader />
       <div className="content-stretch flex flex-col gap-[180px] min-[768px]:max-lg:gap-[clamp(82px,10.68vw,180px)] max-md:gap-0 items-center relative shrink-0 w-full" data-node-id="1:88">
         <HeroSection heroEffectReady={heroEffectReady} />

@@ -289,8 +289,8 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2517">
-            <div className="-translate-x-1/2 absolute h-[75%] left-[calc(50%-1.5%)] top-0 w-[128%]" data-name="002 1" data-node-id="67:2518">
+          <div className="aspect-[334/263] overflow-clip relative shrink-0 w-full" data-node-id="67:2517">
+            <div className="-translate-x-1/2 absolute h-full left-[calc(50%-1.5%)] top-0 w-[133.5%]" data-name="002 1" data-node-id="67:2518">
               <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
             </div>
           </div>
@@ -312,8 +312,8 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2527">
-            <div className="-translate-x-1/2 absolute h-[74%] left-[calc(50%+0.4%)] top-0 w-[96%]" data-name="Image" data-node-id="67:2528">
+          <div className="aspect-[334/256] overflow-clip relative shrink-0 w-full" data-node-id="67:2527">
+            <div className="-translate-x-1/2 absolute h-full left-1/2 top-0 w-full" data-name="Image" data-node-id="67:2528">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <img decoding="async" loading="lazy" alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
               </div>
@@ -337,7 +337,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2537">
+          <div className="aspect-[334/256] overflow-clip relative shrink-0 w-full" data-node-id="67:2537">
             <div className="absolute aspect-[123/526] left-[3.7%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 1" data-node-id="67:2538">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
                 <img decoding="async" loading="lazy" alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
@@ -345,7 +345,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
             <div className="absolute aspect-[123/257] left-[51.1%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 2" data-node-id="67:2539">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                <img decoding="async" loading="lazy" alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[106.9%] left-[-0.45%] max-w-none top-[-16.93%] w-[100.9%]" src={imgOtherProjectsMaceioRight} />
               </div>
             </div>
           </div>
@@ -368,10 +368,10 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
               </div>
             </div>
           </div>
-          <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2548">
-            <div className="-translate-x-1/2 absolute h-[80%] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[0.7%] w-[90%]" data-name="Agenda 2" data-node-id="67:2549">
+          <div className="aspect-[334/256] overflow-clip relative shrink-0 w-full" data-node-id="67:2548">
+            <div className="absolute h-[65.6%] left-[3.6%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[0.8%] w-[92.8%]" data-name="Agenda 2" data-node-id="67:2549">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                <img decoding="async" loading="lazy" alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[163.41%]" src={imgOtherProjectsSankhya} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[147.07%]" src={imgOtherProjectsSankhya} />
               </div>
             </div>
           </div>

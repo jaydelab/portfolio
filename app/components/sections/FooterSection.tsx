@@ -118,8 +118,8 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
       ) : null}
 
       {activeBreakpoint === "tablet" ? (
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="FooterSection-tablet" data-node-id="68:512">
-        <div className="relative h-[534px] overflow-hidden rounded-[16px] w-[736px]" data-node-id="68:513">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center w-full" data-name="FooterSection-tablet" data-node-id="68:512">
+        <div className="relative h-[534px] overflow-hidden rounded-[16px] w-full max-w-[736px]" data-node-id="68:513">
           <div className="absolute inset-0 overflow-hidden rounded-[16px]">
             <div className="-translate-x-1/2 absolute h-[534px] left-1/2 top-0 w-[754px]" data-node-id="68:514">
               <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFooterMobileKeyboard} />
@@ -179,8 +179,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
 
       {activeBreakpoint === "mobile" ? (
       <div
-        className="hidden max-md:flex items-end justify-center mt-[62px] mx-[-16px] relative rounded-[16px] overflow-hidden h-[534px]"
-        style={{ width: "calc(100% + 32px)" }}
+        className="hidden max-md:flex items-end justify-center mt-[62px] relative rounded-[16px] overflow-hidden h-[534px] w-full"
         data-name="FooterSection-mobile"
         data-node-id="67:2576"
       >
