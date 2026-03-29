@@ -32,20 +32,20 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                 <div className="absolute contents inset-[0_-134.94px_-322px_-132.53px]" data-name="Background Images" data-node-id="1:592">
                   <div className="absolute h-[902px] left-[21.69px] mask-alpha mask-intersect mask-no-repeat mask-position-[110.843px_0px] mask-size-[1200px_580px] mix-blend-overlay opacity-50 overflow-clip top-0 w-[1445.783px]" data-name="Paper texture" data-node-id="1:593" style={{ maskImage: `url('${imgBack}')` }}>
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                      <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgPaperTexture} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute left-0 max-w-none size-full top-0" src={imgPaperTexture} />
                     </div>
                   </div>
                   <div className="absolute h-[902px] left-0 mask-alpha mask-intersect mask-no-repeat mask-position-[132.53px_0px] mask-size-[1200px_580px] mix-blend-screen opacity-50 overflow-clip top-0 w-[1445.783px]" data-name="Image" data-node-id="1:594" style={{ maskImage: `url('${imgBack}')` }}>
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                      <img alt="" className="absolute h-[115.16%] left-0 max-w-none top-0 w-[110.37%]" src={imgImage1} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute h-[115.16%] left-0 max-w-none top-0 w-[110.37%]" src={imgImage1} />
                     </div>
                   </div>
                 </div>
                 <div className="absolute h-[655px] left-[-95px] mask-alpha mask-intersect mask-no-repeat mask-position-[95px_68px] mask-size-[1200px_580px] overflow-clip top-[-68px] w-[1729px]" data-name="016 6" data-node-id="1:595" style={{ maskImage: `url('${imgBack}')` }}>
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img0166} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img0166} />
                 </div>
                 <div className="absolute inset-[7.93%_4.17%_88.62%_92.75%] mask-alpha mask-intersect mask-no-repeat mask-position-[-1113px_-46px] mask-size-[1200px_580px] overflow-clip" data-name="Logo-wap" data-node-id="1:596" style={{ maskImage: `url('${imgBack}')` }}>
-                  <img alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
                 </div>
               </div>
               <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] relative shrink-0 w-[460px] max-md:w-full" data-name="Text Block" data-node-id="1:599">
@@ -102,7 +102,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                           <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Sparkle Icon" data-node-id="1:624">
                             <div className="absolute inset-[13.66%]" data-name="Back" data-node-id="I1:624;141:3376">
                               <div className="absolute inset-[-334.72%_-211.23%_-215.58%_-339.07%]">
-                                <img alt="" className="block max-w-none size-full" src={imgBack1} />
+                                <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgBack1} />
                               </div>
                             </div>
                           </div>
@@ -116,7 +116,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                 <div className="h-[143px] overflow-clip relative shrink-0 w-full" data-name="Integration Image Container" data-node-id="1:625">
                   <div className="absolute h-[223px] left-0 top-[-1px] w-[486px]" data-name="Figure - Integrations Orbit 1" data-node-id="1:626">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                      <img alt="" className="absolute left-0 max-w-none top-0 w-full" src={imgFigureIntegrationsOrbit1} />
+                      <img decoding="async" alt="" className="absolute left-0 max-w-none top-0 w-full" src={imgFigureIntegrationsOrbit1} />
                     </div>
                   </div>
                 </div>
@@ -134,30 +134,30 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                         <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-name="Group" data-node-id="1:642">
                           <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-name="Clip path group" data-node-id="1:643">
                             <div className="col-1 h-[24px] mask-alpha mask-no-repeat mask-position-[0px_0px] ml-0 mt-0 relative row-1 w-[54px]" data-name="Group" data-node-id="1:646" style={{ maskImage: `url('${imgGroup}')` }}>
-                              <img alt="" className="absolute block max-w-none size-full" src={imgGroup2} />
+                              <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgGroup2} />
                             </div>
                           </div>
                           <div className="col-1 h-[20px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-20px_-2px] mask-size-[54px_24px] ml-[20px] mt-[2px] relative row-1 w-[32px]" data-name="Group" data-node-id="1:648" style={{ maskImage: `url('${imgGroup}')` }}>
                             <div className="absolute inset-[-15%_-12.5%_-25%_-12.5%]">
-                              <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                              <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgGroup3} />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="relative shrink-0 w-[296px] h-[110px]" data-name="Mask group" data-node-id="1:651">
-                      <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/mask-group-thermometer.svg")} />
+                      <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/mask-group-thermometer.svg")} />
                     </div>
                   </div>
                 </div>
                 <div className="grid-cols-[max-content] grid-rows-[163px] inline-grid place-items-start relative shrink-0" data-name="bento-3" data-node-id="1:656">
                   <div className="bg-white border border-[rgba(3,3,2,0.12)] border-solid col-1 h-[163px] max-md:h-auto ml-0 mt-0 rounded-[20px] row-1 shadow-[0px_50px_40px_0px_rgba(0,0,0,0.01),0px_50px_40px_0px_rgba(0,0,0,0.02),0px_20px_40px_0px_rgba(0,0,0,0.05),0px_3px_10px_0px_rgba(0,0,0,0.08)] w-[384px] max-md:w-full" data-name="Rating Background" data-node-id="1:657" />
                   <div className="col-1 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-18px_26px] mask-size-[384px_162px] ml-[18px] mt-[-26px] relative row-1 size-[349px]" data-name="Product Image" data-node-id="1:659" style={{ maskImage: `url('${imgProductImage}')` }}>
-                    <img alt="" className="absolute left-[-18px] max-w-none pointer-events-none top-[26px] w-[384px]" src={imgProductImage1} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute left-[-18px] max-w-none pointer-events-none top-[26px] w-[384px]" src={imgProductImage1} />
                   </div>
                   <div className="backdrop-blur-[20px] bg-[#fff3d1] border border-[rgba(255,255,255,0.8)] border-solid col-1 content-stretch flex gap-[4px] h-[24px] items-center mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-20px_-20px] mask-size-[384px_162px] overflow-clip ml-[20px] mt-[20px] px-[9px] py-[8px] relative rounded-[31px] row-1" data-name="Rating Container" data-node-id="1:660" style={{ maskImage: `url('${imgProductImage}')` }}>
                     <div className="relative shrink-0 size-[12px]" data-name="Star" data-node-id="1:661">
-                      <img alt="" className="absolute block max-w-none size-full" src={imgStar} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgStar} />
                     </div>
                     <p className="figma-font-510 leading-[normal] relative shrink-0 text-[#8b6533] text-[12px] whitespace-nowrap" data-node-id="1:664" style={{ fontVariationSettings: "'wdth' 100" }}>
                       4.9
@@ -168,7 +168,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
               <div className="h-[348px] max-md:h-[280px] overflow-clip relative shrink-0 w-[282px] max-md:w-full" data-name="Graph Container" data-node-id="3:731">
                 <div className="-translate-x-1/2 absolute bottom-[5.75%] left-[calc(50%+2px)] top-[30.46%] w-[222px]" data-name="Vector" data-node-id="1:666">
                   <div className="absolute inset-[-0.68%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector2} />
+                    <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgVector2} />
                   </div>
                 </div>
                 <div className="absolute h-[348px] left-0 rounded-[30px] top-0 w-[282px]" data-name="Icon background" data-node-id="1:667">
@@ -182,7 +182,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                     </div>
                     <div className="bg-[rgba(255,255,255,0.14)] content-stretch flex gap-[5px] h-[22px] items-center px-[10px] relative rounded-[100px] shrink-0" data-name="Graph Rating" data-node-id="1:676">
                       <div className="relative shrink-0 size-[9px]" data-name="Vector" data-node-id="1:677">
-                        <img alt="" className="absolute block max-w-none size-full" src={imgVector3} />
+                        <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgVector3} />
                       </div>
                       <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.3px] whitespace-nowrap" data-node-id="1:678">
                         <p className="leading-[normal]">4.9</p>
@@ -193,13 +193,13 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                     <div className="col-1 h-[229px] ml-0 mt-0 relative rounded-[20px] row-1 w-[282px]" data-name="Graph Vectors Container" data-node-id="1:680">
                       <div className="absolute h-[213px] left-[-5px] top-[17px] w-[287px]" data-name="Graph Vector Background" data-node-id="1:681">
                         <div className="absolute inset-[-0.47%_0]">
-                          <img alt="" className="block max-w-none size-full" src={imgGraphVectorBackground} />
+                          <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgGraphVectorBackground} />
                         </div>
                       </div>
                     </div>
                     <div className="col-1 h-[96.957px] ml-[134px] mt-[63px] relative row-1 w-[8.442px]" data-name="Graph Vectors" data-node-id="1:693">
                       <div className="absolute inset-[0_-11.84%]">
-                        <img alt="" className="block max-w-none size-full" src={imgGraphVectors} />
+                        <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgGraphVectors} />
                       </div>
                     </div>
                   </div>

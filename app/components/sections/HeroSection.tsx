@@ -1,85 +1,175 @@
-import React from "react";
-import { ShaderAnimation, setShaderPalette } from "../effects/shader-animation";
+import React, { useRef } from "react";
 import { RevealOnMount } from "../effects/reveal-on-mount";
 import { CardEntrance } from "../effects/card-entrance";
+import { UnicornFurnaceBackground } from "../effects/unicorn-furnace-background";
+import {
+  UnicornHeroBackground,
+  type UnicornHeroLayoutConfig,
+} from "../effects/unicorn-hero-background";
 import {
   HeroTitleImageReveal,
   HeroTitleTextReveal,
 } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const imgSlideshowImage = assetUrl("/visual-ir-assets/fig.webp");
 const imgVectorContainer = assetUrl("/visual-ir-assets/vector-container.svg");
 
+/* ── Unicorn Furnace: ajuste aqui, aplica em todos os breakpoints ── */
+const furnaceShader = {
+  enabled: true,
+  center: true,
+  flip: false,
+  mirror: false,
+  useVignette: true,
+  left: "0%",
+  right: "0%",
+  bottom: "-35%",
+  opacity: 1,
+  desktop: {
+    top: "auto",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "10%",
+      leftFade: "0%",
+      rightFade: "0%",
+    },
+  },
+  tablet: {
+    top: "auto",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "0%",
+      leftFade: "0%",
+      rightFade: "0%",
+    },
+  },
+  mobile: {
+    top: "auto",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "0%",
+      leftFade: "0%",
+      rightFade: "0%",
+    },
+  },
+} satisfies UnicornHeroLayoutConfig;
 
-/* ── Shader: ajuste aqui, aplica em todos os breakpoints ── */
-// paletas: "blue" | "red" | "orange" | "mono"
-setShaderPalette("red");
+function getNegativeBottomOffset(bottom: string, sectionMinHeight: string) {
+  const normalizedBottom = bottom.trim();
 
+  if (normalizedBottom.endsWith("%")) {
+    const value = Number.parseFloat(normalizedBottom);
+
+    if (value < 0) {
+      const heightExpression =
+        sectionMinHeight.startsWith("calc(") && sectionMinHeight.endsWith(")")
+          ? `(${sectionMinHeight.slice(5, -1)})`
+          : sectionMinHeight;
+
+      return `calc(${heightExpression} * ${Math.abs(value) / 100})`;
+    }
+  }
+
+  if (normalizedBottom.endsWith("px")) {
+    const value = Number.parseFloat(normalizedBottom);
+
+    if (value < 0) {
+      return `${Math.abs(value)}px`;
+    }
+  }
+
+  return undefined;
+}
+
+/* ── Unicorn White: ajuste aqui, aplica em todos os breakpoints ── */
 const shader = {
-  // compartilhado
-  enabled: false,       // quando false, oculta o shader sem removê-lo
-  center: true,         // quando true, ignora left/right e centraliza
-  flip: true,          // quando true, inverte verticalmente (scaleY -1)
-  mirror: true,       // quando true, espelha horizontalmente (scaleX -1)
-  vignette: true,     // quando true, ativa vinheta global (configs por breakpoint)
+  enabled: false,
+  center: true,
+  flip: false,
+  mirror: false,
+  useVignette: false,
   left: "0%",
   right: "0%",
   bottom: "0%",
-  opacity: 0.4,
-  maskFrom: "0%",
-  maskSolidStart: "8%",
-  maskSolidEnd: "55%",
-  maskTo: "80%",
-  // por breakpoint (size influencia cada resolução)
-  // fadeLateral: quanto maior, mais fecha nas laterais (0% = sem fade, 50% = metade some)
-  desktop: { top: "-150%", size: "220%", fadeLateral: "40%" },
-  tablet:  { top: "-40%",  size: "120%", fadeLateral: "5%" },
-  mobile:  { top: "-45%",  size: "120%", fadeLateral: "5%" },
-};
-
-function shaderStyle(bp: "desktop" | "tablet" | "mobile"): React.CSSProperties {
-  const linearMask = `linear-gradient(to bottom, transparent ${shader.maskFrom}, black ${shader.maskSolidStart}, black ${shader.maskSolidEnd}, transparent ${shader.maskTo})`;
-  const fade = shader[bp].fadeLateral;
-  const useFade = shader.vignette;
-  const lateralMask = `linear-gradient(to right, transparent 0%, black ${fade}, black calc(100% - ${fade}), transparent 100%)`;
-  const mask = useFade ? `${linearMask}, ${lateralMask}` : linearMask;
-  const centered = shader.center;
-  const flipY = shader.flip ? "scaleY(-1)" : "";
-  const mirrorX = shader.mirror ? "scaleX(-1)" : "";
-  const centerX = centered ? "translateX(-50%)" : "";
-  const transform = `${centerX} ${flipY} ${mirrorX}`.trim() || undefined;
-  return {
-    position: "absolute",
-    width: shader[bp].size,
-    height: shader[bp].size,
-    top: shader[bp].top,
-    ...(centered ? { left: "50%" } : { left: shader.left, right: shader.right }),
-    transform,
-    bottom: shader.bottom,
-    opacity: shader.opacity,
-    pointerEvents: "none",
-    zIndex: 0,
-    overflow: "visible",
-    maskImage: mask,
-    WebkitMaskImage: mask,
-    ...(useFade && { maskComposite: "intersect" as const, WebkitMaskComposite: "destination-in" }),
-  };
-}
+  opacity: 1,
+  desktop: {
+    top: "-300px",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "0%",
+      leftFade: "40%",
+      rightFade: "40%",
+    },
+  },
+  tablet: {
+    top: "-300px",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "0%",
+      leftFade: "5%",
+      rightFade: "5%",
+    },
+  },
+  mobile: {
+    top: "-300px",
+    size: "max(100%, 100vw)",
+    vignette: {
+      topFade: "0%",
+      bottomFade: "0%",
+      leftFade: "5%",
+      rightFade: "5%",
+    },
+  },
+} satisfies UnicornHeroLayoutConfig;
 
 interface HeroSectionProps {
   id?: string;
   className?: string;
+  heroEffectReady?: boolean;
 }
 
-export default function HeroSection({ id, className = "" }: HeroSectionProps = {}) {
+export default function HeroSection({
+  id,
+  className = "",
+  heroEffectReady = true,
+}: HeroSectionProps = {}) {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const activeBreakpoint = useActiveBreakpoint();
+  const heroMinHeight = activeBreakpoint === "desktop" ? "calc(100vh - 208px)" : "100vh";
+  const furnaceOverflowBottom =
+    furnaceShader.enabled && heroEffectReady
+      ? getNegativeBottomOffset(furnaceShader.bottom, heroMinHeight)
+      : undefined;
+
   return (
-    <div id={id} className={`w-full max-w-[996px] ${className}`.trim()}>
+    <div
+      id={id}
+      ref={sectionRef}
+      className={`w-full relative flex flex-col ${activeBreakpoint === "desktop" ? "justify-start" : "justify-center"} ${className}`.trim()}
+      style={{ marginBottom: furnaceOverflowBottom, minHeight: heroMinHeight }}
+    >
+      {furnaceShader.enabled && heroEffectReady ? (
+        <UnicornFurnaceBackground breakpoint={activeBreakpoint} layout={furnaceShader} />
+      ) : null}
+
+      {shader.enabled && heroEffectReady ? (
+        <UnicornHeroBackground
+          breakpoint={activeBreakpoint}
+          layout={shader}
+          visibilityTargetRef={sectionRef}
+        />
+      ) : null}
+
       {/* ====== Desktop ====== */}
-      <div className="max-lg:hidden content-stretch flex flex-col gap-[48px] items-center leading-[0] relative shrink-0 w-full" data-name="Container" data-node-id="1:89">
-            {shader.enabled && <div style={shaderStyle("desktop")}>
-              <ShaderAnimation />
-            </div>}
+      {activeBreakpoint === "desktop" ? (
+      <div className="max-lg:hidden content-stretch flex flex-col gap-[48px] items-center leading-[0] relative z-10 shrink-0 w-full max-w-[996px] mx-auto" data-name="Container" data-node-id="1:89">
             <div className="content-stretch flex flex-col gap-[24px] items-center relative z-10 shrink-0 w-full" data-name="Container" data-node-id="1:90">
               <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:91">
                 <div className="figma-font-halant-ptbr flex flex-col justify-center min-w-full not-italic relative shrink-0 text-[#393737] text-[0px] text-center tracking-[-3.5px] w-[min-content]" data-node-id="1:92">
@@ -91,7 +181,7 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
                     />
                     <span className="leading-[90px] max-lg:leading-[clamp(44px,10vw,90px)]">{` `}</span>
                     <HeroTitleTextReveal
-                      className="figma-font-halant-ptbr not-italic text-[#888787] tracking-[-3.5px] leading-[90px] max-lg:leading-[clamp(44px,10vw,90px)]"
+                      className="figma-font-georgia not-italic text-[#888787] tracking-[-3.5px] leading-[90px] max-lg:leading-[clamp(44px,10vw,90px)]"
                       delay={0.24}
                       text="funcionários,"
                     />
@@ -123,7 +213,7 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
                   <div className="figma-font-halant-ptbr col-1 flex flex-col justify-center ml-0 mt-[11.4px] not-italic relative row-1 text-[#393737] text-[0px] text-center tracking-[-3.5px] whitespace-nowrap" data-node-id="1:111">
                     <p className="text-[70px] max-lg:text-[clamp(36px,8vw,70px)]">
                       <HeroTitleTextReveal
-                        className="figma-font-halant-ptbr not-italic text-[#888787] tracking-[-3.5px] leading-[90px] max-lg:leading-[clamp(44px,10vw,90px)]"
+                        className="figma-font-georgia not-italic text-[#888787] tracking-[-3.5px] leading-[90px] max-lg:leading-[clamp(44px,10vw,90px)]"
                         delay={0.36}
                         text="mas"
                       />
@@ -153,7 +243,7 @@ export default function HeroSection({ id, className = "" }: HeroSectionProps = {
               </RevealOnMount>
             </div>
             <CardEntrance className="shrink-0">
-            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative z-10 shrink-0" data-name="Container" data-node-id="1:114">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative z-10 shrink-0" style={{ display: "none" }} data-name="Container" data-node-id="1:114">
               <div className="col-1 h-[383px] ml-0 mt-0 relative row-1 w-[792px]" data-name="Illustration" data-node-id="1:115">
                 <div className="-translate-x-1/2 absolute bg-[rgba(0,0,0,0.8)] border border-solid border-white content-stretch flex flex-col gap-[20px] items-start left-[calc(50%+0.5px)] pb-[20px] pt-[16px] rounded-[20px] top-0 w-[793px]" data-name="Container-illustration" data-node-id="1:125">
                   <div className="border-[rgba(255,255,255,0.06)] border-b border-solid content-stretch flex gap-[6px] h-[20px] items-start px-[16px] relative shrink-0 w-full" data-name="Pagination Dots Container" data-node-id="1:126">
@@ -190,12 +280,11 @@ await agent.run();`}
             </div>
             </CardEntrance>
       </div>
+      ) : null}
 
       {/* ====== Tablet ====== */}
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col items-center mx-[-24px] relative" style={{ width: "calc(100% + 48px)" }} data-name="HeroSection-tablet" data-node-id="68:57">
-        {shader.enabled && <div style={shaderStyle("tablet")}>
-          <ShaderAnimation />
-        </div>}
+      {activeBreakpoint === "tablet" ? (
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col items-center relative z-10 w-full" data-name="HeroSection-tablet" data-node-id="68:57">
         <div className="content-stretch flex flex-col gap-[52px] items-center relative z-10 shrink-0 w-full">
           <RevealOnMount delay={0.05}>
           <div className="backdrop-blur-[25px] bg-[rgba(0,0,0,0.55)] flex h-[30px] items-center justify-center px-[12px] rounded-[18px] shrink-0" data-name="Badge" data-node-id="68:58">
@@ -280,7 +369,7 @@ await agent.run();`}
               </div>
             </div>
 
-            <CardEntrance className="w-full shrink-0">
+            <CardEntrance className="hidden w-full shrink-0">
             <div className="bg-[rgba(0,0,0,0.8)] border border-solid border-white content-stretch flex flex-col gap-[16px] items-start pb-[20px] pt-[16px] rounded-[20px] shrink-0 w-full" data-name="Container-illustration" data-node-id="68:71">
               <div className="border-[rgba(255,255,255,0.06)] border-b border-solid content-stretch flex items-center justify-between px-[16px] relative shrink-0 w-full" data-node-id="68:72">
                 <div className="content-stretch flex gap-[4px] h-[20px] items-center relative shrink-0" data-node-id="68:73">
@@ -318,12 +407,11 @@ await agent.run();`}
           </div>
         </div>
       </div>
+      ) : null}
 
       {/* ====== Mobile ====== */}
-      <div className="hidden max-md:flex flex-col gap-[52px] items-center mx-[-12px] relative" style={{ width: 'calc(100% + 24px)' }} data-name="HeroSection-mobile" data-node-id="13:7056">
-        {shader.enabled && <div style={shaderStyle("mobile")}>
-          <ShaderAnimation />
-        </div>}
+      {activeBreakpoint === "mobile" ? (
+      <div className="hidden max-md:flex flex-col gap-[52px] items-center relative z-10 w-full" data-name="HeroSection-mobile" data-node-id="13:7056">
         {/* Badge */}
         <RevealOnMount delay={0.05}>
         <div className="relative z-10 backdrop-blur-[25px] bg-[rgba(0,0,0,0.55)] flex h-[30px] items-center justify-center px-[12px] rounded-[18px] shrink-0" data-name="Badge" data-node-id="13:7057">
@@ -413,7 +501,7 @@ await agent.run();`}
           </div>
 
           {/* Code block */}
-          <CardEntrance className="w-full">
+          <CardEntrance className="hidden w-full">
           <div className="bg-[rgba(0,0,0,0.8)] border border-solid border-white flex flex-col gap-[16px] items-start pb-[16px] rounded-[14px] w-full" data-name="Container-illustration" data-node-id="13:7071">
             {/* Dot row */}
             <div className="border-b border-[rgba(255,255,255,0.06)] border-solid flex items-center justify-between px-[14px] py-[10px] w-full" data-node-id="13:7072">
@@ -451,6 +539,7 @@ await agent.run();`}</pre>
           </CardEntrance>
         </div>
       </div>
+      ) : null}
     </div>
   );
 }

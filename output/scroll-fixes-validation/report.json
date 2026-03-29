@@ -1,0 +1,14 @@
+[
+  {
+    "name": "desktop-1440",
+    "diffPixels": 714
+  },
+  {
+    "name": "mobile-390",
+    "diffPixels": 0
+  },
+  {
+    "name": "mobile-320",
+    "diffPixels": 84722
+  }
+]

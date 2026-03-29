@@ -73,7 +73,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                 </div>
                 <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0" data-name="Button Container" data-node-id="1:958">
                   <div className="col-1 h-[17px] ml-0 mt-0 relative row-1 w-[79px]" data-name="Button Container" data-node-id="1:959">
-                    <img alt="" className="absolute block max-w-none size-full" src={imgButtonContainer} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgButtonContainer} />
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:976">
                     <div className="col-1 h-[468px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[572px_468px] overflow-clip ml-0 mt-0 opacity-95 relative row-1 w-[572px] max-md:w-full" data-name="Visão de cursos - 1440px 1" data-node-id="1:978" style={{ maskImage: `url('${imgVisaoDeCursos1440Px1}')` }}>
                       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <img alt="" className="absolute h-[107.52%] left-0 max-w-none top-[-0.04%] w-full" src={imgVisaoDeCursos1440Px2} />
+                        <img decoding="async" loading="lazy" alt="" className="absolute h-[107.52%] left-0 max-w-none top-[-0.04%] w-full" src={imgVisaoDeCursos1440Px2} />
                       </div>
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:981">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 1" data-node-id="1:983" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img alt="" className="absolute inset-0 max-w-none object-cover object-top size-full" src={imgHomeMobile390Px12} />
+                            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover object-top size-full" src={imgHomeMobile390Px12} />
                           </div>
                         </div>
                       </div>
@@ -104,7 +104,7 @@ export default function ONovoMercadoSection({ id, className = "" }: ONovoMercado
                       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:985">
                         <div className="col-1 h-[334px] mask-alpha mask-intersect mask-no-repeat mask-position-[0px_0px] mask-size-[266px_334px] ml-0 mt-0 opacity-95 relative row-1 w-[266px] overflow-clip" data-name="Home - Mobile 390px 1 5" data-node-id="1:987" style={{ maskImage: `url('${imgHomeMobile390Px11}')` }}>
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src={assetUrl("/visual-ir-assets/mask-group-novo-mercado.webp")} />
+                            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover object-[center_25%] size-full" src={assetUrl("/visual-ir-assets/mask-group-novo-mercado.webp")} />
                           </div>
                         </div>
                       </div>

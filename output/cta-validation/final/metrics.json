@@ -1,0 +1,478 @@
+[
+  {
+    "name": "desktop-1440",
+    "scrollActiveDelta": 0,
+    "scrollReleaseDelta": 924,
+    "contentCenterDelta": 0,
+    "iconSizeStyles": [
+      {
+        "height": 83.160888671875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 83.160888671875
+      },
+      {
+        "height": 87.7947998046875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 87.79484558105469
+      },
+      {
+        "height": 96.298095703125,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 96.29817199707031
+      },
+      {
+        "height": 103.2447509765625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 103.24478149414062
+      },
+      {
+        "height": 108.5223388671875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 108.52238464355469
+      },
+      {
+        "height": 112.045654296875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 112.04568481445312
+      },
+      {
+        "height": 113.7576904296875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 113.7576904296875
+      },
+      {
+        "height": 113.6307373046875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 113.63075256347656
+      },
+      {
+        "height": 111.6668701171875,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 111.66693115234375
+      },
+      {
+        "height": 107.89788818359375,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 107.89794921875
+      },
+      {
+        "height": 102.384765625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 102.38473510742188
+      },
+      {
+        "height": 95.21636962890625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 95.21646118164062
+      },
+      {
+        "height": 86.50885009765625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 86.5089111328125
+      },
+      {
+        "height": 89.48004150390625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 89.48004150390625
+      },
+      {
+        "height": 93.52423095703125,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 93.52423095703125
+      },
+      {
+        "height": 101.0238037109375,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 101.0238037109375
+      },
+      {
+        "height": 106.8902587890625,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 106.89019775390625
+      },
+      {
+        "height": 111.02874755859375,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 111.02874755859375
+      },
+      {
+        "height": 113.372314453125,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 113.372314453125
+      },
+      {
+        "height": 113.88330078125,
+        "styleHeight": "height: 76px; width: 76px;",
+        "width": 113.88330078125
+      }
+    ],
+    "introCenterDelta": 0,
+    "stickyRect": {
+      "x": 120,
+      "y": -422.484375,
+      "width": 1200,
+      "height": 520,
+      "top": -422.484375,
+      "right": 1320,
+      "bottom": 97.515625,
+      "left": 120
+    }
+  },
+  {
+    "name": "tablet-768",
+    "scrollActiveDelta": 0,
+    "scrollReleaseDelta": 425,
+    "contentCenterDelta": 0,
+    "iconSizeStyles": [
+      {
+        "height": 70.906005859375,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 70.906005859375
+      },
+      {
+        "height": 78.32470703125,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 78.32464599609375
+      },
+      {
+        "height": 84.582763671875,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 84.58273315429688
+      },
+      {
+        "height": 89.5875244140625,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 89.58753967285156
+      },
+      {
+        "height": 93.264892578125,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 93.26490020751953
+      },
+      {
+        "height": 95.560302734375,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 95.56033325195312
+      },
+      {
+        "height": 96.43975830078125,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 96.43980407714844
+      },
+      {
+        "height": 95.8902587890625,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 95.89030456542969
+      },
+      {
+        "height": 93.919921875,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 93.91998291015625
+      },
+      {
+        "height": 90.55801391601562,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 90.5580062866211
+      },
+      {
+        "height": 85.85421752929688,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 85.85420227050781
+      },
+      {
+        "height": 79.8782958984375,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 79.8782958984375
+      },
+      {
+        "height": 72.71878051757812,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 72.71878051757812
+      },
+      {
+        "height": 71.7257080078125,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 71.72573852539062
+      },
+      {
+        "height": 79.0289306640625,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 79.0289306640625
+      },
+      {
+        "height": 85.16110229492188,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 85.16110229492188
+      },
+      {
+        "height": 90.03146362304688,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 90.031494140625
+      },
+      {
+        "height": 93.5677490234375,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 93.56781005859375
+      },
+      {
+        "height": 95.71759033203125,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 95.7176513671875
+      },
+      {
+        "height": 96.44921875,
+        "styleHeight": "height: 62px; width: 62px;",
+        "width": 96.44921875
+      }
+    ],
+    "introCenterDelta": 0,
+    "stickyRect": {
+      "x": 42,
+      "y": -30.71875,
+      "width": 684,
+      "height": 420,
+      "top": -30.71875,
+      "right": 726,
+      "bottom": 389.28125,
+      "left": 42
+    }
+  },
+  {
+    "name": "mobile-390",
+    "scrollActiveDelta": 0,
+    "scrollReleaseDelta": 418,
+    "contentCenterDelta": 0,
+    "iconSizeStyles": [
+      {
+        "height": 71.9456787109375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 71.94563293457031
+      },
+      {
+        "height": 68.470458984375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 68.47041320800781
+      },
+      {
+        "height": 76.2708740234375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 76.27088928222656
+      },
+      {
+        "height": 82.72662353515625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 82.72667694091797
+      },
+      {
+        "height": 87.7239990234375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 87.72396850585938
+      },
+      {
+        "height": 91.1746826171875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.1746826171875
+      },
+      {
+        "height": 93.0179443359375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.01795959472656
+      },
+      {
+        "height": 93.22128295898438,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.2213134765625
+      },
+      {
+        "height": 91.7811279296875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.78115844726562
+      },
+      {
+        "height": 88.72286987304688,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 88.72286987304688
+      },
+      {
+        "height": 84.10040283203125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 84.10037231445312
+      },
+      {
+        "height": 77.99514770507812,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 77.99519348144531
+      },
+      {
+        "height": 70.514892578125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 70.51492309570312
+      },
+      {
+        "height": 69.955810546875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 69.955810546875
+      },
+      {
+        "height": 77.525634765625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 77.52565002441406
+      },
+      {
+        "height": 83.72866821289062,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 83.72868347167969
+      },
+      {
+        "height": 88.45559692382812,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 88.45556640625
+      },
+      {
+        "height": 91.6229248046875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.62295532226562
+      },
+      {
+        "height": 93.17498779296875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.17501831054688
+      },
+      {
+        "height": 93.0843505859375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.0843505859375
+      }
+    ],
+    "introCenterDelta": 0,
+    "stickyRect": {
+      "x": 24,
+      "y": -40.328125,
+      "width": 342,
+      "height": 320,
+      "top": -40.328125,
+      "right": 366,
+      "bottom": 279.671875,
+      "left": 24
+    }
+  },
+  {
+    "name": "mobile-320",
+    "scrollActiveDelta": 0,
+    "scrollReleaseDelta": 418,
+    "contentCenterDelta": 0,
+    "iconSizeStyles": [
+      {
+        "height": 71.7449951171875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 71.74496459960938
+      },
+      {
+        "height": 68.69097900390625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 68.6910400390625
+      },
+      {
+        "height": 76.46417236328125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 76.46412658691406
+      },
+      {
+        "height": 82.88677978515625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 82.88677978515625
+      },
+      {
+        "height": 87.8455810546875,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 87.84556579589844
+      },
+      {
+        "height": 91.25286865234375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.25289916992188
+      },
+      {
+        "height": 93.048583984375,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.04859924316406
+      },
+      {
+        "height": 93.20101928710938,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.20096588134766
+      },
+      {
+        "height": 91.707275390625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.70730590820312
+      },
+      {
+        "height": 88.593994140625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 88.593994140625
+      },
+      {
+        "height": 83.916015625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 83.91600036621094
+      },
+      {
+        "height": 77.7559814453125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 77.75597381591797
+      },
+      {
+        "height": 70.22265625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 70.2226791381836
+      },
+      {
+        "height": 70.25662231445312,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 70.25665283203125
+      },
+      {
+        "height": 77.78451538085938,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 77.78448486328125
+      },
+      {
+        "height": 83.9385986328125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 83.93856811523438
+      },
+      {
+        "height": 88.61019897460938,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 88.61021423339844
+      },
+      {
+        "height": 91.7169189453125,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 91.71688842773438
+      },
+      {
+        "height": 93.20376586914062,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.20376586914062
+      },
+      {
+        "height": 93.0445556640625,
+        "styleHeight": "height: 60px; width: 60px;",
+        "width": 93.0445556640625
+      }
+    ],
+    "introCenterDelta": 0,
+    "stickyRect": {
+      "x": 24,
+      "y": -40.078125,
+      "width": 272,
+      "height": 320,
+      "top": -40.078125,
+      "right": 296,
+      "bottom": 279.921875,
+      "left": 24
+    }
+  }
+]

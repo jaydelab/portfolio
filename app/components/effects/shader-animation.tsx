@@ -321,7 +321,11 @@ export function ShaderAnimation({ className }: ShaderAnimationProps) {
     let renderer: THREE.WebGLRenderer;
 
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: false,
+        powerPreference: "high-performance",
+      });
     } catch {
       geometry.dispose();
       material.dispose();
@@ -329,7 +333,7 @@ export function ShaderAnimation({ className }: ShaderAnimationProps) {
     }
 
     renderer.setClearColor(0xffffff, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
     styleCanvas(renderer.domElement);
     container.appendChild(renderer.domElement);
 

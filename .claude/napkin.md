@@ -7,53 +7,53 @@
 - Each item includes date + "Do instead".
 
 ## Execution & Validation (Highest Priority)
-1. **[2026-03-23] Figma is the absolute source of truth**
-   Do instead: Always pull specs/images/effects from Figma before making changes. Never guess.
+1. **[2026-03-25] 1440px desktop is approved and must stay intact**
+   Do instead: isolate responsive fixes to tablet/mobile variants and always regression-check `1440px` before calling a UI change done.
 
-2. **[2026-03-25] 1440px desktop is approved and must be treated as immutable**
-   Do instead: Fix mobile/tablet with isolated variants and regression-check `1440px` after every change. Never let responsive work influence desktop layout.
+2. **[2026-03-28] Validate with real screenshots, not DevTools guesses**
+   Do instead: use Playwright CLI captures at `320`, `390`, and `1440`; add `768` or `820` whenever the work touches tablet behavior.
 
-3. **[2026-03-25] Tailwind v4: `max-[1023px]:hidden` does NOT reliably override base display utilities**
-   Do instead: Use named breakpoint variants (`max-lg:hidden`) instead of arbitrary value variants (`max-[1023px]:hidden`). This is a CSS source-order issue in Tailwind v4 where arbitrary variants don't always win specificity battles.
+3. **[2026-03-28] Section screenshots can capture title reveals mid-animation**
+   Do instead: after `scrollIntoViewIfNeeded()`, wait about `2500ms` before capturing sections that use `HeroTitleTextReveal`.
 
-4. **[2026-03-25] CSS `100%` in padding resolves to containing block width, not element width**
-   Do instead: Don't use `px-[max(42px,calc((100%-684px)/2))]` for centering. Use `max-w-[684px] mx-auto` instead — it's simpler and mathematically correct.
+4. **[2026-03-23] Make surgical edits and re-check nearby layout**
+   Do instead: read the target section first, patch only the necessary block, then verify the changed section plus the surrounding composition.
 
-5. **[2026-03-25] Breakpoint swap alone is not enough in this repo**
-   Do instead: Validate the continuous stretch from `320` to `1023` and map image distortion, overflow, mask bugs, collisions, and padding drift before changing code.
+## Shell & Command Reliability
+1. **[2026-03-23] Playwright MCP is forbidden in this repo**
+   Do instead: use terminal Playwright only, via `node` scripts with `playwright` or `npx playwright screenshot`.
 
-6. **[2026-03-23] Don't break existing layout when fixing issues**
-   Do instead: Make surgical edits, verify each change doesn't shift surrounding elements.
+2. **[2026-03-28] Start codebase lookup from stable roots**
+   Do instead: search with `rg` in `app/components`, `app/generated`, and confirm final references with `nl -ba` before reporting file lines.
 
-## Responsive Patterns
-1. **[2026-03-25] Tablet content-rail pattern: `max-w-[684px] mx-auto`**
-   Do instead: For tablet sections (768-1023), don't use breakout + padding tricks. Use `w-full max-w-[684px] mx-auto` to center content and let extra width go to gutters.
+## Domain Behavior Guardrails
+1. **[2026-03-23] Figma and the approved runtime are both guardrails**
+   Do instead: treat the current visual runtime as the live baseline, and check Figma before making structural UI decisions.
 
-2. **[2026-03-25] Mobile proportional images: use `aspect-ratio` not fixed heights**
-   Do instead: Replace fixed `h-[Xpx]` with `aspect-[W/H]` on mobile images so they scale proportionally as viewport widens.
+2. **[2026-03-25] This repo uses adaptive variants, not one responsive layout stretched everywhere**
+   Do instead: treat mobile and tablet as intentionally different compositions when the section demands it; edit only the active breakpoint block inside the same section component.
 
-3. **[2026-03-25] Mobile absolute-positioned overlays: use percentage positions**
-   Do instead: Convert fixed px positions (`left-[58.7px] top-[78px]`) to percentages (`left-[21.6%] top-[39.4%]`) so overlays track their parent during fluid scaling.
+3. **[2026-03-28] Active breakpoints are runtime-controlled**
+   Do instead: treat `<768` as mobile, `768-1023` as tablet, and `>=1024` as desktop; validate and debug using those real cutoffs.
 
-4. **[2026-03-25] No `scale()` below 1024px**
-   Do instead: Desktop uses `transform: scale()` between 1024-1440px only. Below 1024px, all fluidity comes from native CSS (clamp, %, aspect-ratio).
+4. **[2026-03-28] Hidden breakpoint variants may not be mounted**
+   Do instead: remember many sections now depend on `useActiveBreakpoint`; in tests and selectors, target only the variant for the current viewport.
 
-## Project Architecture
-1. **[2026-03-23] Figma-extracted React project (visual-ir)**
-   Do instead: Main component at `app/generated/Portfolio2026_1_86.tsx` (1889 lines). Styles in `styles/visual-ir.css`. Assets in `public/visual-ir-assets/`.
+5. **[2026-03-25] Tablet sections center best with a content rail**
+   Do instead: prefer `w-full max-w-[684px] mx-auto` style wrappers over calc-heavy padding math for tablet centering.
 
-2. **[2026-03-25] Adaptive show/hide pattern: desktop/tablet/mobile variants in same components**
-   Do instead: Each section has desktop (`max-lg:hidden`), tablet (`hidden min-[768px]:flex min-[1024px]:hidden`), and mobile (`hidden max-md:flex`) blocks. Edit only the target variant.
+6. **[2026-03-25] Below 1024px, fluidity comes from CSS, not `scale()`**
+   Do instead: use `clamp`, percentages, `aspect-ratio`, and centered rails for tablet/mobile behavior.
 
-3. **[2026-03-23] Fonts: Halant PTBR → use Google Fonts Halant; 510 → identify from Figma**
-   Do instead: Only Halant PTBR used in hero "funcionários" and "mas". Rest of serif titles are Georgia/Newsreader.
+7. **[2026-03-25] Named Tailwind breakpoint patterns are safer here**
+   Do instead: use the repo’s established `max-md`, `max-lg`, and `min-[768px]:... min-[1024px]:...` patterns instead of arbitrary display overrides.
 
 ## User Directives
-1. **[2026-03-23] User wants speed, not explanations**
-   Do instead: Go straight to executing. Minimize commentary. Deliver results fast.
+1. **[2026-03-28] Keep communication short, structured, and in PT-BR**
+   Do instead: answer first, use compact headings/bullets, and skip filler or long theory unless explicitly asked.
 
-2. **[2026-03-25] User rejects desktop edits while working on responsive fixes**
-   Do instead: Keep desktop/web variants untouched and isolate any mobile/tablet correction inside the adaptive blocks only.
+2. **[2026-03-28] Do not redesign unless explicitly requested**
+   Do instead: preserve the current visual baseline and make behavioral/layout fixes surgically.
 
-3. **[2026-03-23] Use Playwright CLI for screenshots, not MCP Playwright**
-   Do instead: `npx playwright screenshot` from terminal, not browser MCP tools.
+3. **[2026-03-28] Performance work cannot cost layout fidelity**
+   Do instead: optimize render cost or interaction logic, then validate screenshots across breakpoints before saying it is ready.

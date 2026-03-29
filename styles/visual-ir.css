@@ -1,10 +1,33 @@
 :root {
   color-scheme: light;
+  --ui-transition-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ui-shadow-border:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 1px 2px -1px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.05);
+  --ui-shadow-border-hover:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1),
+    0 12px 28px rgba(0, 0, 0, 0.08);
+  --ui-shadow-dark:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 6px 18px rgba(0, 0, 0, 0.24),
+    0 18px 34px rgba(0, 0, 0, 0.12);
+  --ui-shadow-dark-hover:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 8px 22px rgba(0, 0, 0, 0.28),
+    0 22px 40px rgba(0, 0, 0, 0.16);
 }
 
 html, body, #root {
   margin: 0;
   min-height: 100%;
+  text-size-adjust: 100%;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 .visual-ir-page {
@@ -19,7 +42,6 @@ html, body, #root {
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
-  overflow-x: clip;
   width: 1440px;
   max-width: 100%;
 }
@@ -35,6 +57,56 @@ html, body, #root {
 
 .visual-ir-stage img, .visual-ir-stage svg {
   display: block;
+}
+
+.visual-ir-stage .figma-font-geist-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+.visual-ir-stage :where(button, a[href]) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.visual-ir-stage .ui-hit-target {
+  min-height: 40px;
+  min-width: 40px;
+}
+
+.visual-ir-stage .ui-pressable {
+  transition-duration: 180ms;
+  transition-property: transform, box-shadow, opacity, filter, background-color, color;
+  transition-timing-function: var(--ui-transition-standard);
+}
+
+.visual-ir-stage .ui-surface {
+  box-shadow: var(--ui-shadow-border);
+}
+
+.visual-ir-stage .ui-surface:is(:hover, :focus-visible) {
+  box-shadow: var(--ui-shadow-border-hover);
+}
+
+.visual-ir-stage .ui-surface-dark {
+  box-shadow: var(--ui-shadow-dark);
+}
+
+.visual-ir-stage .ui-surface-dark:is(:hover, :focus-visible) {
+  box-shadow: var(--ui-shadow-dark-hover);
+}
+
+.visual-ir-stage .ui-smooth-icon {
+  transition-duration: 180ms;
+  transition-property: transform, opacity, filter;
+  transition-timing-function: var(--ui-transition-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-ir-stage .ui-pressable,
+  .visual-ir-stage .ui-surface,
+  .visual-ir-stage .ui-surface-dark,
+  .visual-ir-stage .ui-smooth-icon {
+    transition-duration: 0ms;
+  }
 }
 
 [class~="content-stretch"] {

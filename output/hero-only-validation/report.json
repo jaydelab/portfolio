@@ -1,0 +1,32 @@
+[
+  {
+    "name": "desktop-1440",
+    "diffPixels": 0,
+    "diagnostics": {
+      "unicornLoaded": true,
+      "canvasCount": 1,
+      "heroCanvasPresent": true
+    },
+    "consoleMessages": []
+  },
+  {
+    "name": "mobile-390",
+    "diffPixels": 0,
+    "diagnostics": {
+      "unicornLoaded": true,
+      "canvasCount": 1,
+      "heroCanvasPresent": true
+    },
+    "consoleMessages": []
+  },
+  {
+    "name": "mobile-320",
+    "diffPixels": 0,
+    "diagnostics": {
+      "unicornLoaded": true,
+      "canvasCount": 1,
+      "heroCanvasPresent": true
+    },
+    "consoleMessages": []
+  }
+]

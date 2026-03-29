@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const imgCursor = assetUrl("/visual-ir-assets/cursor.svg");
 const imgAvatarMobileBg = assetUrl("/visual-ir-assets/avatar-mobile-bg.webp");
@@ -12,9 +13,12 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ id, className = "" }: AboutSectionProps = {}) {
+  const activeBreakpoint = useActiveBreakpoint();
+
   return (
     <div id={id} className={`w-full ${className}`.trim()}>
       {/* ====== Desktop ====== */}
+      {activeBreakpoint === "desktop" ? (
       <div className="max-lg:hidden content-stretch flex gap-[24px] max-lg:gap-[16px] items-center justify-center relative shrink-0 max-lg:flex-col-reverse" data-name="Sobre" data-node-id="1:497">
             <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[486px] max-lg:w-full" data-name="Info Container" data-node-id="1:498">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Label Container" data-node-id="1:499" style={{ backgroundImage: "linear-gradient(-13.6093deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
@@ -39,7 +43,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             </div>
             <div className="h-[604px] max-lg:h-[350px] overflow-clip relative shrink-0 w-[690px] max-lg:w-full" data-name="Profile Image Container" data-node-id="1:504">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <img alt="" className="absolute -scale-x-100 max-w-none object-cover size-full" src={assetUrl("/visual-ir-assets/profile-image-container.webp")} />
+                <img decoding="async" loading="lazy" alt="" className="absolute -scale-x-100 max-w-none object-cover size-full" src={assetUrl("/visual-ir-assets/profile-image-container.webp")} />
                 <div className="absolute bg-gradient-to-b from-[39.024%] from-[rgba(247,247,247,0)] inset-0 to-[#f7f7f7] via-[68.132%] via-[rgba(247,247,247,0.5)]" />
               </div>
               <div className="absolute h-[40px] left-[78px] max-lg:left-[20px] top-[175px] max-lg:top-[100px] w-[94px]" data-name="Nametag Container" data-node-id="1:506">
@@ -52,7 +56,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
                   <div className="flex-none rotate-120 skew-x-[0.52deg]">
                     <div className="h-[19.401px] relative w-[17.489px]" data-name="Cursor" data-node-id="1:509">
                       <div className="absolute inset-[2.31%_-3.29%_-150.66%_-172.69%]">
-                        <img alt="" className="block max-w-none size-full" src={imgCursor} />
+                        <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCursor} />
                       </div>
                     </div>
                   </div>
@@ -60,13 +64,15 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               </div>
             </div>
       </div>
+      ) : null}
 
       {/* ====== Tablet ====== */}
+      {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="AboutSection-tablet" data-node-id="68:82">
         <div className="relative h-[530px] w-[768px]" data-node-id="68:83">
           <div className="absolute h-[530px] left-[289px] overflow-clip top-0 w-[479px]" data-node-id="68:83">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-              <img alt="" className="absolute bottom-0 h-full max-w-none object-contain right-0 w-full" src={imgAboutTabletPortrait} />
+              <img decoding="async" loading="lazy" alt="" className="absolute bottom-0 h-full max-w-none object-contain right-0 w-full" src={imgAboutTabletPortrait} />
             </div>
           </div>
 
@@ -104,7 +110,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               <div className="flex-none rotate-120 skew-x-[0.52deg]">
                 <div className="h-[19.401px] relative w-[17.489px]" data-node-id="68:95">
                   <div className="absolute inset-[2.31%_-3.29%_-150.66%_-172.69%]">
-                    <img alt="" className="block max-w-none size-full" src={imgCursor} />
+                    <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCursor} />
                   </div>
                 </div>
               </div>
@@ -112,8 +118,10 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
           </div>
         </div>
       </div>
+      ) : null}
 
       {/* ====== Mobile ====== */}
+      {activeBreakpoint === "mobile" ? (
       <div className="hidden max-md:flex flex-col w-full mt-[62px]" data-name="AboutMe-mobile" data-node-id="13:7081">
         {/* Avatar — full bleed */}
         <div className="mx-[-24px] h-[392px] overflow-clip relative" style={{ width: 'calc(100% + 48px)' }} data-name="victor-avatar" data-node-id="13:7082">
@@ -121,7 +129,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[351px] relative w-[544px]" data-node-id="13:7083">
                 <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-                  <img alt="" className="absolute max-w-none object-cover size-full" src={imgAvatarMobileBg} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute max-w-none object-cover size-full" src={imgAvatarMobileBg} />
                   <div className="absolute bg-gradient-to-b from-[39.024%] from-[rgba(247,247,247,0)] inset-0 to-[#f7f7f7] via-[68.132%] via-[rgba(247,247,247,0.5)]" />
                 </div>
               </div>
@@ -138,7 +146,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               <div className="flex-none rotate-120 skew-x-[0.52deg]">
                 <div className="h-[19.401px] relative w-[17.489px]" data-name="Cursor" data-node-id="13:7087">
                   <div className="absolute inset-[2.31%_-3.29%_-150.66%_-172.69%]">
-                    <img alt="" className="block max-w-none size-full" src={imgCursor} />
+                    <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCursor} />
                   </div>
                 </div>
               </div>
@@ -171,6 +179,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
           </div>
         </div>
       </div>
+      ) : null}
     </div>
   );
 }

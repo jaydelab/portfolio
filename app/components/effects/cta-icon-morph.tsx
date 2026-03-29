@@ -632,6 +632,8 @@ export default function CTAIconMorph({
       }
     };
 
+    const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
+
     const handleMouseMove = (event: MouseEvent) => {
       const rect = element.getBoundingClientRect();
       const normalizedX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
@@ -644,41 +646,26 @@ export default function CTAIconMorph({
     element.addEventListener("wheel", handleWheel, { passive: false });
     element.addEventListener("touchstart", handleTouchStart, { passive: true });
     element.addEventListener("touchmove", handleTouchMove, { passive: false });
-    element.addEventListener("mousemove", handleMouseMove);
-    element.addEventListener("mouseleave", resetMouse);
+    if (supportsFinePointer) {
+      element.addEventListener("mousemove", handleMouseMove);
+      element.addEventListener("mouseleave", resetMouse);
+    }
 
     return () => {
       element.removeEventListener("wheel", handleWheel);
       element.removeEventListener("touchstart", handleTouchStart);
       element.removeEventListener("touchmove", handleTouchMove);
-      element.removeEventListener("mousemove", handleMouseMove);
-      element.removeEventListener("mouseleave", resetMouse);
+      if (supportsFinePointer) {
+        element.removeEventListener("mousemove", handleMouseMove);
+        element.removeEventListener("mouseleave", resetMouse);
+      }
     };
   }, [maxScroll, mouseX, parallaxDistance, shouldReduceMotion, touchMultiplier, virtualScroll]);
-
-  const introOpacity = useTransform(
-    morphProgress,
-    [0, 0.34, 0.62],
-    [1, 0.74, 0],
-  );
+  const introOpacity = useTransform(morphProgress, [0, 0.34, 0.62], [1, 0.74, 0]);
   const introY = useTransform(morphProgress, [0, 0.62], [0, -18]);
-  const introFilter = useTransform(
-    morphProgress,
-    [0, 0.62],
-    ["blur(0px)", "blur(12px)"],
-  );
   const circleContentOpacity = useTransform(activeProgress, [0, 0.55], [1, 0]);
   const circleContentY = useTransform(activeProgress, [0, 0.55], [0, -28]);
-  const circleContentFilter = useTransform(
-    activeProgress,
-    [0, 0.55],
-    ["blur(0px)", "blur(10px)"],
-  );
-  const resolvedActiveOpacity = useTransform(
-    activeProgress,
-    [0.18, 0.72],
-    [0, 1],
-  );
+  const resolvedActiveOpacity = useTransform(activeProgress, [0.18, 0.72], [0, 1]);
   const resolvedActiveY = useTransform(activeProgress, [0.18, 0.72], [28, 0]);
 
   const totalIcons = iconSources.length;
@@ -699,7 +686,7 @@ export default function CTAIconMorph({
             style={
               shouldReduceMotion
                 ? { opacity: 0 }
-                : { filter: introFilter, opacity: introOpacity, y: introY }
+                : { opacity: introOpacity, y: introY }
             }
           >
             {introContent}
@@ -732,9 +719,8 @@ export default function CTAIconMorph({
               data-cta-circle-content=""
               className={`pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 ${circleContentClassName}`.trim()}
               style={
-                shouldShowCircleContent
-                  ? {
-                      filter: circleContentFilter,
+              shouldShowCircleContent
+                ? {
                       opacity: circleContentOpacity,
                       y: circleContentY,
                     }

@@ -11,7 +11,7 @@ export default function CaseStudyPortal({ id, className = "" }: CaseStudyPortalP
   return (
     <div id={id} className={`content-stretch flex max-lg:flex-col gap-[24px] items-start justify-center relative shrink-0 ${className}`.trim()} data-name="Image" data-node-id="1:719">
             <div className="h-[477.018px] relative shrink-0 w-[792px] max-lg:w-full" data-name="003 2 1" data-node-id="1:720">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img00321} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img00321} />
             </div>
             <div className="content-stretch flex flex-col gap-[20px] items-start leading-[0] pt-[48px] max-lg:pt-0 relative shrink-0 w-[384px] max-lg:w-full" data-name="Container" data-node-id="1:721">
               <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full" data-name="Text Container" data-node-id="1:722">

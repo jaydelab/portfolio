@@ -1,6 +1,7 @@
 import CheckListItem from "../ui/CheckListItem";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const img0031 = assetUrl("/visual-ir-assets/0031.webp");
 const imgCaseIntro = assetUrl("/visual-ir-assets/case-intro.webp");
@@ -18,17 +19,21 @@ interface CaseStudyIntroProps {
 }
 
 export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroProps = {}) {
+  const activeBreakpoint = useActiveBreakpoint();
+
   return (
     <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:510">
-            <div className="max-lg:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
-              <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">
-                <HeroTitleTextReveal text="Um novo negócio, uma barreira e uma reunião" delay={0} noWrap={false} />
-              </p>
-            </div>
-            <div className="max-lg:hidden content-stretch flex max-lg:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
+            {activeBreakpoint === "desktop" ? (
+            <>
+              <div className="max-lg:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">
+                <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">
+                  <HeroTitleTextReveal text="Um novo negócio, uma barreira e uma reunião" delay={0} noWrap={false} />
+                </p>
+              </div>
+              <div className="max-lg:hidden content-stretch flex max-lg:flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:512">
               <div className="h-[843px] max-lg:h-[400px] relative shrink-0 w-[690px] max-lg:w-full" data-name="003 1" data-node-id="1:513">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  <img alt="" className="absolute h-[120.78%] left-[-52.17%] max-w-none top-[-11.04%] w-[196.96%]" src={img0031} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute h-[120.78%] left-[-52.17%] max-w-none top-[-11.04%] w-[196.96%]" src={img0031} />
                 </div>
               </div>
               <div className="content-stretch flex flex-col gap-[40px] max-lg:gap-[24px] items-start relative shrink-0 w-[486px] max-lg:w-full" data-name="Container" data-node-id="1:514">
@@ -74,9 +79,12 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+            </>
+            ) : null}
 
       {/* ====== Tablet ====== */}
+      {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="CaseStudies-tablet" data-node-id="68:97">
         <div className="figma-font-georgia not-italic text-[32px] text-[#393737] tracking-[-0.64px] w-[272px]" data-node-id="68:98">
           <p className="leading-[44px]">
@@ -95,7 +103,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                     <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                       <div className="h-[10px] relative shrink-0 w-[12px]">
                         <div className="absolute inset-[-2.5%_-2.08%]">
-                          <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                          <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                         </div>
                       </div>
                     </div>
@@ -104,7 +112,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
               </div>
               <div className="h-[214px] overflow-clip relative rounded-[12px] shrink-0 w-[310px]" data-node-id="68:107">
                 <div className="absolute h-[289px] left-0 top-0 w-[310px]">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntro} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntro} />
                 </div>
               </div>
             </div>
@@ -119,7 +127,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                     <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                       <div className="h-[10px] relative shrink-0 w-[12px]">
                         <div className="absolute inset-[-2.5%_-2.08%]">
-                          <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                          <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                         </div>
                       </div>
                     </div>
@@ -128,13 +136,13 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
               </div>
               <div className="h-[226px] overflow-clip relative shrink-0 w-full" data-node-id="68:117">
                 <div className="absolute h-[554px] right-[55px] top-0 w-[543px]">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
                 </div>
                 <div className="absolute h-[16px] left-[20px] top-0 w-[30px]">
-                  <img alt="" className="absolute block max-w-none opacity-100 size-full" src={imgCaseIntroTabletWapLogo} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none opacity-100 size-full" src={imgCaseIntroTabletWapLogo} />
                 </div>
                 <div className="absolute h-[432px] right-[-235px] top-[-175px] w-[424px]">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
                 </div>
               </div>
             </div>
@@ -150,7 +158,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                 <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                   <div className="h-[10px] relative shrink-0 w-[12px]">
                     <div className="absolute inset-[-2.5%_-2.08%]">
-                      <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                      <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                     </div>
                   </div>
                 </div>
@@ -159,16 +167,18 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
           </div>
           <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full" data-node-id="68:131">
             <div className="absolute h-[581px] right-[-10px] top-[-129px] w-[734px]">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntroTabletNovoMercado} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntroTabletNovoMercado} />
             </div>
             <div className="absolute inset-[0.41%_87.56%_93.9%_2.92%]">
-              <img alt="" className="absolute block max-w-none size-full" src={imgCaseIntroTabletNovoMercadoLogo} />
+              <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgCaseIntroTabletNovoMercadoLogo} />
             </div>
           </div>
         </div>
       </div>
+      ) : null}
 
       {/* ====== Mobile ====== */}
+      {activeBreakpoint === "mobile" ? (
       <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-name="CaseStudies-mobile">
         <div className="figma-font-georgia not-italic text-[24px] text-[#393737] tracking-[-0.48px] w-full">
           <p className="leading-[34px]">
@@ -187,7 +197,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                 <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                   <div className="h-[10px] relative shrink-0 w-[12px]">
                     <div className="absolute inset-[-2.5%_-2.08%]">
-                      <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                      <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                     </div>
                   </div>
                 </div>
@@ -196,7 +206,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
           </div>
           <div className="aspect-[248/214] overflow-clip relative rounded-[12px] shrink-0 w-[calc(100%-24px)]">
             <div className="absolute inset-0">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntro} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseIntro} />
             </div>
           </div>
         </div>
@@ -212,7 +222,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                 <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                   <div className="h-[10px] relative shrink-0 w-[12px]">
                     <div className="absolute inset-[-2.5%_-2.08%]">
-                      <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                      <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                     </div>
                   </div>
                 </div>
@@ -221,13 +231,13 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
           </div>
           <div className="aspect-[272/226] overflow-clip relative shrink-0 w-full">
             <div className="absolute h-[224%] right-[9.2%] top-0 w-[182%]">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
             </div>
             <div className="absolute inset-[0_81.76%_92.92%_7.35%]">
-              <img alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
+              <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
             </div>
             <div className="absolute h-[158%] right-[-71.3%] top-[-48.7%] w-[129%]">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseWapPhone} />
             </div>
           </div>
         </div>
@@ -243,7 +253,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                 <div className="border border-[#4b4b4b] border-solid flex flex-[1_0_0] items-center justify-center min-h-px min-w-px rounded-[50px] w-full">
                   <div className="h-[10px] relative shrink-0 w-[12px]">
                     <div className="absolute inset-[-2.5%_-2.08%]">
-                      <img alt="" className="block max-w-none size-full" src={imgCaseArrow} />
+                      <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgCaseArrow} />
                     </div>
                   </div>
                 </div>
@@ -253,12 +263,13 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
           <div className="aspect-[272/226] overflow-clip relative shrink-0 w-full">
             <div className="absolute inset-0 overflow-clip">
               <div className="absolute bottom-[-25.2%] h-[161.5%] left-[-42.6%] w-[169.5%]">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseNovoMercado} />
+                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgCaseNovoMercado} />
               </div>
             </div>
           </div>
         </div>
       </div>
+      ) : null}
     </div>
   );
 }

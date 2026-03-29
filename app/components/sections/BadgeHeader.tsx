@@ -37,9 +37,13 @@ export default function BadgeHeader({ id, className = "" }: BadgeHeaderProps = {
     <div
       id={id}
       ref={menuRef}
-      className={`backdrop-blur-[25px] bg-[rgba(0,0,0,0.55)] content-stretch flex flex-col h-[34px] max-md:h-auto items-center justify-center px-[20px] max-md:px-[14px] rounded-[18px] shrink-0 sticky top-[24px] z-50 overflow-visible ${className}`.trim()}
+      className={`bg-[#4f4f4f] content-stretch flex flex-col h-[34px] max-md:h-auto items-center justify-center px-[20px] max-md:px-[14px] rounded-[18px] shrink-0 sticky top-[24px] z-50 overflow-visible border border-[rgba(255,255,255,0.08)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] ${className}`.trim()}
       data-name="Badge"
       data-node-id="1:1338"
+      style={{
+        backgroundImage:
+          "linear-gradient(180deg, rgba(92,92,92,0.94) 0%, rgba(72,72,72,0.9) 100%)",
+      }}
     >
       <div className="content-stretch flex gap-[7px] items-center relative shrink-0 max-lg:hidden" data-name="Content" data-node-id="1:1339">
         <div className="bg-[#80f571] rounded-[50px] shrink-0 size-[8px]" data-name="Dot" data-node-id="1:1340" />

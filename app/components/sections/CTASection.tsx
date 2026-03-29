@@ -1,40 +1,11 @@
-import CTAIconMorph from "../effects/cta-icon-morph";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const DESKTOP_ARROW = assetUrl("/visual-ir-assets/icon-svg.svg");
 const MOBILE_ARROW = assetUrl("/visual-ir-assets/cta-mobile-arrow.svg");
 const CTA_COPY =
   "O que você precisa? Resolver um problema complexo? Prazer. Tem uma idéia que não sai do papel no tempo que precisa? Me chama. Do simples ao único eu resolvo.";
-const TABLET_CTA_ICONS = [
-  "/visual-ir-assets/dock/Icon-1.svg",
-  "/visual-ir-assets/dock/Icon-2.svg",
-  "/visual-ir-assets/dock/Icon-4.svg",
-  "/visual-ir-assets/dock/Icon-5.svg",
-  "/visual-ir-assets/dock/Icon-6.svg",
-  "/visual-ir-assets/dock/Icon-7.svg",
-  "/visual-ir-assets/dock/Icon-8.svg",
-  "/visual-ir-assets/dock/Icon-10.svg",
-  "/visual-ir-assets/dock/Icon-11.svg",
-  "/visual-ir-assets/dock/Icon-12.svg",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-figma.webp",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-framer-liquid-glass.webp",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-adobe-photoshop.webp",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-sketch-liquid-glass.webp",
-].map(assetUrl);
-const MOBILE_CTA_ICONS = [
-  "/visual-ir-assets/dock/Icon-1.svg",
-  "/visual-ir-assets/dock/Icon-2.svg",
-  "/visual-ir-assets/dock/Icon-4.svg",
-  "/visual-ir-assets/dock/Icon-5.svg",
-  "/visual-ir-assets/dock/Icon-6.svg",
-  "/visual-ir-assets/dock/Icon-7.svg",
-  "/visual-ir-assets/dock/Icon-8.svg",
-  "/visual-ir-assets/dock/Icon-10.svg",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-figma.webp",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-framer-liquid-glass.webp",
-  "/visual-ir-assets/cta-orbit/cta-orbit-extra-adobe-photoshop.webp",
-].map(assetUrl);
 
 interface CTASectionProps {
   id?: string;
@@ -86,86 +57,41 @@ function CompactCTAButton({ fullWidth = false }: { fullWidth?: boolean }) {
   );
 }
 
-function DesktopIntro() {
-  return (
-    <div className="figma-font-georgia flex w-[980px] flex-col justify-center text-center text-[64px] not-italic tracking-[-1.92px] text-[#393737]">
-      <p className="leading-[72px]">
-        <HeroTitleTextReveal
-          text="Seu projeto é exigente ou pontual?"
-          delay={0}
-          noWrap={false}
-        />
-      </p>
-    </div>
-  );
-}
-
 function DesktopContent() {
   return (
-    <div className="flex w-[920px] flex-col items-center gap-[20px] text-center">
-      <div className="figma-font-georgia flex w-full flex-col justify-center text-[56px] not-italic tracking-[-1.68px] text-[#393737]">
-        <p className="leading-[68px]">
+    <div className="flex w-full max-w-[996px] flex-col items-center gap-[24px] text-center">
+      <div className="figma-font-georgia flex w-full flex-col justify-center text-[70px] not-italic tracking-[-3.5px] text-[#393737]">
+        <p className="leading-[90px]">
           <HeroTitleTextReveal
+            className="figma-font-georgia not-italic tracking-[-3.5px] leading-[90px]"
             text="Seu projeto é exigente ou pontual?"
             delay={0}
             noWrap={false}
           />
         </p>
       </div>
-      <div className="figma-font-geist flex max-w-[760px] flex-col justify-center text-[20px] font-normal text-black opacity-60">
-        <p className="leading-[30px]">{CTA_COPY}</p>
+      <div className="figma-font-geist flex w-[792px] max-w-full flex-col justify-center text-[20px] font-normal text-black opacity-50">
+        <p className="leading-[32px]">{CTA_COPY}</p>
       </div>
       <DesktopCTAButton />
     </div>
   );
 }
 
-function TabletCircleContent() {
-  return (
-    <div className="flex w-[460px] flex-col items-center gap-[16px] text-center">
-      <div className="figma-font-georgia flex flex-col justify-center text-[34px] not-italic tracking-[-0.68px] text-[#393737]">
-        <p className="leading-[42px]">
-          <HeroTitleTextReveal
-            text="Seu projeto é exigente"
-            delay={0}
-            noWrap={false}
-          />
-        </p>
-        <p className="leading-[42px]">
-          <HeroTitleTextReveal
-            text="ou pontual?"
-            delay={0.18}
-            noWrap={false}
-          />
-        </p>
-      </div>
-      <div className="figma-font-geist flex max-w-[420px] flex-col justify-center text-[15px] font-normal text-black opacity-60">
-        <p className="leading-[24px]">{CTA_COPY}</p>
-      </div>
-    </div>
-  );
-}
-
 function TabletActiveContent() {
   return (
-    <div className="flex w-[560px] flex-col items-center gap-[18px] text-center">
-      <div className="figma-font-georgia flex flex-col justify-center text-[36px] not-italic tracking-[-0.72px] text-[#393737]">
-        <p className="leading-[46px]">
+    <div className="flex w-full max-w-[509px] flex-col items-center gap-[24px] text-center">
+      <div className="figma-font-georgia flex w-full flex-col justify-center text-[40px] not-italic tracking-[-0.8px] text-[#393737]">
+        <p className="leading-[48px]">
           <HeroTitleTextReveal
-            text="Seu projeto é exigente"
+            className="figma-font-georgia not-italic tracking-[-0.8px]"
+            text="Seu projeto é exigente ou pontual?"
             delay={0}
             noWrap={false}
           />
         </p>
-        <p className="leading-[46px]">
-          <HeroTitleTextReveal
-            text="ou pontual?"
-            delay={0.18}
-            noWrap={false}
-          />
-        </p>
       </div>
-      <div className="figma-font-geist flex max-w-[500px] flex-col justify-center text-[16px] font-normal text-black opacity-60">
+      <div className="figma-font-geist flex w-full flex-col justify-center text-[16px] font-normal text-black opacity-50">
         <p className="leading-[26px]">{CTA_COPY}</p>
       </div>
       <CompactCTAButton />
@@ -173,52 +99,28 @@ function TabletActiveContent() {
   );
 }
 
-function MobileCircleContent() {
-  return (
-    <div className="flex w-[270px] flex-col items-center gap-[12px] text-center">
-      <div className="figma-font-georgia flex flex-col justify-center text-[24px] not-italic tracking-[-0.48px] text-[#393737]">
-        <p className="leading-[32px]">
-          <HeroTitleTextReveal
-            text="Seu projeto é"
-            delay={0}
-            noWrap={false}
-          />
-        </p>
-        <p className="leading-[32px]">
-          <HeroTitleTextReveal
-            text="exigente ou pontual?"
-            delay={0.16}
-            noWrap={false}
-          />
-        </p>
-      </div>
-      <div className="figma-font-geist flex w-full flex-col justify-center text-[14px] font-normal text-black opacity-60">
-        <p className="leading-[23px]">{CTA_COPY}</p>
-      </div>
-    </div>
-  );
-}
-
 function MobileActiveContent() {
   return (
-    <div className="flex w-full max-w-[272px] flex-col items-start gap-[14px] text-left">
-      <div className="figma-font-georgia flex w-full flex-col justify-center text-[24px] not-italic tracking-[-0.48px] text-[#393737]">
-        <p className="leading-[34px]">
+    <div className="flex w-full max-w-[272px] flex-col items-center gap-[20px] text-center">
+      <div className="figma-font-georgia flex w-full flex-col justify-center text-[clamp(30px,7.5vw,40px)] not-italic tracking-[-0.6px] text-[#393737]">
+        <p className="leading-[clamp(38px,9.5vw,50px)]">
           <HeroTitleTextReveal
+            className="figma-font-georgia not-italic tracking-[-0.6px]"
             text="Seu projeto é"
             delay={0}
             noWrap={false}
           />
         </p>
-        <p className="leading-[34px]">
+        <p className="leading-[clamp(38px,9.5vw,50px)]">
           <HeroTitleTextReveal
+            className="figma-font-georgia not-italic tracking-[-0.6px]"
             text="exigente ou pontual?"
             delay={0.16}
             noWrap={false}
           />
         </p>
       </div>
-      <div className="figma-font-geist flex w-full flex-col justify-center text-[16px] font-normal text-black opacity-60">
+      <div className="figma-font-geist flex w-full flex-col justify-center text-[16px] font-normal text-black opacity-50">
         <p className="leading-[26px]">{CTA_COPY}</p>
       </div>
       <CompactCTAButton />
@@ -230,97 +132,38 @@ export default function CTASection({
   id,
   className = "",
 }: CTASectionProps = {}) {
+  const activeBreakpoint = useActiveBreakpoint();
+
   return (
     <div id={id} className={`w-full ${className}`.trim()}>
+      {activeBreakpoint === "desktop" ? (
       <div
-        className="relative mx-auto w-full max-w-[1200px] max-lg:hidden"
+        className="mx-auto flex w-full max-w-[996px] flex-col items-center max-lg:hidden"
         data-name="CTASection-desktop"
       >
-        <CTAIconMorph
-          arcApex={0.58}
-          arcCenterX={54}
-          arcRadiusScale={0.88}
-          arcSpread={138}
-          cardSize={84}
-          circleRadiusMax={256}
-          circleRadiusScale={0.34}
-          className="h-[980px]"
-          content={<DesktopContent />}
-          contentClassName="inset-x-0 top-[76px] z-20 flex justify-center px-[24px]"
-          iconSize={76}
-          introClassName="inset-x-0 top-[56px] z-10 flex justify-center px-[24px]"
-          introContent={<DesktopIntro />}
-          lineGap={12}
-          sceneClassName="translate-y-[42px] mx-[-120px]"
-          sceneStyle={{ width: "calc(100% + 240px)" }}
-          stickyClassName="top-[42px] h-[520px]"
-        />
+        <DesktopContent />
       </div>
+      ) : null}
 
+      {activeBreakpoint === "tablet" ? (
       <div
         className="hidden min-[768px]:flex min-[1024px]:hidden w-full justify-center"
         data-name="CTASection-tablet"
       >
-        <div className="w-full max-w-[684px]">
-          <CTAIconMorph
-            activeContent={<TabletActiveContent />}
-            activeContentClassName="inset-x-0 top-[24px] z-20 flex justify-center px-[24px]"
-            arcApex={0.50}
-            arcCenterX={0}
-            arcRadiusScale={0.84}
-            arcSpread={122}
-            cardSize={92}
-            circleAngleOffset={-105}
-            circleContent={<TabletCircleContent />}
-            circleContentClassName="mt-[10px] w-[430px] max-w-[calc(100vw_-_112px)]"
-            circleOffsetY={52}
-            circleRadiusMax={300}
-            circleRadiusScale={0.56}
-            className="h-[740px]"
-            iconSize={84}
-            lineGap={12}
-            maxScroll={1000}
-            morphDistance={240}
-            sceneClassName="translate-y-[40px] mx-[-96px]"
-            sceneStyle={{ width: "calc(100% + 192px)" }}
-            sources={TABLET_CTA_ICONS}
-            stickyClassName="top-[28px] h-[440px]"
-            touchMultiplier={2.2}
-          />
+        <div className="flex w-full max-w-[684px] justify-center">
+          <TabletActiveContent />
         </div>
       </div>
+      ) : null}
 
+      {activeBreakpoint === "mobile" ? (
       <div
-        className="hidden max-md:flex w-full mt-[62px]"
+        className="hidden max-md:flex w-full mt-[62px] justify-center"
         data-name="CTASection-mobile"
       >
-        <CTAIconMorph
-          activeContent={<MobileActiveContent />}
-          activeContentClassName="inset-x-[24px] top-[10px] z-20 flex justify-center"
-          arcApex={0.54}
-          arcCenterX={0}
-          arcRadiusScale={0.88}
-          arcSpread={118}
-          cardSize={108}
-          circleAngleOffset={-108}
-          circleContent={<MobileCircleContent />}
-          circleContentClassName="mt-[14px] w-[248px]"
-          circleOffsetY={88}
-          circleRadiusMax={248}
-          circleRadiusScale={0.72}
-          className="h-[648px]"
-          enableFlip={false}
-          iconSize={92}
-          lineGap={14}
-          maxScroll={800}
-          morphDistance={240}
-          sceneClassName="translate-y-[54px] mx-[-72px]"
-          sceneStyle={{ width: "calc(100% + 144px)" }}
-          sources={MOBILE_CTA_ICONS}
-          stickyClassName="top-[18px] h-[388px]"
-          touchMultiplier={2.4}
-        />
+        <MobileActiveContent />
       </div>
+      ) : null}
     </div>
   );
 }

@@ -1,33 +1,35 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
+import { assetUrl } from "../../lib/asset-url";
 
 type SplashIntroProps = {
   children: ReactNode;
+  onComplete?: () => void;
 };
 
 const SPLASH_TEXT = "UX Victor";
 const LETTER_EASE: [number, number, number, number] = [0.56, 0.22, 0.05, 0.99];
-const LETTER_DURATION = 1.14;
-const LETTER_STAGGER = 0.075;
-const LETTER_START_DELAY = 0.08;
+const LETTER_DURATION = 0.72;
+const LETTER_STAGGER = 0.05;
+const LETTER_START_DELAY = 0.04;
 const LAST_CHARACTER_DELAY =
   LETTER_START_DELAY + (SPLASH_TEXT.length - 1) * LETTER_STAGGER;
 const WORDMARK_FINISH_SECONDS = LAST_CHARACTER_DELAY + LETTER_DURATION;
-const WORDMARK_HOLD_SECONDS = 0.16;
-const CURTAIN_DURATION = 0.84;
+const WORDMARK_HOLD_SECONDS = 0.08;
+const CURTAIN_DURATION = 0.48;
 const CURTAIN_DELAY_SECONDS = WORDMARK_FINISH_SECONDS + WORDMARK_HOLD_SECONDS;
 const COMPLETE_MS = Math.round(
   (CURTAIN_DELAY_SECONDS + CURTAIN_DURATION) * 1000
 );
+const imgSplashLogo = assetUrl("/visual-ir-assets/splash-logo.svg");
 
 /** Tempo total da splash em segundos — exportado para coordenação. */
 export const SPLASH_DURATION_S = CURTAIN_DELAY_SECONDS + CURTAIN_DURATION;
 
 function LogoGlyph() {
   return (
-    <span className="relative mr-3 inline-flex h-7 w-7 shrink-0 items-center justify-center">
-      <span className="absolute h-3.5 w-3.5 rounded-[4px] border border-white/70" />
-      <span className="absolute h-1.5 w-1.5 rounded-full bg-white" />
+    <span className="relative inline-flex h-[62px] w-[62px] shrink-0 items-center justify-center">
+      <img alt="" className="block h-[62px] w-[62px]" src={imgSplashLogo} />
     </span>
   );
 }
@@ -41,8 +43,8 @@ function AnimatedCharacter({
 }) {
   return (
     <motion.span
-      initial={{ filter: "blur(11px)", opacity: 0.001, y: "110vh" }}
-      animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+      initial={{ opacity: 0.001, y: "110vh" }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         delay,
         duration: LETTER_DURATION,
@@ -56,13 +58,14 @@ function AnimatedCharacter({
   );
 }
 
-export function SplashIntro({ children }: SplashIntroProps) {
+export function SplashIntro({ children, onComplete }: SplashIntroProps) {
   const [phase, setPhase] = useState<"splash" | "done">("splash");
 
   useEffect(() => {
     // Respeita prefers-reduced-motion — pula splash inteira
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setPhase("done");
+      onComplete?.();
       return;
     }
 
@@ -76,6 +79,7 @@ export function SplashIntro({ children }: SplashIntroProps) {
       document.body.style.overflow = prevOverflow;
       document.body.style.touchAction = prevTouch;
       setPhase("done");
+      onComplete?.();
     }, COMPLETE_MS);
 
     return () => {
@@ -83,7 +87,7 @@ export function SplashIntro({ children }: SplashIntroProps) {
       document.body.style.overflow = prevOverflow;
       document.body.style.touchAction = prevTouch;
     };
-  }, []);
+  }, [onComplete]);
 
   return (
     <>
@@ -102,10 +106,10 @@ export function SplashIntro({ children }: SplashIntroProps) {
             }}
             className="absolute inset-0 flex items-center justify-center bg-[#0a0a0a]"
           >
-            <div className="relative flex items-center text-[38px] font-semibold tracking-[-0.04em] text-white">
+            <div className="relative flex items-center gap-4 text-[38px] font-semibold leading-none tracking-[-0.04em] text-white">
               <motion.span
-                initial={{ filter: "blur(11px)", opacity: 0.001, y: "110vh" }}
-                animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                initial={{ opacity: 0.001, y: "110vh" }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: 0.04,
                   duration: LETTER_DURATION,
@@ -117,7 +121,7 @@ export function SplashIntro({ children }: SplashIntroProps) {
               </motion.span>
 
               <span
-                className="inline-flex whitespace-nowrap"
+                className="inline-flex items-center whitespace-nowrap"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 {SPLASH_TEXT.split("").map((character, index) => (

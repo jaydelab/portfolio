@@ -1,5 +1,7 @@
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import { DockMagnify } from "../effects/dock-magnify";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const imgBackground = assetUrl("/visual-ir-assets/background.webp");
 const imgHowIBuildAiBackground = assetUrl("/visual-ir-assets/how-i-build-ai-background.webp");
@@ -8,6 +10,29 @@ const imgHowIBuildAiScreen = assetUrl("/visual-ir-assets/how-i-build-ai-screen.w
 const imgHowIBuildAiTabletBackground = assetUrl("/visual-ir-assets/how-i-build-ai-tablet-background.webp");
 const imgHowIBuildAiTabletBlur = assetUrl("/visual-ir-assets/how-i-build-ai-tablet-blur.svg");
 const imgHowIBuildAiTabletScreen = assetUrl("/visual-ir-assets/how-i-build-ai-tablet-screen.webp");
+const desktopDockItems = [
+  { src: "/visual-ir-assets/dock/Icon.svg", title: "Linear" },
+  { src: "/visual-ir-assets/dock/Icon-1.svg", title: "Codex" },
+  { src: "/visual-ir-assets/dock/Icon-2.svg", title: "Claude" },
+  { src: "/visual-ir-assets/dock/Icon-3.svg", title: "ChatGPT" },
+  { src: "/visual-ir-assets/dock/Icon-4.svg", title: "Gemini" },
+  { src: "/visual-ir-assets/dock/Icon-5.svg", title: "Perplexity" },
+  { src: "/visual-ir-assets/dock/Icon-6.svg", title: "Grok" },
+  { src: "/visual-ir-assets/dock/Icon-7.svg", title: "Raycast" },
+  { src: "/visual-ir-assets/dock/Icon Container.svg", title: "VSCode" },
+  { src: "/visual-ir-assets/dock/Icon-8.svg", title: "Antigravity" },
+  { src: "/visual-ir-assets/dock/Icon-9.svg", title: "v0" },
+  { src: "/visual-ir-assets/dock/Icon-10.svg", title: "Lovable" },
+  { src: "/visual-ir-assets/dock/Icon-11.svg", title: "Replit" },
+  { src: "/visual-ir-assets/dock/Icon-12.svg", title: "NotebookLM" },
+  { src: "/visual-ir-assets/dock/Icon-13.svg", title: "MCP" },
+  { src: "/visual-ir-assets/dock/Icon-14.svg", title: "Cursor" },
+  { src: "/visual-ir-assets/dock/Icon-15.svg", title: "Supabase" },
+  { src: "/visual-ir-assets/dock/Icon-16.svg", title: "GitHub" },
+].map(({ src, title }) => ({
+  src: assetUrl(src),
+  title,
+}));
 
 interface HighlightsSectionProps {
   id?: string;
@@ -15,10 +40,13 @@ interface HighlightsSectionProps {
 }
 
 export default function HighlightsSection({ id, className = "" }: HighlightsSectionProps = {}) {
+  const activeBreakpoint = useActiveBreakpoint();
+
   return (
     <>
+      {activeBreakpoint === "desktop" ? (
       <div id={id} className={`content-stretch flex flex-col gap-[843px] max-md:gap-[96px] max-sm:gap-[72px] h-[1274px] items-center max-md:items-start pb-[35px] max-md:pb-[24px] pt-[82px] max-md:pt-[48px] px-[36px] max-md:px-[20px] max-sm:px-[16px] relative shrink-0 w-full max-w-[1200px] max-md:h-auto max-lg:hidden ${className}`.trim()} data-name="Background" data-node-id="1:988">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgBackground} />
+        <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgBackground} />
         <div className="content-stretch flex flex-col gap-[12px] max-md:gap-[10px] items-center max-md:items-start leading-[0] relative shrink-0 text-center max-md:text-left w-[792px] max-md:w-full" data-name="Container" data-node-id="1:989">
           <div className="figma-font-georgia flex flex-col justify-center not-italic relative shrink-0 text-[48px] max-lg:text-[clamp(28px,4.8vw,48px)] text-white tracking-[-0.96px] whitespace-nowrap max-md:whitespace-normal" data-node-id="1:990">
             <p className="leading-[normal]">
@@ -26,69 +54,25 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
             </p>
           </div>
           <div className="figma-font-geist bg-clip-text bg-gradient-to-r max-md:bg-none flex flex-col font-light from-[#cfcfcf] justify-center mix-blend-color-dodge max-md:mix-blend-normal relative shrink-0 text-[18px] max-md:text-[16px] text-[transparent] max-md:text-[#dce0e6] to-[#cfcfcf] tracking-[0.5px] max-md:tracking-[0.2px] via-1/2 via-[#dce0e6] w-[792px] max-md:w-full" data-node-id="1:991" style={{ fontFeatureSettings: "'ordn'" }}>
-            <p className="leading-[27px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
+            <p className="leading-[27px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda não domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
           </div>
         </div>
-        <div className="content-stretch flex gap-[12px] items-center justify-center max-md:justify-start pb-[11px] pt-[10px] px-[12px] max-md:px-[10px] relative shrink-0 max-md:w-full max-md:overflow-x-auto max-md:flex-nowrap scrollbar-hide" data-name="Dock" data-node-id="1:992">
+        <div className="content-stretch flex h-[71px] items-end justify-center overflow-visible pb-[11px] pt-[10px] px-[12px] relative shrink-0" data-name="Dock" data-node-id="1:992">
           <div className="absolute bg-[rgba(255,255,255,0.5)] max-md:bg-[rgba(13,18,26,0.28)] inset-0 mix-blend-overlay max-md:mix-blend-normal rounded-[20px]" data-name="Dock Background" data-node-id="1:993" style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", clipPath: "inset(0.3px round 19.7px)" }} />
           <div className="absolute border border-solid border-white inset-0 mix-blend-overlay pointer-events-none rounded-[20px]" />
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:994">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:995">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-1.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:996">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-2.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:997">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-3.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:998">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-4.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:999">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-5.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1000">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-6.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1001">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-7.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon Container" data-node-id="1:1002">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon Container.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1007">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-8.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1008">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-9.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1009">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-10.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1010">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-11.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1011">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-12.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1012">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-13.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1013">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-14.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1014">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-15.svg")} />
-          </div>
-          <div className="relative shrink-0 size-[50px] max-md:shrink-0" data-name="Icon" data-node-id="1:1015">
-            <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-16.svg")} />
-          </div>
+          <DockMagnify
+            items={desktopDockItems.map(({ src, title }, index) => ({
+              icon: <img decoding="async" loading="lazy" alt="" className="block size-full" src={src} />,
+              id: `desktop-dock-icon-${index}`,
+              title,
+            }))}
+            itemClassName="shrink-0"
+          />
         </div>
       </div>
+      ) : null}
 
+      {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="HowIBuildWitfhAI-tablet" data-node-id="68:373">
         <div className="h-[788px] overflow-clip relative rounded-[16px] shrink-0 w-[684px]" data-node-id="68:374">
           <div className="absolute inset-0 bg-[#1a1a1a]" data-node-id="68:375" />
@@ -96,16 +80,16 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
             <div className="-rotate-90 flex-none">
               <div className="h-[684px] relative w-[460px]">
                 <div className="absolute inset-[-20.11%_-36.5%]">
-                  <img alt="" className="block max-w-none size-full" src={imgHowIBuildAiTabletBlur} />
+                  <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgHowIBuildAiTabletBlur} />
                 </div>
               </div>
             </div>
           </div>
           <div className="absolute bottom-0 h-[521px] inset-x-0" data-node-id="68:377">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiTabletBackground} />
+            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiTabletBackground} />
           </div>
           <div className="absolute bottom-[93px] h-[486px] inset-x-0" data-node-id="68:378">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiTabletScreen} />
+            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiTabletScreen} />
           </div>
 
           <div className="absolute flex flex-col gap-[12px] left-[50px] top-[42px] w-[584px]" data-node-id="68:379">
@@ -115,7 +99,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
               </p>
             </div>
             <div className="bg-clip-text bg-gradient-to-r figma-font-geist flex flex-col font-light from-[#cfcfcf] justify-center mix-blend-color-dodge relative text-[14px] text-[transparent] to-[#cfcfcf] via-1/2 via-[#dce0e6] w-full" style={{ fontFeatureSettings: "'ordn' 1", letterSpacing: "-0.1px" }} data-node-id="68:381">
-              <p className="leading-[22px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
+              <p className="leading-[22px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda não domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
             </div>
           </div>
 
@@ -129,29 +113,31 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
                   WebkitBackdropFilter: "blur(5px)",
                 }}
               />
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-1.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-2.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-3.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-4.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-5.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-6.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-7.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon Container.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-8.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-9.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-10.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-11.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-12.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-13.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-14.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-15.svg")} /></div>
-              <div className="relative shrink-0 size-[24px]"><img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-16.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-1.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-2.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-3.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-4.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-5.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-6.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-7.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon Container.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-8.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-9.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-10.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-11.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-12.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-13.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-14.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-15.svg")} /></div>
+              <div className="relative shrink-0 size-[24px]"><img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-16.svg")} /></div>
             </div>
           </div>
         </div>
       </div>
+      ) : null}
 
+      {activeBreakpoint === "mobile" ? (
       <div className="hidden max-md:flex flex-col w-full max-w-[560px] mx-auto mt-[62px]" data-name="HowIBuildWitfhAI-mobile">
         <div className="h-[915px] overflow-clip relative rounded-[14px] w-full" data-name="HowIBuildWitfhAI" data-node-id="67:2437">
           <div className="absolute inset-0 bg-[#1a1a1a]" data-name="background-color" data-node-id="67:2439" />
@@ -159,16 +145,16 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
             <div className="-rotate-90 flex-none">
               <div className="h-[746px] relative w-[411px]">
                 <div className="absolute inset-[-20.11%_-36.5%]">
-                  <img alt="" className="block max-w-none size-full" src={imgHowIBuildAiBlur} />
+                  <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgHowIBuildAiBlur} />
                 </div>
               </div>
             </div>
           </div>
           <div className="-translate-x-1/2 absolute h-[1094px] left-[calc(50%+51px)] top-[340px] w-[824px]" data-name="background" data-node-id="67:2442">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiBackground} />
+            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiBackground} />
           </div>
           <div className="-translate-x-1/2 absolute bottom-[26%] left-1/2 w-[116%] aspect-[316/225]" data-name="screen-illustration" data-node-id="67:2441">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiScreen} />
+            <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHowIBuildAiScreen} />
           </div>
 
           <div className="absolute flex flex-col gap-[12px] inset-x-[20px] leading-[0] top-[20px]" data-name="Container" data-node-id="67:2504">
@@ -178,7 +164,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
               </p>
             </div>
             <div className="bg-clip-text bg-gradient-to-r figma-font-geist flex flex-col font-light from-[#cfcfcf] justify-center mix-blend-color-dodge relative shrink-0 text-[14px] text-transparent to-[#cfcfcf] tracking-[-0.1px] via-1/2 via-[#dce0e6] w-full" data-node-id="67:2506" style={{ fontFeatureSettings: "'ordn' 1" }}>
-              <p className="leading-[22px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
+              <p className="leading-[22px]">Nos últimos meses construí meus próprios produtos. Um deles resolve uma fricção entre design e desenvolvimento que procurei por anos e nunca encontrei, e que hoje existe só no meu repositório e no meu terminal. Eu orquestro agentes, automatizo processos, crio MCPs, CLIs e tenho meu próprio software nativo pra macOS. Uso IA pra fazer meu trabalho render e ir em lugares onde a skill técnica ainda não domina, mas não de qualquer jeito ou sozinho. Não vou me rotular, mas sou curioso o bastante para aprender e executar todos os dias.</p>
             </div>
           </div>
 
@@ -196,57 +182,58 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
             <div aria-hidden="true" className="absolute border border-solid border-white inset-0 mix-blend-overlay pointer-events-none rounded-tl-[20px] rounded-tr-[20px]" />
             <div className="grid grid-cols-4 grid-rows-4 gap-[clamp(10px,3vw,16px)] relative w-[clamp(216px,60%,320px)] aspect-square" data-node-id="67:2444">
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2445">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2447">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-2.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-2.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2449">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-1.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-1.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2451">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon Container.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon Container.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2460">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-5.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-5.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2462">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-9.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-9.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2464">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-7.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-7.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2466">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-4.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-4.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2468">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-6.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-6.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2477">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-8.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-8.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2482">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-15.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-15.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2486">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-14.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-14.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2490">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-10.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-10.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2492">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-13.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-13.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2497">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-16.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-16.svg")} />
               </div>
               <div className="relative shrink-0 size-[45px]" data-node-id="67:2499">
-                <img alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-12.svg")} />
+                <img decoding="async" loading="lazy" alt="" className="block size-full" src={assetUrl("/visual-ir-assets/dock/Icon-12.svg")} />
               </div>
             </div>
           </div>
         </div>
       </div>
+      ) : null}
     </>
   );
 }

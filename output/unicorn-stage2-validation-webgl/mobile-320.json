@@ -1,0 +1,19 @@
+{
+  "name": "mobile-320",
+  "width": 320,
+  "height": 900,
+  "diagnostics": {
+    "unicornLoaded": true,
+    "canvasCount": 1,
+    "heroCanvasPresent": true,
+    "webgl2": true,
+    "heroCanvasSize": {
+      "clientWidth": 320,
+      "clientHeight": 1200,
+      "widthAttribute": "480",
+      "heightAttribute": "1800"
+    }
+  },
+  "consoleMessages": [],
+  "failedRequests": []
+}

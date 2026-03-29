@@ -1,5 +1,6 @@
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
+import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const img22 = assetUrl("/visual-ir-assets/22.webp");
 const imgImage3 = assetUrl("/visual-ir-assets/container-services.webp");
@@ -21,8 +22,11 @@ interface ProjectsGridProps {
 }
 
 export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps = {}) {
+  const activeBreakpoint = useActiveBreakpoint();
+
   return (
     <>
+      {activeBreakpoint === "desktop" ? (
       <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
           <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">
@@ -48,7 +52,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                 </div>
                 <div className="grid-rows-[max-content] inline-grid place-items-start relative shrink-0 w-full" data-name="Mask group" data-node-id="1:1026">
                   <div className="aspect-[4096/2412] col-1 mask-alpha mask-intersect mask-no-repeat mask-position-[119px_0px] mask-size-[642px_274px] overflow-clip ml-[-18.54%] mt-0 relative row-1 w-[133.48999999999998%]" data-name="002 1" data-node-id="1:1028" style={{ maskImage: `url('${img0021}')` }}>
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img22} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img22} />
                   </div>
                 </div>
               </div>
@@ -72,7 +76,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:1036">
                     <div className="absolute h-[276px] left-[-9px] mask-alpha mask-intersect mask-no-repeat mask-position-[9px_10px] mask-size-[438px_266px] overflow-clip top-[-10px] w-[604px]" data-name="Image" data-node-id="1:1038" style={{ maskImage: `url('${imgImage2}')` }}>
                       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <img alt="" className="absolute left-[9px] max-w-none top-[10px] w-[438px]" src={imgImage3} />
+                        <img decoding="async" loading="lazy" alt="" className="absolute left-[9px] max-w-none top-[10px] w-[438px]" src={imgImage3} />
                       </div>
                     </div>
                   </div>
@@ -99,12 +103,12 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                 <div className="h-[266px] overflow-clip relative rounded-tl-[12px] rounded-tr-[12px] shrink-0 w-full" data-name="Container" data-node-id="1:1050">
                   <div className="absolute h-[901px] left-[24px] rounded-[14px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[210px]" data-name="Frame 6275 1" data-node-id="1:1051">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[14px]">
-                      <img alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgFrame62751} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgFrame62751} />
                     </div>
                   </div>
                   <div className="absolute h-[439px] left-[252px] rounded-[14px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[210px]" data-name="Frame 6275 2" data-node-id="1:1052">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[14px]">
-                      <img alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgFrame62752} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgFrame62752} />
                     </div>
                   </div>
                 </div>
@@ -127,7 +131,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                 </div>
                 <div className="grid-rows-[max-content] inline-grid place-items-start relative shrink-0 w-full" data-name="Mask group" data-node-id="1:1059">
                   <div className="aspect-[1366/650] col-1 mask-alpha mask-intersect mask-no-repeat mask-position-[36px_40px] mask-size-[642px_266px] overflow-clip ml-[-5.61%] mt-[-40px] relative rounded-[12px] row-1 w-[106.08%]" data-name="Agenda 2" data-node-id="1:1061" style={{ maskImage: `url('${imgAgenda2}')` }}>
-                    <img alt="" className="absolute left-[36px] max-w-none pointer-events-none top-[40px] w-[642px]" src={imgAgenda3} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute left-[36px] max-w-none pointer-events-none top-[40px] w-[642px]" src={imgAgenda3} />
                   </div>
                 </div>
               </div>
@@ -135,7 +139,9 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           </div>
         </div>
       </div>
+      ) : null}
 
+      {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="ProjectsGrid-tablet" data-node-id="68:443">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="68:444">
           <p className="leading-[44px]">
@@ -163,7 +169,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             </div>
             <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full">
               <div className="-translate-x-1/2 absolute h-[263px] left-[calc(50%-5px)] top-0 w-[446px]">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
+                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
               </div>
             </div>
           </div>
@@ -187,7 +193,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full">
               <div className="-translate-x-1/2 absolute h-[256px] left-1/2 top-0 w-[334px]">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  <img alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
                 </div>
               </div>
             </div>
@@ -214,12 +220,12 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full">
               <div className="absolute h-[636px] left-[12px] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[148px]">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                  <img alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
                 </div>
               </div>
               <div className="absolute h-[311px] left-[173px] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[149px]">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                  <img alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
                 </div>
               </div>
             </div>
@@ -245,7 +251,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
             <div className="flex-[1_0_0] min-h-px min-w-px overflow-clip relative w-full">
               <div className="absolute h-[168px] left-[12px] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[2px] w-[310px]">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                  <img alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[147.07%]" src={imgOtherProjectsSankhya} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[147.07%]" src={imgOtherProjectsSankhya} />
                 </div>
               </div>
             </div>
@@ -253,7 +259,9 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           </div>
         </div>
       </div>
+      ) : null}
 
+      {activeBreakpoint === "mobile" ? (
       <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-node-id="67:2507" data-name="ProjectsGrid-mobile">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[24px] tracking-[-0.48px] w-full" data-node-id="67:2508">
           <p className="leading-[34px]">
@@ -279,7 +287,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           </div>
           <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2517">
             <div className="-translate-x-1/2 absolute h-[75%] left-[calc(50%-1.5%)] top-0 w-[128%]" data-name="002 1" data-node-id="67:2518">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
+              <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgOtherProjectsIgreen} />
             </div>
           </div>
         </div>
@@ -303,7 +311,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2527">
             <div className="-translate-x-1/2 absolute h-[74%] left-[calc(50%+0.4%)] top-0 w-[96%]" data-name="Image" data-node-id="67:2528">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <img alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[106.73%] left-[-0.15%] max-w-none top-[-4.54%] w-[197.64%]" src={imgOtherProjectsAlgar} />
               </div>
             </div>
           </div>
@@ -328,12 +336,12 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2537">
             <div className="absolute aspect-[123/526] left-[3.7%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 1" data-node-id="67:2538">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                <img alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[103.36%] left-[-0.1%] max-w-none top-[-32.66%] w-[100.21%]" src={imgOtherProjectsMaceioLeft} />
               </div>
             </div>
             <div className="absolute aspect-[123/257] left-[51.1%] rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[1.5%] w-[45.2%]" data-name="Frame 6275 2" data-node-id="67:2539">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                <img alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[106.3%] left-0 max-w-none top-[-16.93%] w-full" src={imgOtherProjectsMaceioRight} />
               </div>
             </div>
           </div>
@@ -359,12 +367,13 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
           <div className="aspect-[272/270] overflow-clip relative shrink-0 w-full" data-node-id="67:2548">
             <div className="-translate-x-1/2 absolute h-[80%] left-1/2 rounded-[10px] shadow-[0px_0px_2px_0px_rgba(0,0,0,0.35)] top-[0.7%] w-[90%]" data-name="Agenda 2" data-node-id="67:2549">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-                <img alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[163.41%]" src={imgOtherProjectsSankhya} />
+                <img decoding="async" loading="lazy" alt="" className="absolute h-[129.7%] left-0 max-w-none top-[-29.48%] w-[163.41%]" src={imgOtherProjectsSankhya} />
               </div>
             </div>
           </div>
         </div>
       </div>
+      ) : null}
     </>
   );
 }

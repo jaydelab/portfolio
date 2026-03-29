@@ -52,12 +52,16 @@ export function HeroTitleTextReveal({
           .reduce((total, currentWord) => total + currentWord.length, 0);
 
         return (
-          <span key={`${text}-word-${wordIndex}`} className="inline">
+          <span
+            key={`${text}-word-${wordIndex}`}
+            className="inline-block whitespace-nowrap"
+            style={wordIndex < words.length - 1 ? { marginRight: "0.22em" } : undefined}
+          >
             {word.split("").map((character, charIndex) => (
               <motion.span
                 key={`${text}-${wordIndex}-${charIndex}`}
-                initial={{ filter: "blur(10px)", opacity: 0.001, y: 10 }}
-                animate={isInView ? { filter: "blur(0px)", opacity: 1, y: 0 } : { filter: "blur(10px)", opacity: 0.001, y: 10 }}
+                initial={{ opacity: 0.001, y: 10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.001, y: 10 }}
                 transition={{
                   delay: delay + (charactersBeforeWord + wordIndex + charIndex) * 0.024,
                   duration: 0.4,
@@ -68,7 +72,6 @@ export function HeroTitleTextReveal({
                 {character}
               </motion.span>
             ))}
-            {wordIndex < words.length - 1 ? " " : null}
           </span>
         );
       })}
@@ -109,6 +112,7 @@ export function HeroTitleImageReveal({
       }
       transition={{
         ...TITLE_IMAGE_SPRING,
+        bounce: 0,
         delay,
         type: "spring",
       }}
@@ -135,8 +139,8 @@ export function HeroTitleHighlightReveal({
   return (
     <motion.span
       ref={scopeRef}
-      initial={{ filter: "blur(10px)", opacity: 0.001, y: 10 }}
-      animate={isInView ? { filter: "blur(0px)", opacity: 1, y: 0 } : { filter: "blur(10px)", opacity: 0.001, y: 10 }}
+      initial={{ opacity: 0.001, y: 10 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0.001, y: 10 }}
       transition={{
         delay,
         duration: 0.42,

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Portfolio2026_1_86 from "./generated/Portfolio2026_1_86";
 import { SplashIntro } from "./components/effects/splash-intro";
 import SmoothScroll from "./components/effects/smooth-scroll";
+import { warmupUnicornFurnaceEffect } from "./components/effects/unicorn-furnace-background";
 import "../styles/visual-ir.css";
 
 const DESIGN_WIDTH = 1440;
@@ -9,9 +10,12 @@ const MIN_SCALE_WIDTH = 1024;
 const MARGIN_AT_1440 = 120;
 const MARGIN_AT_1024 = 32;
 const CONTENT_WIDTH = DESIGN_WIDTH - 2 * MARGIN_AT_1440; // 1200
+const HERO_EFFECT_START_DELAY_MS = 180;
 
 export default function App() {
   const [scale, setScale] = useState(1);
+  const [isSplashDone, setIsSplashDone] = useState(false);
+  const [isHeroEffectReady, setIsHeroEffectReady] = useState(false);
   const [stageHeight, setStageHeight] = useState<number | undefined>(undefined);
   const stageRef = useRef<HTMLDivElement>(null);
 
@@ -34,6 +38,38 @@ export default function App() {
       setStageHeight(stageRef.current.scrollHeight);
     }
   }, []);
+
+  const handleSplashComplete = useCallback(() => {
+    setIsSplashDone(true);
+  }, []);
+
+  useEffect(() => {
+    warmupUnicornFurnaceEffect().catch((error) => {
+      console.error(error);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isSplashDone) return;
+
+    let frameA = 0;
+    let frameB = 0;
+    let heroEffectTimer = 0;
+
+    frameA = window.requestAnimationFrame(() => {
+      frameB = window.requestAnimationFrame(() => {
+        heroEffectTimer = window.setTimeout(() => {
+          setIsHeroEffectReady(true);
+        }, HERO_EFFECT_START_DELAY_MS);
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameA);
+      window.cancelAnimationFrame(frameB);
+      window.clearTimeout(heroEffectTimer);
+    };
+  }, [isSplashDone]);
 
   useEffect(() => {
     updateScale();
@@ -59,7 +95,7 @@ export default function App() {
 
   return (
     <SmoothScroll>
-    <SplashIntro>
+    <SplashIntro onComplete={handleSplashComplete}>
     <div className="visual-ir-page">
       <div
         style={
@@ -87,7 +123,7 @@ export default function App() {
               : {}) as React.CSSProperties
           }
         >
-          <Portfolio2026_1_86 />
+          <Portfolio2026_1_86 heroEffectReady={isHeroEffectReady} />
         </div>
       </div>
     </div>
@@ -95,4 +131,3 @@ export default function App() {
     </SmoothScroll>
   );
 }
-

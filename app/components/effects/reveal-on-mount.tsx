@@ -32,10 +32,11 @@ export function RevealOnMount({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18, filter: "blur(10px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration, ease: REVEAL_EASE }}
       className={className || undefined}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>

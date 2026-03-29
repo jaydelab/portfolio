@@ -20,12 +20,12 @@ export default function CaseStudyConnectHunt({ id, className = "" }: CaseStudyCo
               <div className="absolute contents inset-[0_-134.94px_-322px_-132.53px]" data-name="Background Container" data-node-id="1:707">
                 <div className="absolute inset-[0_-134.94px_-322px_-110.84px] mask-alpha mask-intersect mask-no-repeat mask-position-[110.843px_0px] mask-size-[1200px_580px] mix-blend-overlay opacity-60 overflow-clip" data-name="Paper texture" data-node-id="1:708" style={{ maskImage: `url('${imgBack}')` }}>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgPaperTexture} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute left-0 max-w-none size-full top-0" src={imgPaperTexture} />
                   </div>
                 </div>
                 <div className="absolute inset-[0_-113.25px_-322px_-132.53px] mask-alpha mask-intersect mask-no-repeat mask-position-[132.53px_0px] mask-size-[1200px_580px] mix-blend-screen opacity-50 overflow-clip" data-name="Image" data-node-id="1:709" style={{ maskImage: `url('${imgBack}')` }}>
                   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <img alt="" className="absolute h-[115.16%] left-0 max-w-none top-0 w-[110.37%]" src={imgImage1} />
+                    <img decoding="async" loading="lazy" alt="" className="absolute h-[115.16%] left-0 max-w-none top-0 w-[110.37%]" src={imgImage1} />
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@ export default function CaseStudyConnectHunt({ id, className = "" }: CaseStudyCo
                 <div className="absolute flex h-[1248.384px] items-center justify-center left-[-364.22px] top-[-336.71px] w-[1348.089px]" style={{ "--transform-inner-width": "1200", "--transform-inner-height": "19" } as React.CSSProperties}>
                   <div className="-rotate-30 flex-none">
                     <div className="h-[814.175px] relative w-[1086.576px]" data-name="016 6" data-node-id="1:710">
-                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img167} />
+                      <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img167} />
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function CaseStudyConnectHunt({ id, className = "" }: CaseStudyCo
               </div>
             </div>
             <div className="absolute inset-[88.62%_92.75%_7.93%_4.17%]" data-name="Logo-wap" data-node-id="1:716">
-              <img alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
+              <img decoding="async" loading="lazy" alt="" className="absolute block max-w-none size-full" src={imgLogoWap} />
             </div>
           </div>
   );

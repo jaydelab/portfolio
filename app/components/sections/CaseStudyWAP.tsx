@@ -61,7 +61,7 @@ export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps =
             </div>
             <div className="h-[757px] max-lg:h-[400px] relative shrink-0 w-[612px] max-lg:w-full" data-node-id="1:585">
               <div className="absolute h-[757px] left-[-134px] max-lg:left-0 top-0 w-[741px] max-lg:w-full" data-name="005 2" data-node-id="1:586">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img0052} />
+                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img0052} />
               </div>
             </div>
           </div>
