@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run build"
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
@@ -23,6 +26,7 @@
     "playwright": "^1.58.2",
     "pngjs": "^7.0.0",
     "tailwindcss": "4.1.12",
+    "typescript": "^5.9.3",
     "vite": "6.4.1"
   }
 }

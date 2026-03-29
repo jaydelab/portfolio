@@ -2,6 +2,8 @@ import { assetUrl } from "../../lib/asset-url";
 
 const imgVectorContainer = assetUrl("/visual-ir-assets/vector-container.svg");
 
+// Referência arquivada da ilustração antiga da Hero.
+// Fica fora do runtime atual para não pesar a seção, mas preservada no codebase.
 export function HeroIllustrationReference() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative z-10 shrink-0">

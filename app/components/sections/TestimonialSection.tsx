@@ -7,7 +7,12 @@ import {
   type ReactNode,
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
 import { assetUrl } from "../../lib/asset-url";
 import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
@@ -42,6 +47,17 @@ const TESTIMONIALS = [
 const TESTIMONIAL_REVIEWER =
   "Mayra Santos, Gerente de inovação e Desenvolvimento de Software";
 const TESTIMONIAL_COMPANY = "WAP & WAAW by Alok";
+const TABLET_TESTIMONIAL_VARIANTS = {
+  center: { opacity: 1, x: 0 },
+  enter: (nextDirection: -1 | 1) => ({
+    opacity: 0.001,
+    x: nextDirection > 0 ? 48 : -48,
+  }),
+  exit: (nextDirection: -1 | 1) => ({
+    opacity: 0.001,
+    x: nextDirection > 0 ? -48 : 48,
+  }),
+} satisfies Variants;
 
 function TestimonialSwap({
   activeIndex,
@@ -96,7 +112,6 @@ function TestimonialIndicatorBadge({
         >
           <foreignObject x="-50" y="-50" width="139" height="115">
             <div
-              xmlns="http://www.w3.org/1999/xhtml"
               style={{
                 backdropFilter: "blur(25px)",
                 clipPath: `url(#${clipPathId})`,
@@ -226,19 +241,14 @@ function TabletTestimonialSwap({
       <AnimatePresence custom={direction} initial={false} mode="wait">
         <motion.div
           key={activeIndex}
-          animate={{ opacity: 1, x: 0 }}
+          animate="center"
           className="absolute inset-x-0 bottom-0"
           custom={direction}
-          exit={(nextDirection: -1 | 1) => ({
-            opacity: 0.001,
-            x: nextDirection > 0 ? -48 : 48,
-          })}
-          initial={(nextDirection: -1 | 1) => ({
-            opacity: 0.001,
-            x: nextDirection > 0 ? 48 : -48,
-          })}
+          exit="exit"
+          initial="enter"
           style={{ willChange: "transform, opacity" }}
           transition={{ duration: 0.28, ease: TESTIMONIAL_EASE }}
+          variants={TABLET_TESTIMONIAL_VARIANTS}
         >
           {children}
         </motion.div>

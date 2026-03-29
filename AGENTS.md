@@ -58,6 +58,15 @@ index.html → src/main.tsx → app/App.tsx → app/generated/Portfolio2026_1_86
 
 ---
 
+## Validação Técnica
+
+- Comando mínimo de tipagem: `npm run typecheck`
+- Comando mínimo de verificação completa: `npm run validate`
+- `npm run validate` deve passar antes de qualquer commit relevante
+- O CI versionado no repositório valida com `pnpm validate`
+
+---
+
 ## Política de Commits
 
 - Commits pequenos, reversíveis e auditáveis

@@ -15,6 +15,9 @@ const imgOtherProjectsAlgar = assetUrl("/visual-ir-assets/other-projects-algar.w
 const imgOtherProjectsMaceioLeft = assetUrl("/visual-ir-assets/other-projects-maceio-left.webp");
 const imgOtherProjectsMaceioRight = assetUrl("/visual-ir-assets/other-projects-maceio-right.webp");
 const imgOtherProjectsSankhya = assetUrl("/visual-ir-assets/other-projects-sankhya.webp");
+const PROJECTS_GRID_TITLE = "Outros projetos";
+const SANKHYA_DESCRIPTION =
+  "Eram 2.000 telas consolidadas em um único software. Entreguei um Design System, o Redesign do ERP e um sistema único de autenticação já pensado para OmniChannel.";
 
 interface ProjectsGridProps {
   id?: string;
@@ -31,7 +34,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
       <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">
           <p className="leading-[68px] max-lg:leading-[clamp(38px,6.8vw,68px)]">
-            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+            <HeroTitleTextReveal text={PROJECTS_GRID_TITLE} delay={0} noWrap={false} />
           </p>
         </div>
         <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:1018">
@@ -127,7 +130,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                     </div>
                   </div>
                   <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[16px] text-black w-full" data-node-id="1:1058">
-                    <p className="leading-[24px]">Eram 2.000 telas consolidadas em um único software. Entreguei um Design System, o Redesign do ERP e um sistema único de autenticação já pensado para OmniChannel.</p>
+                    <p className="leading-[24px]">{SANKHYA_DESCRIPTION}</p>
                   </div>
                 </div>
                 <div className="grid-rows-[max-content] inline-grid place-items-start relative shrink-0 w-full" data-name="Mask group" data-node-id="1:1059">
@@ -146,7 +149,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col gap-[16px] items-start w-full max-w-[684px] mx-auto" data-name="ProjectsGrid-tablet" data-node-id="68:443">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[32px] tracking-[-0.64px] w-full" data-node-id="68:444">
           <p className="leading-[44px]">
-            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+            <HeroTitleTextReveal text={PROJECTS_GRID_TITLE} delay={0} noWrap={false} />
           </p>
         </div>
 
@@ -241,7 +244,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   <p className="leading-[24px]">de 30 anos</p>
                 </div>
                   <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[14px] text-black w-full">
-                    <p className="leading-[21px]">Eram 2.000 telas consolidadas em um único software. Entreguei um Design System, o Redesign do ERP e um sistema único de autenticação já pensado para OmniChannel.</p>
+                    <p className="leading-[21px]">{SANKHYA_DESCRIPTION}</p>
                   </div>
                 </div>
                 <div className="figma-font-geist flex flex-col font-normal justify-center relative shrink-0 text-[#393737] text-[12px] tracking-[0.12px] whitespace-nowrap">
@@ -266,7 +269,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
       <div className="hidden max-md:flex flex-col gap-[16px] items-start w-full max-w-[480px] mx-auto mt-[62px]" data-node-id="67:2507" data-name="ProjectsGrid-mobile">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[24px] tracking-[-0.48px] w-full" data-node-id="67:2508">
           <p className="leading-[34px]">
-            <HeroTitleTextReveal text="Outros projetos" delay={0} noWrap={false} />
+            <HeroTitleTextReveal text={PROJECTS_GRID_TITLE} delay={0} noWrap={false} />
           </p>
         </div>
 
@@ -357,7 +360,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
                   <p className="leading-[24px]">de 30 anos</p>
                 </div>
                 <div className="figma-font-geist flex flex-col font-normal justify-center opacity-50 relative shrink-0 text-[14px] text-black w-full" data-node-id="67:2545">
-                  <p className="leading-[21px]">Eram 2.000 telas consolidadas em um único software. Entreguei um Design System, o Redesign do ERP e um sistema único de autenticação já pensado para OmniChannel.</p>
+                  <p className="leading-[21px]">{SANKHYA_DESCRIPTION}</p>
                 </div>
               </div>
               <div className="figma-font-geist flex flex-col font-normal justify-center relative shrink-0 text-[#393737] text-[12px] tracking-[0.12px] whitespace-nowrap" data-node-id="67:2546">

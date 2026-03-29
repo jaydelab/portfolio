@@ -69,7 +69,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
                   </div>
                   <div className="content-stretch flex flex-col gap-[11.5px] items-start leading-[0] px-[4px] relative shrink-0 w-full" data-name="Container" data-node-id="1:527">
                     <CheckListItem label="Problema e briefing" />
-                    <CheckListItem label="Pesquisas e copywright" />
+                    <CheckListItem label="Pesquisas e copywriting" />
                     <CheckListItem label="Arquitetura e fluxos" small />
                     <CheckListItem label="Wireframes mobile first" />
                     <CheckListItem label="Viabilidade técnica" />

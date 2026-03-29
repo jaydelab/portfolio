@@ -1,6 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type RefObject } from "react";
 import { assetUrl } from "../../lib/asset-url";
 import type { ActiveBreakpoint } from "../../lib/use-active-breakpoint";
+import type { UnicornStudioApi } from "./unicorn-studio-types";
 
 type UnicornHeroLayoutBreakpoint = {
   vignette: {
@@ -67,32 +68,13 @@ type UnicornStudioScene = {
   destroyed?: boolean;
 };
 
-type UnicornStudioApi = {
-  addScene: (options: {
-    dpi?: number;
-    element: HTMLElement;
-    filePath: string;
-    fps?: number;
-    interactivity?: {
-      mouse?: {
-        disableMobile?: boolean;
-      };
-    };
-    lazyLoad?: boolean;
-    production?: boolean;
-    scale?: number;
-  }) => Promise<UnicornStudioScene>;
+type UnicornHeroWindow = Window & {
+  UnicornStudio?: UnicornStudioApi;
+  __portfolioUnicornRuntimePromise__?: Promise<UnicornStudioApi>;
+  __portfolioUnicornSceneWarmupPromise__?: Promise<void>;
 };
 
-declare global {
-  interface Window {
-    UnicornStudio?: UnicornStudioApi;
-    __portfolioUnicornRuntimePromise__?: Promise<UnicornStudioApi>;
-    __portfolioUnicornSceneWarmupPromise__?: Promise<Response | null>;
-  }
-}
-
-const runtimeUrls = [assetUrl("/effects/unicorn-campo-luminoso/unicorn-runtime.txt")];
+const runtimeUrl = assetUrl("/effects/unicorn-campo-luminoso/unicorn-runtime.txt");
 const sceneTemplateUrl = assetUrl("/effects/unicorn-campo-luminoso/scene.performance.json");
 let runtimeSourcePromise: Promise<string> | null = null;
 let sceneTemplatePromise: Promise<string> | null = null;
@@ -120,27 +102,18 @@ async function fetchRuntimeSource() {
     return runtimeSourcePromise;
   }
 
-  runtimeSourcePromise = (async () => {
-    let lastError: unknown = null;
-
-    for (const runtimeUrl of runtimeUrls) {
-      try {
-        const response = await fetch(runtimeUrl);
-        if (!response.ok) {
-          throw new Error(`Falha ao carregar runtime: ${response.status}`);
-        }
-
-        return await response.text();
-      } catch (error) {
-        lastError = error;
+  runtimeSourcePromise = fetch(runtimeUrl)
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`Falha ao carregar runtime: ${response.status}`);
       }
-    }
 
-    throw lastError ?? new Error("Runtime UnicornStudio indisponível.");
-  })().catch((error) => {
-    runtimeSourcePromise = null;
-    throw error;
-  });
+      return response.text();
+    })
+    .catch((error) => {
+      runtimeSourcePromise = null;
+      throw error;
+    });
 
   return runtimeSourcePromise;
 }
@@ -150,33 +123,35 @@ function loadRuntime() {
     return Promise.reject(new Error("Window indisponível."));
   }
 
-  if (window.UnicornStudio) {
-    return Promise.resolve(window.UnicornStudio);
+  const unicornWindow = window as UnicornHeroWindow;
+
+  if (unicornWindow.UnicornStudio) {
+    return Promise.resolve(unicornWindow.UnicornStudio);
   }
 
-  if (window.__portfolioUnicornRuntimePromise__) {
-    return window.__portfolioUnicornRuntimePromise__;
+  if (unicornWindow.__portfolioUnicornRuntimePromise__) {
+    return unicornWindow.__portfolioUnicornRuntimePromise__;
   }
 
-  window.__portfolioUnicornRuntimePromise__ = fetchRuntimeSource()
+  unicornWindow.__portfolioUnicornRuntimePromise__ = fetchRuntimeSource()
     .then((source) => {
       const script = document.createElement("script");
       script.async = false;
       script.text = source;
       document.head.appendChild(script);
 
-      if (!window.UnicornStudio) {
+      if (!unicornWindow.UnicornStudio) {
         throw new Error("Runtime UnicornStudio não carregou.");
       }
 
-      return window.UnicornStudio;
+      return unicornWindow.UnicornStudio;
     })
     .catch((error) => {
-      window.__portfolioUnicornRuntimePromise__ = undefined;
+      unicornWindow.__portfolioUnicornRuntimePromise__ = undefined;
       throw error;
     });
 
-  return window.__portfolioUnicornRuntimePromise__;
+  return unicornWindow.__portfolioUnicornRuntimePromise__;
 }
 
 async function fetchSceneTemplate() {
@@ -202,7 +177,7 @@ async function fetchSceneTemplate() {
 
 function withHighPerformanceWebGLContext<T>(run: () => Promise<T>) {
   const originalGetContext = HTMLCanvasElement.prototype.getContext;
-  const patchedGetContext: typeof HTMLCanvasElement.prototype.getContext = function patchedGetContext(
+  const patchedGetContext = function patchedGetContext(
     this: HTMLCanvasElement,
     contextId: string,
     options?: unknown,
@@ -220,13 +195,22 @@ function withHighPerformanceWebGLContext<T>(run: () => Promise<T>) {
               powerPreference: "high-performance" as const,
             };
 
-      return Reflect.apply(originalGetContext, this, [contextId, webglOptions]);
+      return Reflect.apply(
+        originalGetContext as (...args: unknown[]) => unknown,
+        this,
+        [contextId, webglOptions],
+      ) as ReturnType<HTMLCanvasElement["getContext"]>;
     }
 
-    return Reflect.apply(originalGetContext, this, [contextId, options]);
+    return Reflect.apply(
+      originalGetContext as (...args: unknown[]) => unknown,
+      this,
+      [contextId, options],
+    ) as ReturnType<HTMLCanvasElement["getContext"]>;
   };
 
-  HTMLCanvasElement.prototype.getContext = patchedGetContext;
+  HTMLCanvasElement.prototype.getContext =
+    patchedGetContext as typeof HTMLCanvasElement.prototype.getContext;
 
   return run().finally(() => {
     HTMLCanvasElement.prototype.getContext = originalGetContext;
@@ -238,10 +222,12 @@ function warmupSceneAsset() {
     return;
   }
 
-  if (!window.__portfolioUnicornSceneWarmupPromise__) {
-    window.__portfolioUnicornSceneWarmupPromise__ = fetch(sceneTemplateUrl).catch(
-      () => null,
-    );
+  const unicornWindow = window as UnicornHeroWindow;
+
+  if (!unicornWindow.__portfolioUnicornSceneWarmupPromise__) {
+    unicornWindow.__portfolioUnicornSceneWarmupPromise__ = fetch(sceneTemplateUrl)
+      .then(() => undefined)
+      .catch(() => undefined);
   }
 }
 
@@ -277,7 +263,7 @@ function getEdgeFadeMask(vignette: UnicornHeroLayoutBreakpoint["vignette"]) {
 function getHeroBackgroundStyle(
   layout: UnicornHeroLayoutConfig | undefined,
   breakpoint: ActiveBreakpoint,
-) {
+): CSSProperties {
   if (!layout) {
     return {
       top: "-300px",

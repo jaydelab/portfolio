@@ -8,8 +8,14 @@ const imgSocialButtonIcon = assetUrl("/visual-ir-assets/social-button-icon.svg")
 
 const imgFooterMobileKeyboard = assetUrl("/visual-ir-assets/footer-mobile-keyboard.webp");
 const imgFooterMobileCheck = assetUrl("/visual-ir-assets/footer-mobile-check.svg");
-const imgFooterMobileLinkedin = assetUrl("/visual-ir-assets/footer-mobile-linkedin.svg");
+const imgFooterMobileLinkedIn = assetUrl("/visual-ir-assets/footer-mobile-linkedin.svg");
 const imgFooterMobileWhatsapp = assetUrl("/visual-ir-assets/footer-mobile-whatsapp.svg");
+const FOOTER_TITLE_START = "Se você precisa";
+const FOOTER_TITLE_HIGHLIGHT = "construir";
+const FOOTER_TITLE_END = "algo pensado pra seres humanos, vamos conversar.";
+const FOOTER_EMAIL = "victorxyn@gmail.com";
+const FOOTER_PHONE = "(34) 99862-4100";
+const FOOTER_LOCATION = "Uberlândia MG";
 
 interface FooterSectionProps {
   id?: string;
@@ -39,20 +45,20 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         <div className="figma-font-georgia col-1 flex flex-col justify-center ml-[300px] mt-[472px] not-italic relative row-1 text-[0px] text-center text-white w-[792px]" data-node-id="1:1311">
           <p className="text-[40px] max-lg:text-[clamp(24px,4.5vw,40px)]">
             <HeroTitleTextReveal
-              text="Se você precisa"
+              text={FOOTER_TITLE_START}
               delay={0}
               className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
               noWrap={false}
             />
             {" "}
             <HeroTitleHighlightReveal
-              text="construir"
+              text={FOOTER_TITLE_HIGHLIGHT}
               delay={0.28}
               className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[39.423%] italic text-[transparent] to-[#cbe3ff] to-[60.096%] leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
             />
             {" "}
             <HeroTitleTextReveal
-              text="algo pensado pra seres humanos, vamos conversar."
+              text={FOOTER_TITLE_END}
               delay={0.46}
               className="leading-[50px] max-lg:leading-[clamp(32px,5.5vw,50px)]"
               noWrap={false}
@@ -70,7 +76,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         </div>
         <div className="figma-font-geist-mono col-1 content-stretch flex font-light gap-[4px] items-center justify-center leading-[0] ml-[470px] mt-[715px] mix-blend-color-dodge relative row-1 text-[#d1d1d1] whitespace-nowrap" data-name="Contact Info" data-node-id="1:1313">
           <div className="flex flex-col justify-center relative shrink-0 text-[14px]" data-node-id="1:1317">
-            <p className="leading-[14px]">victorxyn@gmail.com</p>
+            <p className="leading-[14px]">{FOOTER_EMAIL}</p>
           </div>
           <div className="flex flex-col justify-center opacity-30 relative shrink-0 text-[16px]" data-node-id="1:1321">
             <ul>
@@ -80,7 +86,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
             </ul>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-[14px]" data-node-id="1:1322">
-            <p className="leading-[14px]">(34) 99862-4100</p>
+            <p className="leading-[14px]">{FOOTER_PHONE}</p>
           </div>
           <div className="flex flex-col justify-center opacity-30 relative shrink-0 text-[16px]" data-node-id="1:1323">
             <ul>
@@ -90,7 +96,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
             </ul>
           </div>
           <div className="flex flex-col justify-center relative shrink-0 text-[14px]" data-node-id="1:1326">
-            <p className="leading-[14px]">Uberlândia MG</p>
+            <p className="leading-[14px]">{FOOTER_LOCATION}</p>
           </div>
         </div>
         <div className="col-1 content-stretch flex gap-[24px] items-center ml-[1244px] mt-[688px] relative row-1" data-name="Social Button Container" data-node-id="1:1327">
@@ -123,16 +129,16 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
           <div className="absolute bottom-[32px] left-[32px] right-[32px] flex flex-col gap-[42px] items-center" data-node-id="68:515">
             <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-center text-white tracking-[-0.96px] w-[508px]" data-node-id="68:516">
               <p className="text-[32px]">
-                <HeroTitleTextReveal text="Se você precisa" delay={0} className="leading-[42px]" noWrap={false} />
+                <HeroTitleTextReveal text={FOOTER_TITLE_START} delay={0} className="leading-[42px]" noWrap={false} />
                 {" "}
                 <HeroTitleHighlightReveal
-                  text="construir"
+                  text={FOOTER_TITLE_HIGHLIGHT}
                   delay={0.24}
                   className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[42px] text-[transparent] to-[#cbe3ff] to-[77.885%]"
                 />
                 {" "}
                 <HeroTitleTextReveal
-                  text="algo pensado pra seres humanos, vamos conversar."
+                  text={FOOTER_TITLE_END}
                   delay={0.42}
                   className="leading-[42px]"
                   noWrap={false}
@@ -141,9 +147,9 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
             </div>
 
             <div className="figma-font-geist-mono content-stretch flex flex-col font-light gap-[14px] items-center justify-center leading-[0] mix-blend-color-dodge relative shrink-0 text-[#d1d1d1] text-[12px] whitespace-nowrap" data-node-id="68:517">
-              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">victorxyn@gmail.com</p></div>
-              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">(34) 99862-4100</p></div>
-              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">Uberlândia MG</p></div>
+              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">{FOOTER_EMAIL}</p></div>
+              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">{FOOTER_PHONE}</p></div>
+              <div className="flex flex-col justify-center relative shrink-0"><p className="leading-[14px]">{FOOTER_LOCATION}</p></div>
             </div>
 
             <div className="content-stretch flex items-end justify-between relative shrink-0 w-full" data-node-id="68:518">
@@ -159,7 +165,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
 
               <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="68:520">
                 <div className="relative shrink-0 size-[28px]">
-                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedin} />
+                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedIn} />
                 </div>
                 <div className="relative shrink-0 size-[28px]">
                   <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileWhatsapp} />
@@ -187,16 +193,16 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
         <div className="content-stretch flex flex-col gap-[36px] items-center justify-end p-[32px] relative shrink-0 w-full h-full" data-node-id="67:2579">
           <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-center text-white tracking-[-0.6px] w-full" data-node-id="67:2580">
             <p className="text-[20px]">
-              <HeroTitleTextReveal text="Se você precisa" delay={0} className="leading-[26px]" noWrap={false} />
+              <HeroTitleTextReveal text={FOOTER_TITLE_START} delay={0} className="leading-[26px]" noWrap={false} />
               {" "}
               <HeroTitleHighlightReveal
-                text="construir"
+                text={FOOTER_TITLE_HIGHLIGHT}
                 delay={0.22}
                 className="figma-font-newsreader bg-clip-text bg-gradient-to-r font-normal from-[#5483bc] from-[55.769%] italic leading-[26px] text-[transparent] to-[#cbe3ff] to-[77.885%]"
               />
               {" "}
               <HeroTitleTextReveal
-                text="algo pensado pra seres humanos, vamos conversar."
+                text={FOOTER_TITLE_END}
                 delay={0.38}
                 className="leading-[26px]"
                 noWrap={false}
@@ -206,13 +212,13 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
 
           <div className="figma-font-geist-mono content-stretch flex flex-col font-light gap-[14px] items-center justify-center leading-[0] mix-blend-color-dodge relative shrink-0 text-[#d1d1d1] text-[12px] whitespace-nowrap" data-name="Contact Info" data-node-id="67:2581">
             <div className="flex flex-col justify-center relative shrink-0" data-node-id="67:2582">
-              <p className="leading-[14px]">victorxyn@gmail.com</p>
+              <p className="leading-[14px]">{FOOTER_EMAIL}</p>
             </div>
             <div className="flex flex-col justify-center relative shrink-0" data-node-id="67:2583">
-              <p className="leading-[14px]">(34) 99862-4100</p>
+              <p className="leading-[14px]">{FOOTER_PHONE}</p>
             </div>
             <div className="flex flex-col justify-center relative shrink-0" data-node-id="67:2584">
-              <p className="leading-[14px]">Uberlândia MG</p>
+              <p className="leading-[14px]">{FOOTER_LOCATION}</p>
             </div>
           </div>
 
@@ -229,7 +235,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
 
             <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="67:2587">
               <div className="relative shrink-0 size-[28px]" data-name="Social Button" data-node-id="67:2588">
-                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedin} />
+                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedIn} />
               </div>
               <div className="relative shrink-0 size-[28px]" data-name="Social Button Icon" data-node-id="67:2592">
                 <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileWhatsapp} />

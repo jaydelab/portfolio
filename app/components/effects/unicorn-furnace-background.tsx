@@ -2,6 +2,10 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { assetUrl } from "../../lib/asset-url";
 import type { ActiveBreakpoint } from "../../lib/use-active-breakpoint";
 import type { UnicornHeroLayoutConfig } from "./unicorn-hero-background";
+import type {
+  UnicornStudioApi,
+  UnicornStudioBaseScene,
+} from "./unicorn-studio-types";
 
 type UnicornFurnaceBackgroundProps = {
   breakpoint?: ActiveBreakpoint;
@@ -18,33 +22,11 @@ type UnicornScenePayload = {
   layers?: UnicornSceneLayer[];
 };
 
-type UnicornStudioScene = {
-  destroy?: () => void;
+type UnicornStudioScene = UnicornStudioBaseScene;
+type UnicornFurnaceWindow = Window & {
+  UnicornStudio?: UnicornStudioApi;
+  __portfolioUnicornFurnaceRuntimePromise__?: Promise<UnicornStudioApi>;
 };
-
-type UnicornStudioApi = {
-  addScene: (options: {
-    element: HTMLElement;
-    filePath: string;
-    fps?: number;
-    interactivity?: {
-      mouse?: {
-        disableMobile?: boolean;
-      };
-    };
-    lazyLoad?: boolean;
-    production?: boolean;
-    scale?: number;
-    dpi?: number;
-  }) => Promise<UnicornStudioScene>;
-};
-
-declare global {
-  interface Window {
-    UnicornStudio?: UnicornStudioApi;
-    __portfolioUnicornFurnaceRuntimePromise__?: Promise<UnicornStudioApi>;
-  }
-}
 
 const runtimeUrl = assetUrl("/effects/unicorn-furnace/unicorn-runtime.txt");
 const sceneUrl = assetUrl("/effects/unicorn-furnace/scene.json");
@@ -171,33 +153,35 @@ function loadRuntime() {
     return Promise.reject(new Error("Window indisponível."));
   }
 
-  if (window.UnicornStudio) {
-    return Promise.resolve(window.UnicornStudio);
+  const unicornWindow = window as UnicornFurnaceWindow;
+
+  if (unicornWindow.UnicornStudio) {
+    return Promise.resolve(unicornWindow.UnicornStudio);
   }
 
-  if (window.__portfolioUnicornFurnaceRuntimePromise__) {
-    return window.__portfolioUnicornFurnaceRuntimePromise__;
+  if (unicornWindow.__portfolioUnicornFurnaceRuntimePromise__) {
+    return unicornWindow.__portfolioUnicornFurnaceRuntimePromise__;
   }
 
-  window.__portfolioUnicornFurnaceRuntimePromise__ = fetchRuntimeSource()
+  unicornWindow.__portfolioUnicornFurnaceRuntimePromise__ = fetchRuntimeSource()
     .then((source) => {
       const script = document.createElement("script");
       script.async = false;
       script.text = source;
       document.head.appendChild(script);
 
-      if (!window.UnicornStudio) {
+      if (!unicornWindow.UnicornStudio) {
         throw new Error("Runtime UnicornStudio não carregou.");
       }
 
-      return window.UnicornStudio;
+      return unicornWindow.UnicornStudio;
     })
     .catch((error) => {
-      window.__portfolioUnicornFurnaceRuntimePromise__ = undefined;
+      unicornWindow.__portfolioUnicornFurnaceRuntimePromise__ = undefined;
       throw error;
     });
 
-  return window.__portfolioUnicornFurnaceRuntimePromise__;
+  return unicornWindow.__portfolioUnicornFurnaceRuntimePromise__;
 }
 
 async function buildSceneObjectUrl() {
@@ -233,7 +217,7 @@ async function buildSceneObjectUrl() {
 function getFurnaceBackgroundStyle(
   layout: UnicornHeroLayoutConfig | undefined,
   breakpoint: ActiveBreakpoint,
-) {
+): CSSProperties {
   if (!layout) {
     return {
       bottom: "0",
