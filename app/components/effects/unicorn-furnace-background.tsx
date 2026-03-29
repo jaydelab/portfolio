@@ -59,6 +59,20 @@ let furnaceWarmupPromise: Promise<void> | null = null;
 let runtimeSourcePromise: Promise<string> | null = null;
 let furnaceImageWarmupPromise: Promise<void> | null = null;
 
+function canUseWebGL() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const canvas = document.createElement("canvas");
+  const context =
+    canvas.getContext("webgl2") ??
+    canvas.getContext("webgl") ??
+    canvas.getContext("experimental-webgl");
+
+  return Boolean(context && "getExtension" in context);
+}
+
 function preloadImageAsset(src: string) {
   return new Promise<void>((resolve, reject) => {
     const image = new Image();
@@ -124,7 +138,7 @@ async function fetchRuntimeSource() {
 }
 
 export function warmupUnicornFurnaceEffect() {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || !canUseWebGL()) {
     return Promise.resolve();
   }
 
@@ -280,6 +294,10 @@ export function UnicornFurnaceBackground({
     const container = sceneRef.current;
 
     if (!container) {
+      return undefined;
+    }
+
+    if (!canUseWebGL()) {
       return undefined;
     }
 

@@ -101,6 +101,20 @@ const SCROLL_HERO_FPS = 18;
 const SCROLL_SETTLE_MS = 160;
 const EDGE_FADE_GAIN = 1.9;
 
+function canUseWebGL() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const canvas = document.createElement("canvas");
+  const context =
+    canvas.getContext("webgl2") ??
+    canvas.getContext("webgl") ??
+    canvas.getContext("experimental-webgl");
+
+  return Boolean(context && "getExtension" in context);
+}
+
 async function fetchRuntimeSource() {
   if (runtimeSourcePromise) {
     return runtimeSourcePromise;
@@ -220,7 +234,7 @@ function withHighPerformanceWebGLContext<T>(run: () => Promise<T>) {
 }
 
 function warmupSceneAsset() {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || !canUseWebGL()) {
     return;
   }
 
@@ -314,6 +328,10 @@ export function UnicornHeroBackground({
   useEffect(() => {
     const container = sceneRef.current;
     if (!container) {
+      return undefined;
+    }
+
+    if (!canUseWebGL()) {
       return undefined;
     }
 
