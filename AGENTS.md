@@ -149,17 +149,17 @@ export default function SomeSection({ className = "" }) {
 
 | Seção | Status | Notas |
 |-------|--------|-------|
-| BadgeHeader | ✅ | `max-md:hidden` (badge aparece dentro do Hero mobile) |
-| HeroSection | ✅ | Badge + título + code block mobile |
+| BadgeHeader | ✅ | Badge único e sticky em todos os breakpoints |
+| HeroSection | ✅ | Título adaptativo com Furnace; sem badge embutido |
 | AboutSection | ✅ | Avatar full-bleed + texto com overlap negativo |
 | CaseStudyIntro | ✅ | 3 cards mobile (substitui os 4 case studies desktop) |
 | CaseStudyWAP/Coolhunting/ConnectHunt/Portal | ✅ | `max-md:hidden` via className prop |
 | TestimonialSection | ✅ | Card decorativo responsivo + avatar + review |
-| ONovoMercadoSection | ⏳ | Pendente |
-| HighlightsSection | ⏳ | Pendente |
-| ProjectsGrid | ⏳ | Pendente |
+| ONovoMercadoSection | ✅ | Variante mobile implementada |
+| HighlightsSection | ✅ | Variante mobile implementada |
+| ProjectsGrid | ✅ | Variante mobile implementada |
 | CTASection | ✅ | CTA morph section reconstruída com scroll proprietário e validação via Playwright CLI |
-| FooterSection | ⏳ | Pendente |
+| FooterSection | ✅ | Variante mobile implementada |
 
 ### Validação com Playwright CLI
 

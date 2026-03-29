@@ -12,12 +12,17 @@ tests/visual-baseline/screenshots/
 # AI tooling
 .claude/
 .agent/
+.agents/
 .gemini/
+.kiro/
+.planning/
+.windsurf/
+skills-lock.json
 
 # Project-specific
 figma-cli/
 RUNTIME_RULES.md
 .superpowers/
 screenshots/
-output/playwright/
+output/
 .vercel
