@@ -21,6 +21,7 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
 
   return (
     <>
+      <h2 className="sr-only">Rodapé e informações de contato</h2>
       {activeBreakpoint === "desktop" ? (
       <div
         id={id || "contato"}

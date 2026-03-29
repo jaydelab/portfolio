@@ -26,6 +26,7 @@ export default function ProjectsGrid({ id, className = "" }: ProjectsGridProps =
 
   return (
     <>
+      <h2 className="sr-only">Outros projetos</h2>
       {activeBreakpoint === "desktop" ? (
       <div id={id} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] max-lg:hidden ${className}`.trim()} data-name="Container" data-node-id="1:1016">
         <div className="figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-1.68px] w-full" data-node-id="1:1017">

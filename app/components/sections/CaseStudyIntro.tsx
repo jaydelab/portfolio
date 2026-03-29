@@ -23,6 +23,7 @@ export default function CaseStudyIntro({ id, className = "" }: CaseStudyIntroPro
 
   return (
     <div id={id || "cases"} className={`content-stretch flex flex-col gap-[52px] max-lg:gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="1:510">
+      <h2 className="sr-only">Cases</h2>
             {activeBreakpoint === "desktop" ? (
             <>
               <div className="max-lg:hidden figma-font-georgia flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[#393737] text-[56px] max-lg:text-[clamp(30px,5.5vw,56px)] text-center tracking-[-2.8px] w-full" data-node-id="1:511">

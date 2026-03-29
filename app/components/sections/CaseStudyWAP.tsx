@@ -11,6 +11,7 @@ interface CaseStudyWAPProps {
 export default function CaseStudyWAP({ id, className = "" }: CaseStudyWAPProps = {}) {
   return (
     <div id={id} className={`content-stretch flex max-lg:flex-col items-start justify-center relative shrink-0 ${className}`.trim()} data-node-id="1:573">
+      <h3 className="sr-only">WAP</h3>
             <div className="content-stretch flex flex-col gap-[42px] max-lg:gap-[24px] items-start relative shrink-0 w-[588px] max-lg:w-full" data-node-id="1:574">
               <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0" data-node-id="1:575">
                 <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-node-id="1:576" style={{ backgroundImage: "linear-gradient(-8.23177deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>

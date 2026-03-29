@@ -10,6 +10,7 @@ interface CaseStudyPortalProps {
 export default function CaseStudyPortal({ id, className = "" }: CaseStudyPortalProps = {}) {
   return (
     <div id={id} className={`content-stretch flex max-lg:flex-col gap-[24px] items-start justify-center relative shrink-0 ${className}`.trim()} data-name="Image" data-node-id="1:719">
+      <h3 className="sr-only">Portal Fornecedor</h3>
             <div className="h-[477.018px] relative shrink-0 w-[792px] max-lg:w-full" data-name="003 2 1" data-node-id="1:720">
               <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img00321} />
             </div>

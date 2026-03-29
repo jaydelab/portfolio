@@ -44,6 +44,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
 
   return (
     <>
+      <h2 className="sr-only">Como eu construo com IA</h2>
       {activeBreakpoint === "desktop" ? (
       <div id={id} className={`content-stretch flex flex-col gap-[843px] max-md:gap-[96px] max-sm:gap-[72px] h-[1274px] items-center max-md:items-start pb-[35px] max-md:pb-[24px] pt-[82px] max-md:pt-[48px] px-[36px] max-md:px-[20px] max-sm:px-[16px] relative shrink-0 w-full max-w-[1200px] max-md:h-auto max-lg:hidden ${className}`.trim()} data-name="Background" data-node-id="1:988">
         <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgBackground} />

@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { RevealOnMount } from "../effects/reveal-on-mount";
-import { CardEntrance } from "../effects/card-entrance";
 import { UnicornFurnaceBackground } from "../effects/unicorn-furnace-background";
 import {
   UnicornHeroBackground,
@@ -14,7 +13,6 @@ import { assetUrl } from "../../lib/asset-url";
 import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const imgSlideshowImage = assetUrl("/visual-ir-assets/fig.webp");
-const imgVectorContainer = assetUrl("/visual-ir-assets/vector-container.svg");
 
 /* ── Unicorn Furnace: ajuste aqui, aplica em todos os breakpoints ── */
 const furnaceShader = {
@@ -142,7 +140,12 @@ export default function HeroSection({
 }: HeroSectionProps = {}) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const activeBreakpoint = useActiveBreakpoint();
-  const heroMinHeight = activeBreakpoint === "desktop" ? "calc(100vh - 208px)" : "100vh";
+  const heroMinHeight =
+    activeBreakpoint === "desktop"
+      ? "calc(100vh - 208px)"
+      : activeBreakpoint === "tablet"
+        ? "clamp(440px, calc(62svh - 100px), 600px)"
+        : "clamp(360px, calc(56svh - 80px), 460px)";
   const furnaceOverflowBottom =
     furnaceShader.enabled && heroEffectReady
       ? getNegativeBottomOffset(furnaceShader.bottom, heroMinHeight)
@@ -152,9 +155,11 @@ export default function HeroSection({
     <div
       id={id}
       ref={sectionRef}
-      className={`w-full relative flex flex-col ${activeBreakpoint === "desktop" ? "justify-start" : "justify-center"} ${className}`.trim()}
+      className={`w-full relative flex flex-col justify-start ${className}`.trim()}
       style={{ marginBottom: furnaceOverflowBottom, minHeight: heroMinHeight }}
     >
+      <h1 className="sr-only">Claude e Codex são funcionários, mas produto nasce no Figma</h1>
+
       {furnaceShader.enabled && heroEffectReady ? (
         <UnicornFurnaceBackground breakpoint={activeBreakpoint} layout={furnaceShader} />
       ) : null}
@@ -242,61 +247,13 @@ export default function HeroSection({
               </div>
               </RevealOnMount>
             </div>
-            <CardEntrance className="shrink-0">
-            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative z-10 shrink-0" style={{ display: "none" }} data-name="Container" data-node-id="1:114">
-              <div className="col-1 h-[383px] ml-0 mt-0 relative row-1 w-[792px]" data-name="Illustration" data-node-id="1:115">
-                <div className="-translate-x-1/2 absolute bg-[rgba(0,0,0,0.8)] border border-solid border-white content-stretch flex flex-col gap-[20px] items-start left-[calc(50%+0.5px)] pb-[20px] pt-[16px] rounded-[20px] top-0 w-[793px]" data-name="Container-illustration" data-node-id="1:125">
-                  <div className="border-[rgba(255,255,255,0.06)] border-b border-solid content-stretch flex gap-[6px] h-[20px] items-start px-[16px] relative shrink-0 w-full" data-name="Pagination Dots Container" data-node-id="1:126">
-                    <div className="bg-[#a3a3a3] opacity-50 rounded-[100px] shrink-0 size-[10px]" data-name="Container" data-node-id="1:127" />
-                    <div className="bg-[#6a6a6a] rounded-[16777200px] shrink-0 size-[10px]" data-name="Container" data-node-id="1:128" />
-                    <div className="bg-[#a3a3a3] opacity-50 rounded-[16777200px] shrink-0 size-[10px]" data-name="Container" data-node-id="1:129" />
-                  </div>
-                  <div className="content-stretch flex flex-col items-start px-[20px] pb-[0px] relative shrink-0 w-full" data-name="Code Container" data-node-id="1:130">
-                    <pre className="figma-font-geist-mono text-[14px] leading-[22px] text-[rgba(255,255,255,0.5)] m-0 whitespace-pre-wrap" data-node-id="1:131">
-{`import { Designer } from '@victor/core';
-import { Figma, AI, Vibe, Research } from './MyWorkflow';
-
-const victor = new Designer({ origin: 'pencil-on-paper' });
-const builder = victor.evolveToBuilder();
-
-const ecosystem = builder.build([
-  new ProductThinking(),
-  new DesignSystems(),
-  new AIOrchestration(),
-  new ShipItAnyway(),
-]);
-
-const agent = new `}<span className="text-[#EAB308]">Jade</span>{` ({ creator: builder, context: ecosystem });
-await agent.run();`}
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              <div className="col-1 h-[20px] ml-[753px] mt-[362px] relative row-1 w-[16px]" data-name="Vector Container" data-node-id="1:495">
-                <div className="absolute inset-[-15%_-21.48%_-25%_-25%]">
-                  <img alt="" className="block max-w-none size-full" src={imgVectorContainer} />
-                </div>
-              </div>
-            </div>
-            </CardEntrance>
       </div>
       ) : null}
 
       {/* ====== Tablet ====== */}
       {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col items-center relative z-10 w-full" data-name="HeroSection-tablet" data-node-id="68:57">
-        <div className="content-stretch flex flex-col gap-[52px] items-center relative z-10 shrink-0 w-full">
-          <RevealOnMount delay={0.05}>
-          <div className="backdrop-blur-[25px] bg-[rgba(0,0,0,0.55)] flex h-[30px] items-center justify-center px-[12px] rounded-[18px] shrink-0" data-name="Badge" data-node-id="68:58">
-            <div className="flex gap-[7px] items-center" data-node-id="68:59">
-              <div className="bg-[#80f571] rounded-[50px] shrink-0 size-[8px]" data-node-id="68:60" />
-              <div className="figma-font-geist font-medium text-[12px] text-white whitespace-nowrap" data-node-id="68:61">
-                <p className="leading-[normal]">Open to Work</p>
-              </div>
-            </div>
-          </div>
-          </RevealOnMount>
-
+        <div className="content-stretch flex flex-col gap-[24px] items-center relative z-10 shrink-0 w-full">
           <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[509px]" data-node-id="68:62">
             <div className="content-stretch flex flex-col gap-[12px] items-center relative shrink-0 w-full" data-node-id="68:63">
               <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-node-id="68:64">
@@ -368,42 +325,6 @@ await agent.run();`}
                 </div>
               </div>
             </div>
-
-            <CardEntrance className="hidden w-full shrink-0">
-            <div className="bg-[rgba(0,0,0,0.8)] border border-solid border-white content-stretch flex flex-col gap-[16px] items-start pb-[20px] pt-[16px] rounded-[20px] shrink-0 w-full" data-name="Container-illustration" data-node-id="68:71">
-              <div className="border-[rgba(255,255,255,0.06)] border-b border-solid content-stretch flex items-center justify-between px-[16px] relative shrink-0 w-full" data-node-id="68:72">
-                <div className="content-stretch flex gap-[4px] h-[20px] items-center relative shrink-0" data-node-id="68:73">
-                  <div className="bg-[#a3a3a3] opacity-50 rounded-full shrink-0 size-[8px]" data-node-id="68:74" />
-                  <div className="bg-[#6a6a6a] rounded-full shrink-0 size-[8px]" data-node-id="68:75" />
-                  <div className="bg-[#a3a3a3] opacity-50 rounded-full shrink-0 size-[8px]" data-node-id="68:76" />
-                </div>
-                <div className="h-[14px] relative shrink-0 w-[11.2px]" data-node-id="68:77">
-                  <div className="absolute inset-[-21.43%_-32.2%_-35.71%_-35.71%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVectorContainer} />
-                  </div>
-                </div>
-              </div>
-              <div className="content-stretch flex flex-col items-start px-[20px] relative shrink-0 w-full" data-node-id="68:78">
-                <pre className="figma-font-geist-mono text-[10px] leading-[14px] text-[rgba(255,255,255,0.5)] m-0 whitespace-pre-wrap w-full" data-node-id="68:79">
-{`import { Designer } from '@victor/core';
-import { Figma, AI, Vibe, Research } from './MyWorkflow';
-
-const victor = new Designer({ origin: 'pencil-on-paper' });
-const builder = victor.evolveToBuilder();
-
-const ecosystem = builder.build([
-  new ProductThinking(),
-  new DesignSystems(),
-  new AIOrchestration(),
-  new ShipItAnyway(),
-]);
-
-const agent = new `}<span className="text-[#ffdd54]">Jade</span>{` ({ creator: builder, context: ecosystem });
-await agent.run();`}
-                </pre>
-              </div>
-            </div>
-            </CardEntrance>
           </div>
         </div>
       </div>
@@ -411,19 +332,7 @@ await agent.run();`}
 
       {/* ====== Mobile ====== */}
       {activeBreakpoint === "mobile" ? (
-      <div className="hidden max-md:flex flex-col gap-[52px] items-center relative z-10 w-full" data-name="HeroSection-mobile" data-node-id="13:7056">
-        {/* Badge */}
-        <RevealOnMount delay={0.05}>
-        <div className="relative z-10 backdrop-blur-[25px] bg-[rgba(0,0,0,0.55)] flex h-[30px] items-center justify-center px-[12px] rounded-[18px] shrink-0" data-name="Badge" data-node-id="13:7057">
-          <div className="flex gap-[7px] items-center" data-node-id="13:7058">
-            <div className="bg-[#80f571] rounded-[50px] shrink-0 size-[8px]" data-node-id="13:7059" />
-            <div className="figma-font-geist font-medium text-[12px] text-white whitespace-nowrap" data-node-id="13:7060">
-              <p className="leading-[normal]">Open to Work</p>
-            </div>
-          </div>
-        </div>
-        </RevealOnMount>
-
+      <div className="hidden max-md:flex flex-col gap-[24px] items-center relative z-10 w-full" data-name="HeroSection-mobile" data-node-id="13:7056">
         {/* Content: title + code block */}
         <div className="relative z-10 flex flex-col gap-[24px] items-start w-full" data-node-id="13:7061">
           {/* Title group */}
@@ -499,44 +408,6 @@ await agent.run();`}
               </div>
             </div>
           </div>
-
-          {/* Code block */}
-          <CardEntrance className="hidden w-full">
-          <div className="bg-[rgba(0,0,0,0.8)] border border-solid border-white flex flex-col gap-[16px] items-start pb-[16px] rounded-[14px] w-full" data-name="Container-illustration" data-node-id="13:7071">
-            {/* Dot row */}
-            <div className="border-b border-[rgba(255,255,255,0.06)] border-solid flex items-center justify-between px-[14px] py-[10px] w-full" data-node-id="13:7072">
-              <div className="flex gap-[4px] items-center" data-node-id="13:7073">
-                <div className="bg-[#a3a3a3] opacity-50 rounded-full shrink-0 size-[8px]" data-node-id="13:7074" />
-                <div className="bg-[#a3a3a3] opacity-50 rounded-full shrink-0 size-[8px]" data-node-id="13:7075" />
-                <div className="bg-[#a3a3a3] opacity-50 rounded-full shrink-0 size-[8px]" data-node-id="13:7076" />
-              </div>
-              <div className="h-[14px] relative shrink-0 w-[11.2px]" data-node-id="13:7077">
-                <div className="absolute inset-[-21.43%_-32.2%_-35.71%_-35.71%]">
-                  <img alt="" className="block max-w-none size-full" src={imgVectorContainer} />
-                </div>
-              </div>
-            </div>
-
-            {/* Code content */}
-            <div className="flex items-start px-[14px] w-full" data-node-id="13:7079">
-              <pre className="figma-font-geist-mono text-[10px] leading-[14px] text-[rgba(255,255,255,0.5)] m-0 whitespace-pre-wrap flex-1" data-node-id="13:7080">{`import { Designer } from '@victor/core';
-import { Figma, AI, Vibe, Research } from './MyWorkflow';
-
-const victor = new Designer({ origin: 'pencil-on-paper' });
-const builder = victor.evolveToBuilder();
-
-const ecosystem = builder.build([
-  new ProductThinking(),
-  new DesignSystems(),
-  new AIOrchestration(),
-  new ShipItAnyway(),
-]);
-
-const agent = new `}<span className="text-[#ffdd54]">Jade</span>{` ({ creator: builder, context: ecosystem });
-await agent.run();`}</pre>
-            </div>
-          </div>
-          </CardEntrance>
         </div>
       </div>
       ) : null}

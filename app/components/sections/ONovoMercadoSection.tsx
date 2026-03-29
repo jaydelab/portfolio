@@ -15,6 +15,7 @@ interface ONovoMercadoSectionProps {
 export default function ONovoMercadoSection({ id, className = "" }: ONovoMercadoSectionProps = {}) {
   return (
     <div id={id || "sobre"} className={`content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="O Novo Mercado" data-node-id="1:945">
+      <h2 className="sr-only">O Novo Mercado</h2>
             <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:946">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[36px] items-center justify-center px-[16px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" data-name="Upper Container" data-node-id="1:947" style={{ backgroundImage: "linear-gradient(-10.1145deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }}>
                 <div className="figma-font-geist flex flex-col font-medium justify-center leading-[0] relative shrink-0 text-[#232323] text-[13px] whitespace-nowrap" data-node-id="1:948">

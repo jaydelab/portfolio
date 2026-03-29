@@ -26,6 +26,7 @@ interface CaseStudyCoolhuntingProps {
 export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCoolhuntingProps = {}) {
   return (
     <div id={id} className={`content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Cover Container" data-node-id="1:587">
+      <h3 className="sr-only">Coolhunting 2.0</h3>
             <div className="content-stretch flex flex-col gap-[10px] h-[580px] max-md:h-auto max-md:min-h-[300px] items-end overflow-clip pb-[55px] pt-[58px] px-[50px] relative shrink-0 w-full" data-name="Main Content" data-node-id="1:588">
               <div className="absolute contents left-0 top-0" data-name="Mask group" data-node-id="1:589">
                 <div className="-translate-x-1/2 absolute bg-[#c3e1e5] h-[990.074px] left-[calc(50%+12.05px)] mask-alpha mask-intersect mask-no-repeat mask-position-[46.537px_3.037px] mask-size-[1200px_580px] overflow-clip rounded-[30px] top-[-3.04px] w-[1317.171px]" data-name="Back" data-node-id="1:591" style={{ maskImage: `url('${imgBack}')` }} />
@@ -58,7 +59,7 @@ export default function CaseStudyCoolhunting({ id, className = "" }: CaseStudyCo
                   </div>
                 </div>
                 <div className="figma-font-geist flex flex-col font-normal h-[130px] justify-center min-w-full opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]" data-node-id="1:603">
-                  <p className="leading-[26px]">O sistema faz a gestão completa do ciclo de vida de cada item, centraliza dados massivos e conta com uma LLM integrada ue atua em pontos estratégicos. O sistema foi projetado em Light e Dark Mode e é totalmente responsivo em quatro breakpoints, só nele já são mais de +500 telas projetadas.</p>
+                  <p className="leading-[26px]">O sistema faz a gestão completa do ciclo de vida de cada item, centraliza dados massivos e conta com uma LLM integrada que atua em pontos estratégicos. O sistema foi projetado em modo claro e escuro e é totalmente responsivo em quatro resoluções. Só nele já são mais de +500 telas projetadas.</p>
                 </div>
               </div>
             </div>

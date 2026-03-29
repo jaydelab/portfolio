@@ -17,6 +17,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
 
   return (
     <div id={id} className={`w-full ${className}`.trim()}>
+      <h2 className="sr-only">Sobre mim</h2>
       {/* ====== Desktop ====== */}
       {activeBreakpoint === "desktop" ? (
       <div className="max-lg:hidden content-stretch flex gap-[24px] max-lg:gap-[16px] items-center justify-center relative shrink-0 max-lg:flex-col-reverse" data-name="Sobre" data-node-id="1:497">
@@ -29,7 +30,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               <div className="content-stretch flex flex-col gap-[24px] h-[464px] items-start relative shrink-0 w-full" data-name="Text Container" data-node-id="1:501">
                 <div className="figma-font-georgia flex flex-[1_0_0] flex-col justify-center leading-[0] min-h-px min-w-px not-italic relative text-[#393737] text-[48px] max-lg:text-[clamp(28px,4.8vw,48px)] tracking-[-1.44px] w-full" data-node-id="1:502">
                   <p className="leading-[64px] max-lg:leading-[clamp(36px,6.4vw,64px)]">
-                    <HeroTitleTextReveal text="A parte que não cabe na minha bio do Linkedin" delay={0} noWrap={false} />
+                    <HeroTitleTextReveal text="A parte que não cabe na minha bio do LinkedIn" delay={0} noWrap={false} />
                   </p>
                 </div>
                 <div className="figma-font-geist flex flex-col font-normal justify-center opacity-60 relative shrink-0 text-[18px] max-lg:text-[clamp(15px,2vw,18px)] text-black tracking-[-0.2px] w-full whitespace-pre-wrap leading-[27px] max-lg:leading-[clamp(23px,2.8vw,27px)]" data-node-id="1:503">
@@ -37,7 +38,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
                   <p className="mb-0">&nbsp;</p>
                   <p className="mb-0">Tenho 26 anos, orgulho de ser pai da Jade e já acumulei 9 anos de profissão criando produtos que milhões de pessoas usam, sim, foram muitas xícaras de café até chegar aqui.</p>
                   <p className="mb-0">&nbsp;</p>
-                  <p>Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas idéias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
+                  <p>Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas ideias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
                 </div>
               </div>
             </div>
@@ -85,7 +86,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               </div>
               <div className="figma-font-georgia not-italic text-[32px] text-[#393737] tracking-[-0.64px] w-full" data-node-id="68:87">
                 <p className="leading-[44px] whitespace-pre-wrap">
-                  <HeroTitleTextReveal text="A parte que não cabe na minha bio do Linkedin" delay={0} noWrap={false} />
+                  <HeroTitleTextReveal text="A parte que não cabe na minha bio do LinkedIn" delay={0} noWrap={false} />
                 </p>
               </div>
             </div>
@@ -96,7 +97,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
               <p className="leading-[26px]">Tenho 26 anos, orgulho de ser pai da Jade e já acumulei 9 anos de profissão criando produtos que milhões de pessoas usam, sim, foram muitas xícaras de café até chegar aqui.</p>
             </div>
             <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black tracking-[-0.2px] w-full" data-node-id="68:90">
-              <p className="leading-[26px]">Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas idéias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
+              <p className="leading-[26px]">Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas ideias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
             </div>
           </div>
 
@@ -164,7 +165,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             </div>
             <div className="figma-font-georgia not-italic text-[24px] text-[#393737] tracking-[-0.48px] w-full" data-node-id="13:7092">
               <p className="leading-[34px]">
-                <HeroTitleTextReveal text="A parte que não cabe na minha bio do Linkedin" delay={0} noWrap={false} />
+                <HeroTitleTextReveal text="A parte que não cabe na minha bio do LinkedIn" delay={0} noWrap={false} />
               </p>
             </div>
           </div>
@@ -175,7 +176,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             <p className="leading-[26px]">Tenho 26 anos, orgulho de ser pai da Jade e já acumulei 9 anos de profissão criando produtos que milhões de pessoas usam, sim, foram muitas xícaras de café até chegar aqui.</p>
           </div>
           <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black w-full" data-node-id="13:7095">
-            <p className="leading-[26px]">Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas idéias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
+            <p className="leading-[26px]">Eu não posso prometer mudar o mundo, mas prometo que o meu trabalho e minhas ideias ajudarão a impulsionar o seu negócio, os seus produtos e a experiência dos seus usuários.</p>
           </div>
         </div>
       </div>

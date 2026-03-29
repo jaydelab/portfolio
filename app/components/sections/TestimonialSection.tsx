@@ -462,6 +462,7 @@ export default function TestimonialSection({ id, className = "" }: TestimonialSe
 
   return (
     <div id={id} className={`h-[455.5px] max-lg:h-auto relative shrink-0 w-full max-w-[1200px] ${className}`.trim()} data-name="Container" data-node-id="3:733">
+      <h2 className="sr-only">Depoimento</h2>
             {activeBreakpoint === "desktop" ? (
             <>
             <div className="max-lg:hidden absolute content-stretch flex flex-col gap-[20px] items-start left-[452px] top-[121px] w-[680px]" data-name="Review Container" data-node-id="1:727">

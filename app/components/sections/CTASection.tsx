@@ -5,7 +5,7 @@ import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 const DESKTOP_ARROW = assetUrl("/visual-ir-assets/icon-svg.svg");
 const MOBILE_ARROW = assetUrl("/visual-ir-assets/cta-mobile-arrow.svg");
 const CTA_COPY =
-  "O que você precisa? Resolver um problema complexo? Prazer. Tem uma idéia que não sai do papel no tempo que precisa? Me chama. Do simples ao único eu resolvo.";
+  "O que você precisa? Resolver um problema complexo? Prazer. Tem uma ideia que não sai do papel no tempo que precisa? Me chama. Do simples ao único eu resolvo.";
 
 interface CTASectionProps {
   id?: string;
@@ -136,6 +136,7 @@ export default function CTASection({
 
   return (
     <div id={id} className={`w-full ${className}`.trim()}>
+      <h2 className="sr-only">Contato</h2>
       {activeBreakpoint === "desktop" ? (
       <div
         className="mx-auto flex w-full max-w-[996px] flex-col items-center max-lg:hidden"
