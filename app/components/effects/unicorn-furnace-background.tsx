@@ -23,6 +23,10 @@ type UnicornScenePayload = {
 };
 
 type UnicornStudioScene = UnicornStudioBaseScene;
+type UnicornFurnaceScene = UnicornStudioBaseScene & {
+  refresh?: () => void;
+  renderFrame?: () => void;
+};
 type UnicornFurnaceWindow = Window & {
   UnicornStudio?: UnicornStudioApi;
   __portfolioUnicornFurnaceRuntimePromise__?: Promise<UnicornStudioApi>;
@@ -286,12 +290,29 @@ export function UnicornFurnaceBackground({
     }
 
     let disposed = false;
-    let scene: UnicornStudioScene | null = null;
+    let scene: UnicornFurnaceScene | null = null;
     let sceneObjectUrl: string | null = null;
     let revealFrameA = 0;
     let revealFrameB = 0;
+    let refreshFrame = 0;
     let revealTimer = 0;
     setIsVisible(false);
+
+    const refreshScene = () => {
+      if (!scene || disposed) {
+        return;
+      }
+
+      window.cancelAnimationFrame(refreshFrame);
+      refreshFrame = window.requestAnimationFrame(() => {
+        scene?.refresh?.();
+        scene?.renderFrame?.();
+      });
+    };
+
+    const handleViewportChange = () => {
+      refreshScene();
+    };
 
     Promise.all([warmupUnicornFurnaceEffect(), loadRuntime(), buildSceneObjectUrl()])
       .then(([, runtime, nextSceneObjectUrl]) => {
@@ -315,6 +336,7 @@ export function UnicornFurnaceBackground({
         }
 
         scene = nextScene;
+        refreshScene();
         revealFrameA = window.requestAnimationFrame(() => {
           revealFrameB = window.requestAnimationFrame(() => {
             revealTimer = window.setTimeout(() => {
@@ -329,18 +351,24 @@ export function UnicornFurnaceBackground({
         console.error(error);
       });
 
+    window.addEventListener("resize", handleViewportChange, { passive: true });
+    window.addEventListener("orientationchange", handleViewportChange, { passive: true });
+
     return () => {
       disposed = true;
       window.cancelAnimationFrame(revealFrameA);
       window.cancelAnimationFrame(revealFrameB);
+      window.cancelAnimationFrame(refreshFrame);
       window.clearTimeout(revealTimer);
+      window.removeEventListener("resize", handleViewportChange);
+      window.removeEventListener("orientationchange", handleViewportChange);
       scene?.destroy?.();
 
       if (sceneObjectUrl) {
         URL.revokeObjectURL(sceneObjectUrl);
       }
     };
-  }, []);
+  }, [breakpoint]);
 
   useEffect(() => {
     if (typeof window === "undefined") {

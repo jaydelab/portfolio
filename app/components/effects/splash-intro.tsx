@@ -22,6 +22,24 @@ const COMPLETE_MS = Math.round(
 );
 /** Tempo total da splash em segundos — exportado para coordenação. */
 export const SPLASH_DURATION_S = CURTAIN_DELAY_SECONDS + CURTAIN_DURATION;
+const FONT_STABILIZE_TIMEOUT_MS = 1600;
+
+async function waitForFontsStable() {
+  if (typeof document === "undefined" || !("fonts" in document)) {
+    return;
+  }
+
+  await Promise.race([
+    document.fonts.ready.catch(() => undefined),
+    new Promise((resolve) => window.setTimeout(resolve, FONT_STABILIZE_TIMEOUT_MS)),
+  ]);
+
+  await new Promise<void>((resolve) => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => resolve());
+    });
+  });
+}
 
 function LogoGlyph() {
   return (
@@ -106,25 +124,41 @@ export function SplashIntro({ children, onComplete }: SplashIntroProps) {
   useEffect(() => {
     // Respeita prefers-reduced-motion — pula splash inteira
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setPhase("done");
-      onComplete?.();
-      return;
+      let cancelled = false;
+
+      void (async () => {
+        await waitForFontsStable();
+        if (cancelled) return;
+        setPhase("done");
+        onComplete?.();
+      })();
+
+      return () => {
+        cancelled = true;
+      };
     }
 
     const prevOverflow = document.body.style.overflow;
     const prevTouch = document.body.style.touchAction;
+    let cancelled = false;
 
     document.body.style.overflow = "hidden";
     document.body.style.touchAction = "none";
 
     const timer = window.setTimeout(() => {
-      document.body.style.overflow = prevOverflow;
-      document.body.style.touchAction = prevTouch;
-      setPhase("done");
-      onComplete?.();
+      void (async () => {
+        await waitForFontsStable();
+        if (cancelled) return;
+
+        document.body.style.overflow = prevOverflow;
+        document.body.style.touchAction = prevTouch;
+        setPhase("done");
+        onComplete?.();
+      })();
     }, COMPLETE_MS);
 
     return () => {
+      cancelled = true;
       window.clearTimeout(timer);
       document.body.style.overflow = prevOverflow;
       document.body.style.touchAction = prevTouch;

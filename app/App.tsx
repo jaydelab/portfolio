@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useLayoutEffect } from "react";
 import Portfolio2026_1_86 from "./generated/Portfolio2026_1_86";
 import { SplashIntro } from "./components/effects/splash-intro";
 import SmoothScroll from "./components/effects/smooth-scroll";
@@ -35,9 +35,10 @@ export default function App() {
 
   const updateHeight = useCallback(() => {
     if (stageRef.current) {
-      setStageHeight(stageRef.current.scrollHeight);
+      const measuredHeight = stageRef.current.getBoundingClientRect().height;
+      setStageHeight(scale > 0 ? measuredHeight / scale : measuredHeight);
     }
-  }, []);
+  }, [scale]);
 
   const handleSplashComplete = useCallback(() => {
     setIsSplashDone(true);
@@ -83,6 +84,13 @@ export default function App() {
     if (stageRef.current) ro.observe(stageRef.current);
     return () => ro.disconnect();
   }, [updateHeight]);
+
+  useLayoutEffect(() => {
+    updateHeight();
+    const frame = window.requestAnimationFrame(updateHeight);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [scale, updateHeight]);
 
   const isScaling = scale < 1;
   const scaledWidth = DESIGN_WIDTH * scale;

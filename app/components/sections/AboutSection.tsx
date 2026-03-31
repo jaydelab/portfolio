@@ -6,7 +6,7 @@ import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
 const imgCursor = assetUrl("/visual-ir-assets/cursor.svg");
 const imgAvatarMobileBg = assetUrl("/visual-ir-assets/avatar-mobile-bg.webp");
-const imgAboutTabletPortrait = assetUrl("/visual-ir-assets/about-tablet-portrait.webp");
+const imgAboutTabletPortrait = assetUrl("/visual-ir-assets/about-tablet-portrait-uncropped.webp");
 const imgProfileImageContainer = assetUrl("/visual-ir-assets/profile-image-container.webp");
 const ABOUT_TITLE = "A parte que não cabe na minha bio do LinkedIn";
 const ABOUT_PARAGRAPH_1 =
@@ -50,7 +50,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
                   <p>{ABOUT_PARAGRAPH_3}</p>
                 </div>
               </div>
-              <SectionActionButtons align="start" className="mt-[32px]" />
+              <SectionActionButtons align="start" />
             </div>
             <div className="h-[604px] max-lg:h-[350px] overflow-clip relative shrink-0 w-[690px] max-lg:w-full" data-name="Profile Image Container" data-node-id="1:504">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -80,14 +80,20 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
       {/* ====== Tablet ====== */}
       {activeBreakpoint === "tablet" ? (
       <div className="hidden min-[768px]:flex min-[1024px]:hidden justify-center mx-[-24px] w-[calc(100%+48px)]" data-name="AboutSection-tablet" data-node-id="68:82">
-        <div className="relative h-[530px] w-[768px]" data-node-id="68:83">
-          <div className="absolute h-[530px] left-[289px] overflow-clip top-0 w-[479px]" data-node-id="68:83">
+        <div className="relative min-h-[530px] w-[768px] pb-[24px]" data-node-id="68:83">
+          <div className="absolute h-[530px] left-[289px] top-0 w-[479px]" data-node-id="68:83">
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-              <img decoding="async" loading="lazy" alt="" className="absolute bottom-0 h-full max-w-none object-contain right-0 w-full" src={imgAboutTabletPortrait} />
+              <img
+                decoding="async"
+                loading="lazy"
+                alt=""
+                className="absolute h-auto max-w-none right-[-92px] top-[8px] w-[700px]"
+                src={imgAboutTabletPortrait}
+              />
             </div>
           </div>
 
-          <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-[42px] top-0 w-[334px]" data-node-id="68:89">
+          <div className="relative z-10 content-stretch flex flex-col gap-[12px] items-start ml-[42px] w-[334px]" data-node-id="68:89">
             <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full" data-node-id="68:90">
               <div className="backdrop-blur-[30px] border border-solid border-white content-stretch flex h-[30px] items-center justify-center px-[12px] py-[8px] relative rounded-[300px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)] shrink-0" style={{ backgroundImage: "linear-gradient(-13.094382348112262deg, rgba(255, 255, 255, 0.15) 34.408%, rgba(153, 153, 153, 0.15) 83.485%)" }} data-node-id="68:85">
                 <div className="figma-font-geist font-medium text-[12px] text-[#232323] whitespace-nowrap" data-node-id="68:86">
@@ -109,7 +115,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black tracking-[-0.2px] w-full" data-node-id="68:90">
               <p className="leading-[26px]">{ABOUT_PARAGRAPH_3}</p>
             </div>
-            <SectionActionButtons align="start" className="mt-[32px]" />
+            <SectionActionButtons align="start" className="mt-[12px]" />
           </div>
 
           <div className="absolute h-[44px] left-[343px] top-px w-[76px]" data-node-id="68:92">
@@ -189,7 +195,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
           <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black w-full" data-node-id="13:7095">
             <p className="leading-[26px]">{ABOUT_PARAGRAPH_3}</p>
           </div>
-          <SectionActionButtons align="start" className="mt-[32px]" />
+          <SectionActionButtons align="start" className="mt-[12px]" />
         </div>
       </div>
       ) : null}

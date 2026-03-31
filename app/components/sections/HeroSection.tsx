@@ -41,7 +41,7 @@ const furnaceShader = {
     size: "max(100%, 100vw)",
     vignette: {
       topFade: "0%",
-      bottomFade: "0%",
+      bottomFade: "10%",
       leftFade: "0%",
       rightFade: "0%",
     },
@@ -51,7 +51,7 @@ const furnaceShader = {
     size: "max(100%, 100vw)",
     vignette: {
       topFade: "0%",
-      bottomFade: "0%",
+      bottomFade: "10%",
       leftFade: "0%",
       rightFade: "0%",
     },
@@ -148,7 +148,7 @@ export default function HeroSection({
         ? "clamp(440px, calc(62svh - 100px), 600px)"
         : "clamp(360px, calc(56svh - 80px), 460px)";
   const furnaceOverflowBottom =
-    furnaceShader.enabled && heroEffectReady
+    furnaceShader.enabled
       ? getNegativeBottomOffset(furnaceShader.bottom, heroMinHeight)
       : undefined;
 
@@ -256,7 +256,7 @@ export default function HeroSection({
 
       {/* ====== Tablet ====== */}
       {activeBreakpoint === "tablet" ? (
-      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col items-center relative z-10 w-full" data-name="HeroSection-tablet" data-node-id="68:57">
+      <div className="hidden min-[768px]:flex min-[1024px]:hidden flex-col items-center relative z-10 w-full pt-[16px]" data-name="HeroSection-tablet" data-node-id="68:57">
         <div className="content-stretch flex flex-col gap-[24px] items-center relative z-10 shrink-0 w-full">
           <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[509px]" data-node-id="68:62">
             <div className="content-stretch flex flex-col gap-[12px] items-center relative shrink-0 w-full" data-node-id="68:63">
@@ -339,7 +339,7 @@ export default function HeroSection({
 
       {/* ====== Mobile ====== */}
       {activeBreakpoint === "mobile" ? (
-      <div className="hidden max-md:flex flex-col gap-[24px] items-center relative z-10 w-full" data-name="HeroSection-mobile" data-node-id="13:7056">
+      <div className="hidden max-md:flex flex-col gap-[24px] items-center relative z-10 w-full pt-[14px]" data-name="HeroSection-mobile" data-node-id="13:7056">
         {/* Content: title + code block */}
         <div className="relative z-10 flex flex-col gap-[24px] items-start w-full" data-node-id="13:7061">
           {/* Title group */}
