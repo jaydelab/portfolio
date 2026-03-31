@@ -415,7 +415,7 @@ export default function HeroSection({
               </div>
             </div>
           </div>
-          <RevealOnMount delay={0.58} className="w-full">
+          <RevealOnMount delay={0.58} className="flex w-full justify-center">
             <SectionActionButtons />
           </RevealOnMount>
         </div>
