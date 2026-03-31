@@ -25,6 +25,11 @@ html, body, #root {
   text-size-adjust: 100%;
 }
 
+html.visual-ir-protection-enabled,
+html.visual-ir-protection-enabled body {
+  -webkit-touch-callout: none;
+}
+
 #root {
   position: relative;
   z-index: 1;
@@ -57,6 +62,21 @@ html, body, #root {
 
 .visual-ir-stage img, .visual-ir-stage svg {
   display: block;
+}
+
+html.visual-ir-protection-enabled .visual-ir-stage,
+html.visual-ir-protection-enabled .visual-ir-stage * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html.visual-ir-protection-enabled .visual-ir-stage img,
+html.visual-ir-protection-enabled .visual-ir-stage svg,
+html.visual-ir-protection-enabled .visual-ir-stage canvas,
+html.visual-ir-protection-enabled .visual-ir-stage picture {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .visual-ir-stage .figma-font-geist-mono {

@@ -3,6 +3,7 @@ import Portfolio2026_1_86 from "./generated/Portfolio2026_1_86";
 import { SplashIntro } from "./components/effects/splash-intro";
 import SmoothScroll from "./components/effects/smooth-scroll";
 import { warmupUnicornFurnaceEffect } from "./components/effects/unicorn-furnace-background";
+import { ContentProtection } from "./components/effects/content-protection";
 import "../styles/visual-ir.css";
 
 const DESIGN_WIDTH = 1440;
@@ -103,6 +104,7 @@ export default function App() {
 
   return (
     <SmoothScroll>
+    <ContentProtection />
     <SplashIntro onComplete={handleSplashComplete}>
     <div className="visual-ir-page">
       <div
