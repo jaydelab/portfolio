@@ -65,7 +65,7 @@ function FooterSocialButton({
         {...commonProps}
         aria-label="Abrir conversa no WhatsApp"
         href={WHATSAPP_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         {icon}
@@ -79,7 +79,7 @@ function FooterSocialButton({
         {...commonProps}
         aria-label="Abrir perfil no LinkedIn"
         href={LINKEDIN_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         {icon}

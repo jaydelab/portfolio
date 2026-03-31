@@ -19,7 +19,7 @@ function ContactButton({ mode }: { mode: "desktop" | "tablet" | "mobile" }) {
         className="group relative inline-flex h-[44px] w-[119.59px] shrink-0 overflow-clip rounded-[50px] bg-[rgba(12,12,12,0.82)] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.19),0px_10px_10px_0px_rgba(0,0,0,0.17),0px_23px_14px_0px_rgba(0,0,0,0.1),0px_41px_17px_0px_rgba(0,0,0,0.03)] transition-[opacity,transform,box-shadow] duration-150 hover:opacity-70 active:translate-y-px active:opacity-[0.88] active:shadow-[0px_1px_2px_0px_rgba(0,0,0,0.18),0px_4px_8px_0px_rgba(0,0,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
         aria-label="Abrir conversa no WhatsApp"
         href={WHATSAPP_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <div className="figma-font-geist absolute left-[20px] top-1/2 flex h-[20px] w-[51.948px] -translate-y-1/2 flex-col justify-center text-[14px] font-medium leading-[0] tracking-[-0.14px] text-white">
@@ -45,7 +45,7 @@ function ContactButton({ mode }: { mode: "desktop" | "tablet" | "mobile" }) {
         className="group relative inline-flex h-[42px] w-[127px] shrink-0 overflow-clip rounded-[50px] bg-[#363636] p-px shadow-[0px_3px_6px_0px_rgba(0,0,0,0.19),0px_10px_10px_0px_rgba(0,0,0,0.17),0px_23px_14px_0px_rgba(0,0,0,0.1),0px_41px_17px_0px_rgba(0,0,0,0.03)] transition-[opacity,transform,box-shadow] duration-150 hover:opacity-70 active:translate-y-px active:opacity-[0.88] active:shadow-[0px_1px_2px_0px_rgba(0,0,0,0.18),0px_4px_8px_0px_rgba(0,0,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
         aria-label="Abrir conversa no WhatsApp"
         href={WHATSAPP_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <div className="flex min-h-px w-full min-w-px flex-[1_0_0] items-center justify-center gap-[12px] rounded-[50px] border border-[#4b4b4b] border-solid px-[14px]">
@@ -69,7 +69,7 @@ function ContactButton({ mode }: { mode: "desktop" | "tablet" | "mobile" }) {
       className="group relative inline-flex h-[42px] shrink-0 overflow-clip rounded-[50px] bg-[#363636] p-px shadow-[0px_3px_6px_0px_rgba(0,0,0,0.19),0px_10px_10px_0px_rgba(0,0,0,0.17),0px_23px_14px_0px_rgba(0,0,0,0.1),0px_41px_17px_0px_rgba(0,0,0,0.03)] transition-[opacity,transform,box-shadow] duration-150 hover:opacity-70 active:translate-y-px active:opacity-[0.88] active:shadow-[0px_1px_2px_0px_rgba(0,0,0,0.18),0px_4px_8px_0px_rgba(0,0,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
       aria-label="Abrir conversa no WhatsApp"
       href={WHATSAPP_HREF}
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <div className="flex min-h-px w-full min-w-px flex-[1_0_0] items-center justify-center gap-[8px] rounded-[50px] border border-[#4b4b4b] border-solid px-[14px]">
@@ -99,7 +99,7 @@ function ScheduleCallButton({
         className="group relative inline-flex h-[44px] shrink-0 items-center justify-center gap-[8px] rounded-[32px] border border-[#ededed] bg-gradient-to-b from-white to-[#fafafa] px-[20px] shadow-[0px_1px_2px_0px_rgba(128,128,128,0.1)] transition-[transform,box-shadow,border-color,background] duration-150 hover:border-[#dfdfdf] hover:from-white hover:to-[#f5f5f5] hover:shadow-[0px_2px_4px_0px_rgba(128,128,128,0.14)] active:translate-y-px active:border-[#d4d4d4] active:shadow-[0px_1px_2px_0px_rgba(128,128,128,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
         aria-label="Agendar reunião no Cal.com"
         href={SCHEDULE_CALL_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <div className="flex size-[24px] shrink-0 items-center justify-center opacity-40 transition-opacity duration-150 group-hover:opacity-55 group-active:opacity-70">
@@ -118,7 +118,7 @@ function ScheduleCallButton({
         className="group relative inline-flex h-[42px] shrink-0 items-center justify-center gap-[8px] rounded-[32px] border border-[#ededed] bg-gradient-to-b from-white to-[#fafafa] px-[14px] shadow-[0px_1px_2px_0px_rgba(128,128,128,0.1)] transition-[transform,box-shadow,border-color,background] duration-150 hover:border-[#dfdfdf] hover:from-white hover:to-[#f5f5f5] hover:shadow-[0px_2px_4px_0px_rgba(128,128,128,0.14)] active:translate-y-px active:border-[#d4d4d4] active:shadow-[0px_1px_2px_0px_rgba(128,128,128,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
         aria-label="Agendar reunião no Cal.com"
         href={SCHEDULE_CALL_HREF}
-        rel="noreferrer"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <div className="flex size-[24px] shrink-0 items-center justify-center opacity-40 transition-opacity duration-150 group-hover:opacity-55 group-active:opacity-70">
@@ -136,7 +136,7 @@ function ScheduleCallButton({
       className="group relative inline-flex h-[42px] shrink-0 items-center justify-center gap-[6px] rounded-[32px] border border-[#ededed] bg-gradient-to-b from-white to-[#fafafa] px-[14px] shadow-[0px_1px_2px_0px_rgba(128,128,128,0.1)] transition-[transform,box-shadow,border-color,background] duration-150 hover:border-[#dfdfdf] hover:from-white hover:to-[#f5f5f5] hover:shadow-[0px_2px_4px_0px_rgba(128,128,128,0.14)] active:translate-y-px active:border-[#d4d4d4] active:shadow-[0px_1px_2px_0px_rgba(128,128,128,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d81ff]"
       aria-label="Agendar reunião no Cal.com"
       href={SCHEDULE_CALL_HREF}
-      rel="noreferrer"
+      rel="noopener noreferrer"
       target="_blank"
     >
       <div className="flex size-[20px] shrink-0 items-center justify-center opacity-40 transition-opacity duration-150 group-hover:opacity-55 group-active:opacity-70">

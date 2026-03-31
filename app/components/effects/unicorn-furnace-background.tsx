@@ -2,10 +2,8 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { assetUrl } from "../../lib/asset-url";
 import type { ActiveBreakpoint } from "../../lib/use-active-breakpoint";
 import type { UnicornHeroLayoutConfig } from "./unicorn-hero-background";
-import type {
-  UnicornStudioApi,
-  UnicornStudioBaseScene,
-} from "./unicorn-studio-types";
+import type { UnicornStudioBaseScene } from "./unicorn-studio-types";
+import { loadUnicornStudioRuntime } from "./load-unicorn-studio-runtime";
 
 type UnicornFurnaceBackgroundProps = {
   breakpoint?: ActiveBreakpoint;
@@ -27,12 +25,8 @@ type UnicornFurnaceScene = UnicornStudioBaseScene & {
   refresh?: () => void;
   renderFrame?: () => void;
 };
-type UnicornFurnaceWindow = Window & {
-  UnicornStudio?: UnicornStudioApi;
-  __portfolioUnicornFurnaceRuntimePromise__?: Promise<UnicornStudioApi>;
-};
 
-const runtimeUrl = assetUrl("/effects/unicorn-furnace/unicorn-runtime.txt");
+const runtimeUrl = assetUrl("/effects/unicorn-furnace/unicorn-runtime.js");
 const sceneUrl = assetUrl("/effects/unicorn-furnace/scene.json");
 const furnaceBaseUrl = assetUrl("/effects/unicorn-furnace/furnace-base.png");
 const furnaceOverlayUrl = assetUrl("/effects/unicorn-furnace/furnace-overlay.png");
@@ -42,7 +36,6 @@ const FURNACE_FADE_IN_MS = 520;
 const FURNACE_REVEAL_DELAY_MS = 140;
 const EDGE_FADE_GAIN = 1.9;
 let furnaceWarmupPromise: Promise<void> | null = null;
-let runtimeSourcePromise: Promise<string> | null = null;
 let furnaceImageWarmupPromise: Promise<void> | null = null;
 
 function canUseWebGL() {
@@ -102,27 +95,6 @@ function warmupImageAssets() {
   return furnaceImageWarmupPromise;
 }
 
-async function fetchRuntimeSource() {
-  if (runtimeSourcePromise) {
-    return runtimeSourcePromise;
-  }
-
-  runtimeSourcePromise = fetch(runtimeUrl)
-    .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`Falha ao aquecer runtime Furnace: ${response.status}`);
-      }
-
-      return response.text();
-    })
-    .catch((error) => {
-      runtimeSourcePromise = null;
-      throw error;
-    });
-
-  return runtimeSourcePromise;
-}
-
 export function warmupUnicornFurnaceEffect() {
   if (typeof window === "undefined" || !canUseWebGL()) {
     return Promise.resolve();
@@ -133,7 +105,7 @@ export function warmupUnicornFurnaceEffect() {
   }
 
   furnaceWarmupPromise = Promise.all([
-    fetchRuntimeSource(),
+    loadUnicornStudioRuntime(runtimeUrl),
     fetch(sceneUrl).then((response) => {
       if (!response.ok) {
         throw new Error(`Falha ao aquecer cena Furnace: ${response.status}`);
@@ -150,42 +122,6 @@ export function warmupUnicornFurnaceEffect() {
     });
 
   return furnaceWarmupPromise;
-}
-
-function loadRuntime() {
-  if (typeof window === "undefined") {
-    return Promise.reject(new Error("Window indisponível."));
-  }
-
-  const unicornWindow = window as UnicornFurnaceWindow;
-
-  if (unicornWindow.UnicornStudio) {
-    return Promise.resolve(unicornWindow.UnicornStudio);
-  }
-
-  if (unicornWindow.__portfolioUnicornFurnaceRuntimePromise__) {
-    return unicornWindow.__portfolioUnicornFurnaceRuntimePromise__;
-  }
-
-  unicornWindow.__portfolioUnicornFurnaceRuntimePromise__ = fetchRuntimeSource()
-    .then((source) => {
-      const script = document.createElement("script");
-      script.async = false;
-      script.text = source;
-      document.head.appendChild(script);
-
-      if (!unicornWindow.UnicornStudio) {
-        throw new Error("Runtime UnicornStudio não carregou.");
-      }
-
-      return unicornWindow.UnicornStudio;
-    })
-    .catch((error) => {
-      unicornWindow.__portfolioUnicornFurnaceRuntimePromise__ = undefined;
-      throw error;
-    });
-
-  return unicornWindow.__portfolioUnicornFurnaceRuntimePromise__;
 }
 
 async function buildSceneObjectUrl() {
@@ -314,7 +250,11 @@ export function UnicornFurnaceBackground({
       refreshScene();
     };
 
-    Promise.all([warmupUnicornFurnaceEffect(), loadRuntime(), buildSceneObjectUrl()])
+    Promise.all([
+      warmupUnicornFurnaceEffect(),
+      loadUnicornStudioRuntime(runtimeUrl),
+      buildSceneObjectUrl(),
+    ])
       .then(([, runtime, nextSceneObjectUrl]) => {
         sceneObjectUrl = nextSceneObjectUrl;
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type RefObject } from "react";
 import { assetUrl } from "../../lib/asset-url";
 import type { ActiveBreakpoint } from "../../lib/use-active-breakpoint";
-import type { UnicornStudioApi } from "./unicorn-studio-types";
+import { loadUnicornStudioRuntime } from "./load-unicorn-studio-runtime";
 
 type UnicornHeroLayoutBreakpoint = {
   vignette: {
@@ -69,14 +69,11 @@ type UnicornStudioScene = {
 };
 
 type UnicornHeroWindow = Window & {
-  UnicornStudio?: UnicornStudioApi;
-  __portfolioUnicornRuntimePromise__?: Promise<UnicornStudioApi>;
   __portfolioUnicornSceneWarmupPromise__?: Promise<void>;
 };
 
-const runtimeUrl = assetUrl("/effects/unicorn-campo-luminoso/unicorn-runtime.txt");
+const runtimeUrl = assetUrl("/effects/unicorn-campo-luminoso/unicorn-runtime.js");
 const sceneTemplateUrl = assetUrl("/effects/unicorn-campo-luminoso/scene.performance.json");
-let runtimeSourcePromise: Promise<string> | null = null;
 let sceneTemplatePromise: Promise<string> | null = null;
 const DEFAULT_HERO_FPS = 60;
 const SCROLL_HERO_FPS = 18;
@@ -95,63 +92,6 @@ function canUseWebGL() {
     canvas.getContext("experimental-webgl");
 
   return Boolean(context && "getExtension" in context);
-}
-
-async function fetchRuntimeSource() {
-  if (runtimeSourcePromise) {
-    return runtimeSourcePromise;
-  }
-
-  runtimeSourcePromise = fetch(runtimeUrl)
-    .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`Falha ao carregar runtime: ${response.status}`);
-      }
-
-      return response.text();
-    })
-    .catch((error) => {
-      runtimeSourcePromise = null;
-      throw error;
-    });
-
-  return runtimeSourcePromise;
-}
-
-function loadRuntime() {
-  if (typeof window === "undefined") {
-    return Promise.reject(new Error("Window indisponível."));
-  }
-
-  const unicornWindow = window as UnicornHeroWindow;
-
-  if (unicornWindow.UnicornStudio) {
-    return Promise.resolve(unicornWindow.UnicornStudio);
-  }
-
-  if (unicornWindow.__portfolioUnicornRuntimePromise__) {
-    return unicornWindow.__portfolioUnicornRuntimePromise__;
-  }
-
-  unicornWindow.__portfolioUnicornRuntimePromise__ = fetchRuntimeSource()
-    .then((source) => {
-      const script = document.createElement("script");
-      script.async = false;
-      script.text = source;
-      document.head.appendChild(script);
-
-      if (!unicornWindow.UnicornStudio) {
-        throw new Error("Runtime UnicornStudio não carregou.");
-      }
-
-      return unicornWindow.UnicornStudio;
-    })
-    .catch((error) => {
-      unicornWindow.__portfolioUnicornRuntimePromise__ = undefined;
-      throw error;
-    });
-
-  return unicornWindow.__portfolioUnicornRuntimePromise__;
 }
 
 async function fetchSceneTemplate() {
@@ -225,7 +165,10 @@ function warmupSceneAsset() {
   const unicornWindow = window as UnicornHeroWindow;
 
   if (!unicornWindow.__portfolioUnicornSceneWarmupPromise__) {
-    unicornWindow.__portfolioUnicornSceneWarmupPromise__ = fetch(sceneTemplateUrl)
+    unicornWindow.__portfolioUnicornSceneWarmupPromise__ = Promise.all([
+      loadUnicornStudioRuntime(runtimeUrl),
+      fetchSceneTemplate(),
+    ])
       .then(() => undefined)
       .catch(() => undefined);
   }
@@ -360,7 +303,7 @@ export function UnicornHeroBackground({
       scrollReleaseTimer = window.setTimeout(releaseScrollBudget, SCROLL_SETTLE_MS);
     };
 
-    Promise.all([loadRuntime(), fetchSceneTemplate()])
+    Promise.all([loadUnicornStudioRuntime(runtimeUrl), fetchSceneTemplate()])
       .then(([runtime]) => {
         return withHighPerformanceWebGLContext(() =>
           runtime.addScene({

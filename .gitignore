@@ -3,6 +3,9 @@ dist/
 .DS_Store
 *.log
 *.tsbuildinfo
+.env
+.env.*
+!.env.example
 
 # Playwright
 .playwright-cli/
