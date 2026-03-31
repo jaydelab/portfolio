@@ -1,6 +1,5 @@
 import {
   useEffect,
-  useId,
   useLayoutEffect,
   useRef,
   useState,
@@ -105,47 +104,16 @@ function TestimonialIndicatorBadge({
   activeIndex: number;
   className?: string;
 }) {
-  const clipPathId = useId().replace(/:/g, "");
-
   return (
     <div className={`flex items-center gap-[12px] ${className}`.trim()} data-name="Badge">
-      <div className="h-[15px] relative shrink-0 w-[39px]">
-        <svg
-          className="absolute block max-w-none size-full"
-          fill="none"
-          preserveAspectRatio="none"
-          viewBox="0 0 39 15"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <foreignObject x="-50" y="-50" width="139" height="115">
-            <div
-              style={{
-                backdropFilter: "blur(25px)",
-                clipPath: `url(#${clipPathId})`,
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </foreignObject>
-          <g data-figma-bg-blur-radius="50">
-            <rect width="39" height="15" rx="7.5" fill="#575757" />
-            {([7.5, 15.5, 23.5, 31.5] as const).map((cx, index) => (
-              <circle
-                key={`testimonial-badge-dot-${index}`}
-                cx={cx}
-                cy="7.5"
-                fill="white"
-                opacity={activeIndex === index ? 1 : 0.2}
-                r="2.5"
-              />
-            ))}
-          </g>
-          <defs>
-            <clipPath id={clipPathId} transform="translate(50 50)">
-              <rect width="39" height="15" rx="7.5" />
-            </clipPath>
-          </defs>
-        </svg>
+      <div className="visual-ir-indicator-glass relative flex h-[15px] w-[39px] shrink-0 items-center justify-center gap-[3px] rounded-[7.5px]">
+        {([0, 1, 2, 3] as const).map((index) => (
+          <span
+            key={`testimonial-badge-dot-${index}`}
+            className="block h-[5px] w-[5px] rounded-full bg-white"
+            style={{ opacity: activeIndex === index ? 1 : 0.2 }}
+          />
+        ))}
       </div>
     </div>
   );

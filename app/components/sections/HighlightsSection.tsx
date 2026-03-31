@@ -64,7 +64,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
           </div>
         </div>
         <div className="content-stretch flex h-[71px] items-end justify-center overflow-visible pb-[11px] pt-[10px] px-[12px] relative shrink-0" data-name="Dock" data-node-id="1:992">
-          <div className="absolute bg-[rgba(255,255,255,0.5)] max-md:bg-[rgba(13,18,26,0.28)] inset-0 mix-blend-overlay max-md:mix-blend-normal rounded-[20px]" data-name="Dock Background" data-node-id="1:993" style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", clipPath: "inset(0.3px round 19.7px)" }} />
+          <div className="visual-ir-dock-glass absolute inset-0 rounded-[20px]" data-name="Dock Background" data-node-id="1:993" style={{ clipPath: "inset(0.3px round 19.7px)" }} />
           <div className="absolute border border-solid border-white inset-0 mix-blend-overlay pointer-events-none rounded-[20px]" />
           <DockMagnify
             items={dockIcons.map(({ src, title }, index) => ({
@@ -113,11 +113,7 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
             <div className="border border-solid border-white content-stretch flex gap-[8px] h-full items-center justify-center px-[10px] py-[8px] relative rounded-[12px] w-full">
               <div
                 aria-hidden="true"
-                className="absolute bg-[rgba(255,255,255,0.5)] inset-0 mix-blend-overlay pointer-events-none rounded-[12px]"
-                style={{
-                  backdropFilter: "blur(5px)",
-                  WebkitBackdropFilter: "blur(5px)",
-                }}
+                className="visual-ir-dock-glass absolute inset-0 pointer-events-none rounded-[12px]"
               />
               {dockIcons.map(({ src }, index) => (
                 <div className="relative shrink-0 size-[24px]" key={`tablet-dock-icon-${index}`}>
@@ -164,13 +160,8 @@ export default function HighlightsSection({ id, className = "" }: HighlightsSect
           <div className="absolute content-stretch flex h-[32%] items-start justify-center left-[4.4%] overflow-hidden p-[16px] right-[4.4%] rounded-tl-[20px] rounded-tr-[20px] top-[76.2%]" data-name="Dock Background" data-node-id="67:2443">
             <div
               aria-hidden="true"
-              className="absolute inset-0 mix-blend-overlay pointer-events-none rounded-tl-[20px] rounded-tr-[20px]"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.5)",
-                backdropFilter: "blur(5px)",
-                WebkitBackdropFilter: "blur(5px)",
-                clipPath: "inset(0.3px round 19.7px 19.7px 0 0)",
-              }}
+              className="visual-ir-dock-glass absolute inset-0 pointer-events-none rounded-tl-[20px] rounded-tr-[20px]"
+              style={{ clipPath: "inset(0.3px round 19.7px 19.7px 0 0)" }}
             />
             <div aria-hidden="true" className="absolute border border-solid border-white inset-0 mix-blend-overlay pointer-events-none rounded-tl-[20px] rounded-tr-[20px]" />
             <div className="grid grid-cols-4 grid-rows-4 gap-[clamp(10px,3vw,16px)] relative w-[clamp(216px,60%,320px)] aspect-square" data-node-id="67:2444">

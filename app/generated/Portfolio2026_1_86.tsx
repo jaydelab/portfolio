@@ -12,6 +12,7 @@ import HighlightsSection from "../components/sections/HighlightsSection";
 import ProjectsGrid from "../components/sections/ProjectsGrid";
 import CTASection from "../components/sections/CTASection";
 import FooterSection from "../components/sections/FooterSection";
+import SectionActionButtons from "../components/sections/SectionActionButtons";
 import { assetUrl } from "../lib/asset-url";
 
 const imgVector9 = assetUrl("/visual-ir-assets/994144d485b287b95c9e3138c9d881eeb59bb13f.svg");
@@ -28,13 +29,21 @@ export default function Web1440Px({ heroEffectReady = true }: Web1440PxProps) {
         <HeroSection heroEffectReady={heroEffectReady} />
         <AboutSection />
         <CaseStudyIntro />
+        <SectionActionButtons className="max-md:mt-[36px]" />
         <CaseStudyWAP className="max-lg:hidden" />
+        <SectionActionButtons className="max-lg:hidden max-md:mt-[36px]" />
         <CaseStudyCoolhunting className="max-lg:hidden" />
+        <SectionActionButtons className="max-lg:hidden max-md:mt-[36px]" />
         <CaseStudyConnectHunt className="max-lg:hidden" />
+        <SectionActionButtons className="max-lg:hidden max-md:mt-[36px]" />
         <CaseStudyPortal className="max-lg:hidden" />
+        <SectionActionButtons className="max-lg:hidden max-md:mt-[36px]" />
         <TestimonialSection />
+        <SectionActionButtons className="max-md:mt-[36px]" />
         <ONovoMercadoSection className="max-lg:hidden" />
+        <SectionActionButtons className="max-lg:hidden max-md:mt-[36px]" />
         <HighlightsSection />
+        <SectionActionButtons className="max-md:mt-[36px]" />
         <ProjectsGrid />
         <CTASection />
         <FooterSection />

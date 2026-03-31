@@ -1,5 +1,6 @@
 import React from "react";
 import { HeroTitleTextReveal } from "../effects/hero-title-reveal";
+import SectionActionButtons from "./SectionActionButtons";
 import { assetUrl } from "../../lib/asset-url";
 import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
@@ -49,6 +50,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
                   <p>{ABOUT_PARAGRAPH_3}</p>
                 </div>
               </div>
+              <SectionActionButtons align="start" className="mt-[32px]" />
             </div>
             <div className="h-[604px] max-lg:h-[350px] overflow-clip relative shrink-0 w-[690px] max-lg:w-full" data-name="Profile Image Container" data-node-id="1:504">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -107,6 +109,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
             <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black tracking-[-0.2px] w-full" data-node-id="68:90">
               <p className="leading-[26px]">{ABOUT_PARAGRAPH_3}</p>
             </div>
+            <SectionActionButtons align="start" className="mt-[32px]" />
           </div>
 
           <div className="absolute h-[44px] left-[343px] top-px w-[76px]" data-node-id="68:92">
@@ -186,6 +189,7 @@ export default function AboutSection({ id, className = "" }: AboutSectionProps =
           <div className="figma-font-geist font-normal opacity-60 text-[16px] text-black w-full" data-node-id="13:7095">
             <p className="leading-[26px]">{ABOUT_PARAGRAPH_3}</p>
           </div>
+          <SectionActionButtons align="start" className="mt-[32px]" />
         </div>
       </div>
       ) : null}

@@ -1,15 +1,10 @@
 import { HeroTitleHighlightReveal, HeroTitleTextReveal } from "../effects/hero-title-reveal";
-import { assetUrl } from "../../lib/asset-url";
 import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
+import { assetUrl } from "../../lib/asset-url";
 
 const imgVector8 = assetUrl("/visual-ir-assets/vector-8.svg");
-const imgSocialButton = assetUrl("/visual-ir-assets/social-button.svg");
-const imgSocialButtonIcon = assetUrl("/visual-ir-assets/social-button-icon.svg");
-
 const imgFooterMobileKeyboard = assetUrl("/visual-ir-assets/footer-mobile-keyboard.webp");
 const imgFooterMobileCheck = assetUrl("/visual-ir-assets/footer-mobile-check.svg");
-const imgFooterMobileLinkedIn = assetUrl("/visual-ir-assets/footer-mobile-linkedin.svg");
-const imgFooterMobileWhatsapp = assetUrl("/visual-ir-assets/footer-mobile-whatsapp.svg");
 const FOOTER_TITLE_START = "Se você precisa";
 const FOOTER_TITLE_HIGHLIGHT = "construir";
 const FOOTER_TITLE_END = "algo pensado pra seres humanos, vamos conversar.";
@@ -20,6 +15,79 @@ const FOOTER_LOCATION = "Uberlândia MG";
 interface FooterSectionProps {
   id?: string;
   className?: string;
+}
+
+function LinkedInGlyph({ size }: { size: 18 | 22 }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className="block"
+      fill="none"
+      height={size}
+      viewBox="0 0 24 24"
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.767 8.494c-.957 0-1.734-.772-1.734-1.724s.777-1.724 1.734-1.724c.958 0 1.735.772 1.735 1.724s-.777 1.724-1.735 1.724ZM8.255 18.954H5.28v-9.54h2.975v9.54ZM18.963 18.954h-2.969v-4.642c0-1.106-.023-2.524-1.543-2.524-1.543 0-1.78 1.205-1.78 2.444v4.722h-2.972v-9.54h2.853v1.3h.04c.398-.75 1.37-1.542 2.82-1.542 3.014 0 3.57 1.976 3.57 4.547v5.235Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+function WhatsAppGlyph({ size }: { size: 18 | 22 }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className="block"
+      fill="none"
+      height={size}
+      viewBox="0 0 24 24"
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.52 11.923c0 4.7-3.84 8.516-8.57 8.516a8.59 8.59 0 0 1-4.1-1.041L3.5 20.54l1.157-4.214a8.434 8.434 0 0 1-1.148-4.376c.002-4.699 3.842-8.514 8.57-8.514 2.292 0 4.445.888 6.067 2.502a8.452 8.452 0 0 1 2.374 5.985Z"
+        stroke="rgba(255,255,255,0.4)"
+        strokeWidth="1.6"
+      />
+      <path
+        d="M8.89 7.915c-.2-.446-.41-.454-.6-.462l-.81-.01c-.28 0-.735.103-1.119.507-.385.405-1.469 1.379-1.469 3.363 0 1.983 1.503 3.899 1.712 4.17.21.272 2.865 4.592 7.02 6.25 3.45 1.375 4.152 1.11 4.902 1.019.75-.09 2.422-.984 2.765-1.935.344-.952.344-1.769.241-1.92-.102-.15-.385-.24-.803-.44-.42-.2-2.474-1.212-2.856-1.348-.382-.136-.662-.197-.943.204-.281.4-1.083 1.347-1.33 1.62-.246.272-.492.306-.91.103-.42-.2-1.77-.65-3.37-2.07-1.246-1.106-2.084-2.473-2.33-2.877-.247-.404-.026-.622.185-.822.189-.179.42-.466.628-.698.21-.232.28-.4.42-.669.14-.268.07-.503-.035-.702-.104-.2-.942-2.281-1.288-3.123Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+function FooterSocialButton({
+  size,
+  type,
+}: {
+  size: 28 | 38;
+  type: "linkedin" | "whatsapp";
+}) {
+  const iconSize = size === 38 ? 22 : 18;
+
+  return (
+    <div
+      className="visual-ir-social-button relative shrink-0 transition-[transform,opacity,filter] duration-150 hover:-translate-y-px hover:opacity-85"
+      data-name={type === "linkedin" ? "Social Button" : "Social Button Icon"}
+      style={{
+        borderRadius: size === 38 ? 12 : 8,
+        height: size,
+        width: size,
+      }}
+    >
+      <div className="absolute inset-0 flex items-center justify-center rounded-[inherit]">
+        {type === "linkedin" ? (
+          <LinkedInGlyph size={iconSize as 18 | 22} />
+        ) : (
+          <WhatsAppGlyph size={iconSize as 18 | 22} />
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function FooterSection({ id, className = "" }: FooterSectionProps = {}) {
@@ -100,19 +168,8 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
           </div>
         </div>
         <div className="col-1 content-stretch flex gap-[24px] items-center ml-[1244px] mt-[688px] relative row-1" data-name="Social Button Container" data-node-id="1:1327">
-          <div className="relative shrink-0 size-[38px]" data-name="Social Button" data-node-id="1:1328">
-            <div className="absolute inset-[-7.89%_-10.53%_-13.16%_-10.53%]">
-              <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgSocialButton} />
-            </div>
-          </div>
-          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group" data-node-id="1:1330">
-            <div className="col-1 ml-0 mt-0 row-1 size-[38px]" data-name="Social Button Background" data-node-id="1:1331" />
-            <div className="col-1 ml-0 mt-0 relative row-1 size-[38px]" data-name="Social Button Icon" data-node-id="1:1332">
-              <div className="absolute inset-[-7.89%_-10.53%_-13.16%_-10.53%]">
-                <img decoding="async" loading="lazy" alt="" className="block max-w-none size-full" src={imgSocialButtonIcon} />
-              </div>
-            </div>
-          </div>
+          <FooterSocialButton size={38} type="linkedin" />
+          <FooterSocialButton size={38} type="whatsapp" />
         </div>
       </div>
       ) : null}
@@ -164,12 +221,8 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
               </div>
 
               <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="68:520">
-                <div className="relative shrink-0 size-[28px]">
-                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedIn} />
-                </div>
-                <div className="relative shrink-0 size-[28px]">
-                  <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileWhatsapp} />
-                </div>
+                <FooterSocialButton size={28} type="linkedin" />
+                <FooterSocialButton size={28} type="whatsapp" />
               </div>
             </div>
           </div>
@@ -233,12 +286,8 @@ export default function FooterSection({ id, className = "" }: FooterSectionProps
             </div>
 
             <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="67:2587">
-              <div className="relative shrink-0 size-[28px]" data-name="Social Button" data-node-id="67:2588">
-                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileLinkedIn} />
-              </div>
-              <div className="relative shrink-0 size-[28px]" data-name="Social Button Icon" data-node-id="67:2592">
-                <img decoding="async" loading="lazy" alt="" className="absolute inset-0 max-w-none size-full" src={imgFooterMobileWhatsapp} />
-              </div>
+              <FooterSocialButton size={28} type="linkedin" />
+              <FooterSocialButton size={28} type="whatsapp" />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import {
   HeroTitleImageReveal,
   HeroTitleTextReveal,
 } from "../effects/hero-title-reveal";
+import SectionActionButtons from "./SectionActionButtons";
 import { assetUrl } from "../../lib/asset-url";
 import { useActiveBreakpoint } from "../../lib/use-active-breakpoint";
 
@@ -246,6 +247,9 @@ export default function HeroSection({
                 <p className="leading-[32px] max-lg:leading-[clamp(24px,3.2vw,32px)]">Oi, eu sou o Victor. Aqui eu vou te contar sobre o que andei fazendo nestes quase 10 anos entre milhares de produtos e serviços que são usados por milhões de pessoas.</p>
               </div>
               </RevealOnMount>
+              <RevealOnMount delay={0.58} className="shrink-0">
+                <SectionActionButtons />
+              </RevealOnMount>
             </div>
       </div>
       ) : null}
@@ -326,6 +330,9 @@ export default function HeroSection({
               </div>
             </div>
           </div>
+          <RevealOnMount delay={0.58} className="shrink-0">
+            <SectionActionButtons />
+          </RevealOnMount>
         </div>
       </div>
       ) : null}
@@ -408,6 +415,9 @@ export default function HeroSection({
               </div>
             </div>
           </div>
+          <RevealOnMount delay={0.58} className="w-full">
+            <SectionActionButtons />
+          </RevealOnMount>
         </div>
       </div>
       ) : null}
